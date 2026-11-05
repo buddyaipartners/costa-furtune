@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Sai Harmony Pvt. Ltd. · Costa Furtune Master Township & Crestview Residences</title>
+<meta name="description" content="Official Corporate Platform of Sai Harmony Pvt. Ltd. Explore the Costa Furtune Master Township: Phase 1 Triplex Villas (Ready, 100% Sold Out), Phase 2 Crestview (B+S+12 3BHK Residences, ORERA MP/19/2024/01244), Phase 3 Horizon Heights." />
+<meta name="theme-color" content="#040A16" />
+<meta property="og:title" content="Sai Harmony · Costa Furtune Master Township" />
+<meta property="og:description" content="Official Company Platform for Sai Harmony Pvt. Ltd. and Costa Furtune Master Township. Kantabada, Chandaka Forest Corridor, Bhubaneswar." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/render-elevation.webp" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+
+<body class="is-loading">
+
+<!-- ─────────────────────────  PRELOADER  ───────────────────────── -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <div class="loader__mark">
+      <img src="assets/logos/costa-furtune-brochure-official.webp" alt="Costa Furtune Brochure Logo" width="56" height="56" style="object-fit:contain;" />
+    </div>
+    <div class="loader__name">Sai Harmony · Costa Furtune</div>
+    <div class="loader__bar"><span id="loadBar"></span></div>
+    <div class="loader__pct"><span id="loadPct">0</span><small>%</small></div>
+  </div>
+</div>
+
+<!-- FIXED 3D PROCEDURAL CANVAS (hidden in light theme) -->
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="scrim" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ─────────────────────────  HEADER & NAV  ───────────────────────── -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="Costa Furtune Crestview">
+    <img src="assets/logos/costa-furtune-wordmark-light.svg" alt="Costa Furtune Crestview" width="360" height="64" />
+  </a>
+
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#developer">Developer</a>
+    <a href="#township">3 Phases</a>
+    <a href="#residences">3 BHK Focus</a>
+    <a href="#amenities">Clubhouse</a>
+    <a href="#progress">Progress</a>
+    <a href="#verification">Verification</a>
+  </nav>
+
+  <a class="btn btn--primary nav__cta" href="#enquire">Book Site Visit</a>
+  <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open navigation menu">
+    <span></span><span></span><span></span><em>Menu</em>
+  </button>
+</header>
+
+<div class="navmenu" id="navMenu" aria-hidden="true">
+  <nav aria-label="Mobile sections">
+    <a href="#developer"><span>00</span>Master Developer (Sai Harmony)</a>
+    <a href="#township"><span>01</span>Complete Township (All 3 Phases)</a>
+    <a href="triplex.html" class="navmenu__sub"><span>→</span>Costa Fortune Triplex — Phase 1 (Sold Out)</a>
+    <a href="crestview.html" class="navmenu__sub"><span>→</span>Costa Furtune Crestview — Phase 2 (3 BHK Focus)</a>
+    <a href="horizon-heights.html" class="navmenu__sub"><span>→</span>Horizon Heights — Phase 3 (Twin Towers)</a>
+    <a href="clubhouse.html" class="navmenu__sub"><span>→</span>Club Costa Fantasy (Construction Ready)</a>
+    <a href="#residences"><span>02</span>Exclusive 3 BHK Collection</a>
+    <a href="#amenities"><span>03</span>Club Costa Fantasy</a>
+    <a href="#progress"><span>04</span>Construction Progress</a>
+    <a href="#leadership"><span>05</span>Leadership &amp; MD Desk</a>
+    <a href="#verification"><span>06</span>ORERA Verification</a>
+    <a href="#enquire"><span>07</span>Private VIP Viewing</a>
+  </nav>
+  <div class="navmenu__foot">
+    <a href="tel:+917735536906">+91 77355 36906</a>
+    <a href="mailto:saiharmony2021@gmail.com">saiharmony2021@gmail.com</a>
+  </div>
+</div>
+
+<!-- ─────────────────────────  CHAPTER PROGRESS RAIL  ───────────────────────── -->
+<aside class="rail" id="rail" aria-label="Page progress">
+  <div class="rail__track"><span class="rail__fill" id="railFill"></span></div>
+  <ol class="rail__list" id="railList">
+    <li data-ch="0"><span>00</span><em>Opening</em></li>
+    <li data-ch="1"><span>01</span><em>Developer</em></li>
+    <li data-ch="2"><span>02</span><em>3 Phases</em></li>
+    <li data-ch="3"><span>03</span><em>3 BHK Living</em></li>
+    <li data-ch="4"><span>04</span><em>Clubhouse</em></li>
+    <li data-ch="5"><span>05</span><em>Progress</em></li>
+    <li data-ch="6"><span>06</span><em>Leadership</em></li>
+    <li data-ch="7"><span>07</span><em>ORERA Law</em></li>
+    <li data-ch="8"><span>08</span><em>Enquire</em></li>
+  </ol>
+</aside>
+
+<main id="top">
+
+<!-- ═══════════════════════  00 · HERO  ═══════════════════════ -->
+<section class="section section--hero" data-chapter="0">
+  <div class="hero__media">
+    <picture>
+      <source media="(max-width:900px), (orientation:portrait)" srcset="assets/brochure/tower-portrait.webp">
+      <img src="assets/brochure/hero-aerial.webp" alt="Costa Furtune Crestview master township aerial — tower, triplex villas and forest" loading="eager" decoding="async" width="2200" height="1320" />
+    </picture>
+    <div class="hero__media__veil"></div>
+  </div>
+  <div class="hero__content">
+    <p class="eyebrow" data-reveal>
+      <span class="eyebrow__rule"></span>Sai Harmony Pvt. Ltd. · Master Planned Township
+    </p>
+    <h1 class="hero__title" data-reveal data-reveal-delay="80">
+      <span class="hero__line">Costa</span>
+      <span class="hero__line hero__line--accent">Furtune</span>
+      <span class="hero__line hero__line--small">Crestview &amp; Township</span>
+    </h1>
+    <p class="hero__sub" data-reveal data-reveal-delay="180">
+      Where architectural authority meets the Chandaka green belt.<br />
+      Featuring our exclusive <strong>3 BHK Royal &amp; Imperial Collection (from ₹5,700/sqft)</strong> alongside delivered luxury triplex villas.
+    </p>
+    <div class="hero__meta" data-reveal data-reveal-delay="260">
+      <span>Kantabada · Chandaka Corridor</span>
+      <span class="dot"></span>
+      <span>ORERA MP/19/2024/01244</span>
+      <span class="dot"></span>
+      <span>Possession Aug 2028</span>
+    </div>
+
+    <div class="hero__actions" data-reveal data-reveal-delay="320">
+      <button id="btnHeroTour" class="btn btn--gold" style="padding:14px 28px;">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14" style="margin-right:8px;"><path d="M4 3.5l8 4.5-8 4.5v-9z"/></svg>
+        Watch the Site Film · 31s
+      </button>
+      <a href="#residences" class="btn btn--ghost" style="padding:14px 28px;">Explore 3 BHK Floor Plans</a>
+      <a href="https://www.saiharmony.com/_files/ugd/06bd43_413c9c71aa79400c8ca91a2597b8d41e.pdf" class="btn btn--ghost" style="padding:14px 28px;" target="_blank" rel="noopener">Download Official Brochure</a>
+    </div>
+  </div>
+
+  <div class="hero__foot">
+    <div class="hero__scroll">
+      <span class="hero__scroll-line"></span>
+      <span>Scroll to explore</span>
+    </div>
+    <div class="hero__coords">
+      <span>20.3223° N</span>
+      <span>85.7265° E</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════  LOCATION · PROJECT SITUATION  ═══════════════════════ -->
+<section class="section section--location" id="location" data-chapter="0.5" style="padding-top:clamp(40px, 6vh, 80px);">
+  <div class="location" data-reveal>
+    <div class="location__media">
+      <figure class="location__map">
+        <img src="assets/location-map-costa-fortune.jpg" alt="Map centred on the Costa Furtune master township at Ghangapatna, Kantabada, Odisha 752054, north-west of Bhubaneswar" loading="lazy" decoding="async" width="1200" height="1200" />
+        <span class="map-pin" style="--x:58.44%; --y:51.42%;">
+          <span class="map-pin__pulse"></span>
+          <span class="map-pin__dot"></span>
+          <span class="map-pin__label">Costa Furtune<small>Ghangapatna · Kantabada</small></span>
+        </span>
+        <figcaption>
+          <span>Project Location</span>
+          Ghangapatna · Kantabada · Odisha 752054
+          <em>Map © OpenStreetMap contributors · pin from the official Google listing</em>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="location__copy">
+      <p class="label"><span>📍</span> Project Situation</p>
+      <h2 class="display">Where the forest<br /><em>meets the future.</em></h2>
+      <p class="lede">
+        The Costa Furtune Master Township occupies a privileged corridor along the 40-foot Kantabada connecting artery — the last undeveloped greenfront before the Chandaka Forest Reserve.
+      </p>
+      <div class="location__grid">
+        <article class="location__card">
+          <span class="location__num">01</span>
+          <h3>Kantabada Main Road</h3>
+          <p>40 ft wide arterial frontage · Direct entry from NH-16 via Chandaka junction</p>
+        </article>
+        <article class="location__card">
+          <span class="location__num">02</span>
+          <h3>Chandaka Forest Reserve</h3>
+          <p>Protected wildlife sanctuary buffer · Permanent green views · Zero future high-rise obstruction</p>
+        </article>
+        <article class="location__card">
+          <span class="location__num">03</span>
+          <h3>Bhubaneswar Connectivity</h3>
+          <p>28 min to Biju Patnaik Airport · 27 min to Bhubaneswar Railway Station · 26 min to AIIMS</p>
+        </article>
+        <article class="location__card">
+          <span class="location__num">04</span>
+          <h3>Civic Infrastructure</h3>
+          <p>15.25 m external road · 2,078 sq m site development · 384 sq m plantation · ORERA-approved</p>
+        </article>
+      </div>
+      <div class="location__distances" aria-label="Driving distances from the site">
+        <span class="location__distance"><b>24 km · 28 min</b><span>Biju Patnaik Airport</span></span>
+        <span class="location__distance"><b>24 km · 27 min</b><span>Bhubaneswar Railway Station</span></span>
+        <span class="location__distance"><b>16 km · 26 min</b><span>AIIMS Bhubaneswar</span></span>
+        <span class="location__distance location__distance--note"><span>Road distance &amp; drive time &middot; indicative</span></span>
+      </div>
+
+      <div class="location__cta">
+        <a href="#enquire" class="btn btn--gold">Schedule Site Visit →</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Costa%20Fortune%20Kantabada&amp;query_place_id=ChIJM_NwqxsHGToRq2G14gfZ0TI" class="btn btn--ghost" target="_blank" rel="noopener">Open in Google Maps &nearr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════  01 · MASTER DEVELOPER  ═══════════════════════ -->
+<section class="section section--split" id="developer" data-chapter="1">
+  <div class="split">
+    <div class="panel panel--left" data-reveal>
+      <p class="label"><span>01</span> The Promoter</p>
+      <h2 class="display">Built on truth.<br /><em>Engineered for generations.</em></h2>
+      <p class="lede">
+        <strong>Sai Harmony Pvt. Ltd.</strong> is a premier real estate development enterprise based in Bhubaneswar,
+        committed to creating signature residential master communities with full regulatory compliance and zero compromises in civil engineering.
+      </p>
+      <p class="body">
+        From our registered corporate headquarters in Chandrasekharpur to the serene green expanses of Kantabada, every project is engineered in partnership with premier industry authorities: <strong>SR Engineering</strong> (Civil &amp; Structural Consultants) and <strong>Vogue Architect</strong>.
+      </p>
+
+      <dl class="stats">
+        <div class="stat"><dt>100%</dt><dd>ORERA &amp; BDA Verified</dd></div>
+        <div class="stat"><dt>Zone III</dt><dd>Seismic RCC Frame</dd></div>
+        <div class="stat"><dt>3 Phases</dt><dd>Master Township</dd></div>
+        <div class="stat"><dt>Aug 2028</dt><dd>Crestview Handover</dd></div>
+      </dl>
+    </div>
+
+    <figure class="split__media" data-reveal data-reveal-delay="120">
+      <img src="assets/brochure/tower-morning.webp" alt="Costa Furtune Crestview tower — morning elevation" loading="lazy" decoding="async" width="1640" height="1800" />
+      <figcaption><span>Phase 2 · Crestview</span>B + Stilt + 12 residential floors</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════════════  02 · ALL 3 PHASES TOWNSHIP  ═══════════════════════ -->
+<section class="section section--wide" id="township" data-chapter="2" style="padding-top:clamp(60px, 8vh, 120px);">
+  <div class="wide__head" data-reveal>
+    <p class="label"><span>02</span> Master Township Architecture</p>
+    <h2 class="display">One integrated master site.<br /><em>Three distinct living phases.</em></h2>
+    <p class="lede lede--center">
+      Spanning prime acreage along the 40-foot Kantabada connecting artery, the Costa Furtune master township integrates high-rise panoramic towers, ready-to-move luxury triplex villas, and an opulent G+4 private clubhouse.
+    </p>
+  </div>
+
+  <!-- COMPLETE SITE AERIAL SHOWCASE -->
+  <div class="township-master-feature" data-reveal data-reveal-delay="80">
+    <div class="township-master-feature__grid">
+      <div class="township-master-feature__copy">
+        <span class="badge-exclusive">Master Township Integration</span>
+        <h3>One address.<br /><em>Four landmarks.</em></h3>
+        <p>
+          The complete Costa Furtune site, shown as one planned composition — the Crestview tower,
+          the delivered Triplex villa enclave, the Club Costa Fantasy anchor, and the Horizon Heights
+          expansion parcel.
+        </p>
+        <ul class="township-key">
+          <li><span>01</span><b>Costa Fortune Triplex</b><em>Phase 1 · G+2 villas · delivered &amp; sold out</em></li>
+          <li><span>02</span><b>Costa Furtune Crestview</b><em>Phase 2 · B+S+12 · 144 residences · Aug 2028</em></li>
+          <li><span>03</span><b>Horizon Heights</b><em>Phase 3 · Twin towers · Plot No. 2 · EOI open</em></li>
+          <li><span>04</span><b>Club Costa Fantasy</b><em>Shared anchor · G+4 · 60,000 sq ft clubhouse</em></li>
+        </ul>
+        <a href="#enquire" class="btn btn--primary btn--sm">Book Master Site Tour ↗</a>
+      </div>
+
+      <figure class="township-master-feature__img-box">
+        <img src="assets/phases/township-aerial-master.webp" alt="Official Costa Furtune master township aerial layout showing Crestview, Club Fantasy, Triplex and Horizon Heights" loading="lazy" decoding="async" width="594" height="599" />
+        <figcaption>Official master layout · Kantabada, Chandaka Road, Bhubaneswar</figcaption>
+      </figure>
+    </div>
+
+    <div class="township-master-pills">
+      <a href="triplex.html" class="township-master-pill">
+        <span class="badge-ready" style="align-self:flex-start;">PHASE 1 · READY TO MOVE</span>
+        <strong>Costa Fortune Triplex</strong>
+        <span>G+2 Luxury Villas · 100% Sold Out &amp; Handed Over</span>
+      </a>
+      <a href="crestview.html" class="township-master-pill">
+        <span class="badge-exclusive" style="align-self:flex-start;">PHASE 2 · UNDER CONSTRUCTION</span>
+        <strong>Costa Furtune Crestview</strong>
+        <span>B+S+12 Tower · 144 Flats · 3 BHK Focus (Aug 2028)</span>
+      </a>
+      <a href="horizon-heights.html" class="township-master-pill">
+        <span class="badge-exclusive" style="align-self:flex-start;">PHASE 3 · SKYWARD EXPANSION</span>
+        <strong>Horizon Heights</strong>
+        <span>Twin Towers B+S+11 · Plot No. 2 · EOI Open</span>
+      </a>
+      <a href="clubhouse.html" class="township-master-pill">
+        <span class="badge-ready" style="align-self:flex-start;">SHARED ANCHOR · READY</span>
+        <strong>Club Costa Fantasy</strong>
+        <span>G+4 60,000 sq ft Clubhouse &amp; Semi-Olympic Pool</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="township-grid" data-reveal data-reveal-delay="120">
+    <!-- PHASE 1 · TRIPLEX -->
+    <article class="township-card">
+      <div class="township-card__hero">
+        <span class="township-card__tag township-card__tag--luxury">Phase 1 · Ready to Move · 100% Sold Out</span>
+        <img src="assets/phases/phase2-triplex-villas.webp" alt="Costa Fortune Luxury Triplex Villas" loading="lazy" width="800" height="500" />
+      </div>
+      <div class="township-card__body">
+        <span class="township-card__phase">Delivered Gated Villa Enclave</span>
+        <h3>Costa Fortune Triplex</h3>
+        <p>Completed premium 3-level villa residences (G+2, 2,480 &amp; 2,530 sq. ft. SBA). Private portico parking, open rooftop terrace, Sal wood choukath, Tata Prabesh main door, and dedicated 500W power backup per villa. 100% sold out and delivered.</p>
+        <div class="township-card__meta">
+          <span>ORERA: <b>RP/19/2023/00854</b></span>
+          <span>SBA: <b>2,480 &amp; 2,530 sq ft</b></span>
+          <span>Status: <b>Ready / Sold Out</b></span>
+        </div>
+        <div class="township-card__actions">
+          <a href="triplex.html" class="btn btn--gold btn--sm" style="display:inline-block; padding:8px 18px; font-size:11px;">View Triplex Page →</a>
+          <button class="btn btn--ghost btn--sm btn-open-phase" data-phase="triplex" style="display:inline-block; padding:8px 18px; font-size:11px;">Interactive CAD Plans</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- PHASE 2 · CRESTVIEW -->
+    <article class="township-card">
+      <div class="township-card__hero">
+        <span class="township-card__tag township-card__tag--active">Phase 2 · Under Construction</span>
+        <img src="assets/phases/phase1-crestview.webp" alt="Costa Furtune Crestview Tower" loading="lazy" width="800" height="500" />
+      </div>
+      <div class="township-card__body">
+        <span class="township-card__phase">High-Rise Residential Landmark</span>
+        <h3>Costa Furtune Crestview</h3>
+        <p>A solitary B+S+12 architectural statement holding 144 residences and 2 commercial retail shops. Six high-speed passenger lifts, grand double-height entrance lobby, and 3-side open ventilation.</p>
+        <div class="township-card__meta">
+          <span>ORERA: <b>MP/19/2024/01244</b></span>
+          <span>Focus: <b>3 BHK Exclusive</b></span>
+          <span>Handover: <b>Aug 2028</b></span>
+        </div>
+        <div class="township-card__actions">
+          <a href="crestview.html" class="btn btn--gold btn--sm" style="display:inline-block; padding:8px 18px; font-size:11px;">View Crestview Page →</a>
+          <a href="#residences" class="btn btn--ghost btn--sm" style="display:inline-block; padding:8px 18px; font-size:11px;">Quick 3 BHK Specs</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- PHASE 3 · HORIZON HEIGHTS -->
+    <article class="township-card">
+      <div class="township-card__hero">
+        <span class="township-card__tag township-card__tag--upcoming">Phase 3 · Skyward Expansion</span>
+        <img src="assets/phases/phase3-horizon-heights.webp" alt="Costa Furtune Horizon Heights Twin Towers" loading="lazy" width="800" height="500" />
+      </div>
+      <div class="township-card__body">
+        <span class="township-card__phase">Panoramic Canopy Residences</span>
+        <h3>Costa Furtune Horizon Heights</h3>
+        <p>The upcoming twin-tower landmark (B+S+11) holding premium 3 BHK residences, duplex penthouses, and a ground-floor commercial convenience arcade. Designed with uninterrupted green canopies towards Chandaka nature reserve over Plot No. 2.</p>
+        <div class="township-card__meta">
+          <span>ORERA: <b>RP/19/2026/01487</b></span>
+          <span>Typology: <b>Twin Towers B+S+11</b></span>
+          <span>Status: <b>EOI Open</b></span>
+        </div>
+        <div class="township-card__actions">
+          <a href="horizon-heights.html" class="btn btn--gold btn--sm" style="display:inline-block; padding:8px 18px; font-size:11px;">View Horizon Heights Page →</a>
+          <button class="btn btn--ghost btn--sm btn-open-phase" data-phase="horizon" style="display:inline-block; padding:8px 18px; font-size:11px;">View Layouts</button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- CENTRAL ANCHOR: CLUB COSTA FANTASY -->
+  <div class="township-anchor" data-reveal data-reveal-delay="180">
+    <div class="township-anchor__img">
+      <img src="assets/phases/club-costa-fantasy-pool.webp" alt="Club Costa Fantasy Clubhouse and Swimming Pool" loading="lazy" width="1000" height="600" />
+    </div>
+    <div class="township-anchor__body">
+      <p class="label"><span>Common Anchor</span> Integrated Township Infrastructure</p>
+      <div class="township-anchor__title">
+        <h3>Club Costa Fantasy</h3>
+        <span class="badge-ready">Construction Ready</span>
+      </div>
+      <p>
+        A magnificent G+4 private clubhouse shared in common by residents of Costa Fortune (Triplex), Costa Furtune Crestview, and future expansion over Plot No. 2 (Horizon Heights). <strong>Civil structure and pool construction are completed.</strong>
+      </p>
+      <p>
+        Spanning 60,000 sq. ft. across 4 levels: Open-air semi-Olympic swimming pool with sunken sun deck, air-conditioned banquet ballroom (350+ pax), high-tech fitness gymnasium &amp; Zumba studio, billiards lounge, squash &amp; badminton arena, and rooftop sky observatory facing Chandaka forest.
+      </p>
+      <div class="township-anchor__actions">
+        <a href="clubhouse.html" class="btn btn--primary btn--sm">Explore Club Costa Fantasy →</a>
+        <span class="badge-exclusive">G+4 Grand Clubhouse</span>
+        <span class="badge-exclusive">Shared by All 3 Phases</span>
+        <span class="badge-exclusive">60,000 sq ft Recreation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════  03 · EXCLUSIVE 3 BHK RESIDENCES  ═══════════════════════ -->
+<section class="section section--wide" id="residences" data-chapter="3">
+  <div class="wide__head" data-reveal>
+    <p class="label"><span>03</span> Crestview Residences</p>
+    <h2 class="display">The 3 BHK Collection.<br /><em>Bespoke, spacious, uncompromised.</em></h2>
+    <p class="lede lede--center">
+      With 100% of our 1 BHK residences fully booked, the developer share is now dedicated exclusively to the four premier 3 BHK typologies.
+    </p>
+  </div>
+
+  <div class="residences" data-reveal data-reveal-delay="120">
+    <!-- INVENTORY STATUS BANNER -->
+    <div class="inventory-banner">
+      <div class="inventory-banner__status">
+        <span class="badge-exclusive">EXCLUSIVE 3 BHK FOCUS</span>
+        <span class="badge-ready">BASE RATE: ₹5,700 / SQ. FT. SBA</span>
+      </div>
+      <p>
+        <strong>Notice to Buyers:</strong> While compact 1 BHK residences (600 – 671 sq ft) remain available in select allocation, developer priority is dedicated to the expansive <strong>3 BHK Royal &amp; Imperial Collection (1,845 – 2,033 sq ft SBA) starting at ₹5,700/sqft</strong>.
+      </p>
+    </div>
+
+    <!-- 3 BHK UNIT GRID -->
+    <div class="unit-grid--4col">
+      <!-- TYPE 1: 1,845 SQ FT -->
+      <article class="unit--3bhk is-selected" data-plan="1845">
+        <span class="unit__badge">Optimal Family Layout</span>
+        <header><span class="unit__type">Type 1 · Flats 101–1201</span><h3>Grand Three</h3></header>
+        <div class="unit__area"><b>1,845</b><span>sq ft SBA</span></div>
+        <dl>
+          <div><dt>RERA Carpet</dt><dd>1,016.5 sq ft (94.44 sqm)</dd></div>
+          <div><dt>RERA Balcony</dt><dd>63.3 sq ft (5.88 sqm)</dd></div>
+          <div><dt>Built-up Area</dt><dd>1,208 sq ft (112.22 sqm)</dd></div>
+          <div><dt>Parking</dt><dd>1 Covered Stilt Space</dd></div>
+        </dl>
+        <div class="unit__price">
+          <span>Indicative Base</span>
+          <b>₹1.05 Cr*</b>
+        </div>
+      </article>
+
+      <!-- TYPE 5: 1,941 SQ FT -->
+      <article class="unit--3bhk" data-plan="1941">
+        <span class="unit__badge">Maximum Carpet Area</span>
+        <header><span class="unit__type">Type 5 · Flats 105–1205</span><h3>Luxury Three</h3></header>
+        <div class="unit__area"><b>1,941</b><span>sq ft SBA</span></div>
+        <dl>
+          <div><dt>RERA Carpet</dt><dd>1,082.1 sq ft (100.53 sqm)</dd></div>
+          <div><dt>RERA Balcony</dt><dd>50.7 sq ft (4.71 sqm)</dd></div>
+          <div><dt>Built-up Area</dt><dd>1,289 sq ft (119.75 sqm)</dd></div>
+          <div><dt>Parking</dt><dd>1 Covered Stilt Space</dd></div>
+        </dl>
+        <div class="unit__price">
+          <span>Indicative Base</span>
+          <b>₹1.14 Cr*</b>
+        </div>
+      </article>
+
+      <!-- TYPES 4 & 6: 2,013 SQ FT -->
+      <article class="unit--3bhk" data-plan="2013">
+        <span class="unit__badge">Dual Forest Balconies</span>
+        <header><span class="unit__type">Types 4 &amp; 6 · Flats 104–1206</span><h3>Royal Three</h3></header>
+        <div class="unit__area"><b>2,013</b><span>sq ft SBA</span></div>
+        <dl>
+          <div><dt>RERA Carpet</dt><dd>1,031.4 sq ft (95.82 sqm)</dd></div>
+          <div><dt>RERA Balcony</dt><dd>144.1 sq ft (13.39 sqm)</dd></div>
+          <div><dt>Built-up Area</dt><dd>1,301 sq ft (120.91 sqm)</dd></div>
+          <div><dt>Parking</dt><dd>1 Covered Stilt Space</dd></div>
+        </dl>
+        <div class="unit__price">
+          <span>Indicative Base</span>
+          <b>₹1.14 Cr*</b>
+        </div>
+      </article>
+
+      <!-- TYPE 2: 2,033 SQ FT -->
+      <article class="unit--3bhk" data-plan="2033">
+        <span class="unit__badge">Panoramic Corner Residence</span>
+        <header><span class="unit__type">Type 2 · Flats 102–1202</span><h3>Imperial Three</h3></header>
+        <div class="unit__area"><b>2,033</b><span>sq ft SBA</span></div>
+        <dl>
+          <div><dt>RERA Carpet</dt><dd>1,034.9 sq ft (96.14 sqm)</dd></div>
+          <div><dt>RERA Balcony</dt><dd>148.8 sq ft (13.83 sqm)</dd></div>
+          <div><dt>Built-up Area</dt><dd>1,300 sq ft (120.78 sqm)</dd></div>
+          <div><dt>Parking</dt><dd>2 Dedicated Parking Spaces</dd></div>
+        </dl>
+        <div class="unit__price">
+          <span>Indicative Base</span>
+          <b>₹1.15 Cr*</b>
+        </div>
+      </article>
+    </div>
+
+    <!-- SPECIFICATIONS & ARCHITECTURAL HIGHLIGHTS -->
+    <div class="specs">
+      <div>
+        <h4>Vastu &amp; Ventilation</h4>
+        <p>All 3 BHKs feature East or North facing main entrances, 3-side open elevation, and cross ventilation through expansive living balconies.</p>
+      </div>
+      <div>
+        <h4>Structural Standard</h4>
+        <p>Seismic Zone III RCC framed structure engineered by SR Engineering, high-grade TMT steel, and 200mm external boundary thermal blockwork.</p>
+      </div>
+      <div>
+        <h4>Lift &amp; Power Redundancy</h4>
+        <p>6 passenger elevators (OTIS / KONE) with Automatic Rescue Devices (ARD), 100% silent DG power backup for common areas and lifts.</p>
+      </div>
+    </div>
+
+    <p class="fineprint">
+      Saleable, carpet, and balcony areas certified as per official ORERA filings (Registration MP/19/2024/01244) and Sai Harmony Pvt. Ltd. Developer Price List.
+      Indicative pricing calculated at ₹5,500 – ₹5,700 / sq ft base rate. GST, stamp duty, and registration charges extra.
+    </p>
+  </div>
+
+  <!-- ARCHITECTURAL CAD PLATE -->
+  <figure class="plan" data-reveal>
+    <div class="plan__frame">
+      <img src="assets/plans/typical-floor-cad.webp" alt="Official architectural floor plate for Costa Furtune Crestview showing 3 BHK layouts" loading="lazy" decoding="async" width="1800" height="1200" />
+    </div>
+    <figcaption>
+      <span>Architectural CAD Floor Plate</span>
+      Twelve homes per floor served by six lifts and two emergency fire staircases — drawn by Vogue Architect.
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ═══════════════════════  04 · AMENITIES & CLUB FANTASY  ═══════════════════════ -->
+<section class="section section--split" id="amenities" data-chapter="4">
+  <div class="split">
+    <div class="panel panel--left panel--dark" data-reveal>
+      <p class="label"><span>04</span> Lifestyle Infrastructure</p>
+      <h2 class="display">Club <em>Costa Fantasy.</em><br />Four levels of privilege.</h2>
+      <p class="lede">
+        A dedicated G+4 lifestyle clubhouse anchored within the master township — accessible exclusively to residents of Crestview and the township enclave.
+      </p>
+
+      <ul class="amenities">
+        <li>Infinity Swimming Pool</li><li>Toddlers Splash Deck</li><li>Equipped Multi-Gym</li>
+        <li>Billiards &amp; Snooker</li><li>Indoor Badminton Court</li><li>Kids Indoor Creche</li>
+        <li>Rooftop Banquet Terrace</li><li>Private Tea &amp; Coffee Lounge</li><li>Fine Dining Cafe</li>
+        <li>Unisex Grooming Salon</li><li>24/7 Wellness Pharmacy</li><li>On-site Bank ATM</li>
+        <li>Daily Convenience Mart</li><li>Landscaped Pet Park</li><li>Jogging Circuit</li>
+        <li>20,000 sq ft Green Spine</li>
+      </ul>
+    </div>
+
+    <figure class="split__media" data-reveal data-reveal-delay="120">
+      <img src="assets/brochure/club-exterior.webp" alt="Club Costa Fantasy G+4 clubhouse — official architectural render" loading="lazy" decoding="async" width="2200" height="1200" />
+      <figcaption><span>Club Costa Fantasy</span>G+4 lifestyle clubhouse · shared by all three phases</figcaption>
+    </figure>
+  </div>
+
+  <div class="gallery" data-reveal>
+    <figure class="gallery__item gallery__item--tall">
+      <img src="assets/brochure/pool-deck.webp" alt="Infinity pool deck with palms, cabanas and sun loungers at Club Costa Fantasy" loading="lazy" decoding="async" width="2000" height="890" />
+      <figcaption><span>01</span>The Pool Deck &amp; Cabanas</figcaption>
+    </figure>
+    <figure class="gallery__item gallery__item--wide">
+      <img src="assets/brochure/pool-dusk.webp" alt="Pool at dusk with palm trees and loungers" loading="lazy" decoding="async" width="1475" height="915" />
+      <figcaption><span>02</span>Club Costa Fantasy · G+4 Clubhouse</figcaption>
+    </figure>
+    <figure class="gallery__item">
+      <img src="assets/brochure/pool-detail.webp" alt="Infinity pool detail with butterfly wall art" loading="lazy" decoding="async" width="1475" height="860" />
+      <figcaption><span>03</span>Butterfly Wall · Infinity Pool</figcaption>
+    </figure>
+    <figure class="gallery__item">
+      <img src="assets/brochure/banquet-hall.webp" alt="Banquet hall with forest mural and chandeliers" loading="lazy" decoding="async" width="2200" height="832" />
+      <figcaption><span>04</span>Open Terrace Banquet</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════════════  05 · LIVE CONSTRUCTION PROGRESS  ═══════════════════════ -->
+<section class="section section--wide" id="progress" data-chapter="5">
+  <div class="wide__head" data-reveal>
+    <p class="label"><span>05</span> Construction Telemetry</p>
+    <h2 class="display">Documented on site.<br /><em>Verified on the record.</em></h2>
+    <p class="lede lede--center">
+      Every milestone below corresponds directly with certified filings submitted to the Odisha Real Estate Regulatory Authority.
+    </p>
+  </div>
+
+  <div class="sitegrid" data-reveal>
+    <figure class="sitegrid__item sitegrid__item--wide">
+      <img src="assets/site-entrance.webp" alt="Costa Furtune entrance archway at Kantabada" loading="lazy" decoding="async" width="1800" height="1012" />
+      <figcaption><span>On Site</span>The completed entrance archway and security plaza.</figcaption>
+    </figure>
+    <figure class="sitegrid__item sitegrid__item--tall">
+      <img src="assets/site-tower.webp" alt="Active RCC tower construction stilt to 5th floor" loading="lazy" decoding="async" width="1000" height="1457" />
+      <figcaption><span>Tower Elevation</span>RCC columns and slab casting from stilt to fifth level.</figcaption>
+    </figure>
+    <figure class="sitegrid__item">
+      <img src="assets/site-foundation.webp" alt="Foundation and subterranean piling work" loading="lazy" decoding="async" width="1000" height="1351" />
+      <figcaption><span>Sub-structure</span>Piling and RCC raft foundation completed.</figcaption>
+    </figure>
+    <figure class="sitegrid__item">
+      <img src="assets/site-gate.webp" alt="Working site gate and compliance board" loading="lazy" decoding="async" width="1000" height="1600" />
+      <figcaption><span>Site Access</span>Direct ingress off the 40-ft Chandaka connecting artery.</figcaption>
+    </figure>
+  </div>
+
+  <ol class="timeline" data-reveal data-reveal-delay="120">
+    <li class="is-done">
+      <span class="timeline__dot"></span>
+      <div class="timeline__body">
+        <span class="timeline__when">Certified Complete · Oct 2025</span>
+        <h3>Sub-structure &amp; Raft Foundation</h3>
+        <p>Heavy RCC pile foundation and plinth engineering to Seismic Zone III specifications.</p>
+      </div>
+    </li>
+    <li class="is-active">
+      <span class="timeline__dot"></span>
+      <div class="timeline__body">
+        <span class="timeline__when">Active Milestone · 2026</span>
+        <h3>Tower Superstructure (Stilt to 5th Slab)</h3>
+        <p>Stilt parking columns, commercial shop framework, and first five residential slabs underway.</p>
+      </div>
+    </li>
+    <li>
+      <span class="timeline__dot"></span>
+      <div class="timeline__body">
+        <span class="timeline__when">Scheduled · 2026–2027</span>
+        <h3>Floors 6 to 12 &amp; Block Masonry</h3>
+        <p>Upper residential slabs followed by acoustic thermal masonry and internal plastering.</p>
+      </div>
+    </li>
+    <li>
+      <span class="timeline__dot"></span>
+      <div class="timeline__body">
+        <span class="timeline__when">Scheduled · 2027–2028</span>
+        <h3>Finishes, MEP, Elevators &amp; Club Costa Fantasy</h3>
+        <p>High-speed lift installation, vitrified flooring, electrical transformers, and clubhouse completion.</p>
+      </div>
+    </li>
+    <li class="is-end">
+      <span class="timeline__dot"></span>
+      <div class="timeline__body">
+        <span class="timeline__when">19 August 2028</span>
+        <h3>Statutory Handover &amp; Possession</h3>
+        <p>Possession as registered and committed with ORERA.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ═══════════════════════  06 · LEADERSHIP & MD DESK  ═══════════════════════ -->
+<section class="section section--leadership" id="leadership" data-chapter="6">
+  <div class="wide__head" data-reveal>
+    <p class="label"><span>06</span> Executive Governance</p>
+    <h2 class="display">Leadership with conviction.<br /><em>Commitment to buyers.</em></h2>
+    <p class="lede lede--center">
+      Behind Sai Harmony Pvt. Ltd. stands experienced real estate leadership dedicated to delivering on every promise filed under the Odisha Real Estate Regulatory Authority.
+    </p>
+  </div>
+
+  <!-- MANAGING DIRECTOR SPOTLIGHT CARD -->
+  <div class="leadership-spotlight" data-reveal data-reveal-delay="100">
+    <div class="md-portrait">
+      <img src="assets/leadership/md-ashok-pattnaik.webp" alt="Ashok Kumar Pattnaik, Managing Director, Sai Harmony Pvt. Ltd." loading="lazy" width="600" height="800" />
+    </div>
+    <div class="md-details">
+      <span class="md-badge">Founder &amp; Executive Leadership</span>
+      <h3 class="md-name">Ashok Kumar Pattnaik</h3>
+      <p class="md-title">Managing Director · Sai Harmony Pvt. Ltd.</p>
+
+      <blockquote class="md-quote">
+        “Serving customers with a ‘YOU ON PRIORITY’ philosophy is the bedrock of our operations. Costa Furtune is engineered to be a generational address — built with verified title, strict structural rigor, and uncompromising lifestyle amenities.”
+      </blockquote>
+
+      <p class="md-bio">
+        With over two decades of experience in real estate and project management across Odisha, Mr. Pattnaik has spearheaded high-value residential developments centered around transparent ORERA compliance, timely civil construction, and long-term asset appreciation for families and investors.
+      </p>
+
+      <div class="md-direct-contact">
+        <span><b>Email:</b> <a href="mailto:ashohkumarpattnaik1969@gmail.com">ashohkumarpattnaik1969@gmail.com</a></span>
+        <span><b>Direct Phone:</b> <a href="tel:+919937715505">+91 99377 15505</a></span>
+        <span><b>Registered Office:</b> Prachi Enclave, Chandrasekharpur</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOARD DIRECTORS ROW -->
+  <div class="directors-row" data-reveal data-reveal-delay="160">
+    <!-- DIRECTOR 1 -->
+    <div class="director-card">
+      <div class="director-card__avatar">
+        <img src="assets/leadership/director-manoj-dash.webp" alt="Manoj Kumar Dash, Director" loading="lazy" width="200" height="240" />
+      </div>
+      <div class="director-card__info">
+        <h4>Manoj Kumar Dash</h4>
+        <span>Director · Operations &amp; Stakeholder Relations</span>
+        <p>Overseeing project procurement, contractor execution, and strategic channel partnerships across Bhubaneswar.</p>
+        <p style="margin-top:8px;"><b>Phone:</b> <a href="tel:+919937005103">+91 99370 05103</a></p>
+      </div>
+    </div>
+
+    <!-- DIRECTOR 2 -->
+    <div class="director-card">
+      <div class="director-card__avatar">
+        <img src="assets/leadership/director-sarada-mohanty.webp" alt="Sarada Prasad Mohanty, Director" loading="lazy" width="200" height="240" />
+      </div>
+      <div class="director-card__info">
+        <h4>Sarada Prasad Mohanty</h4>
+        <span>Director · Corporate Affairs &amp; Finance</span>
+        <p>Directing regulatory compliance, escrow account governance, and customer handover administration.</p>
+        <p style="margin-top:8px;"><b>Phone:</b> <a href="tel:+919437500573">+91 94375 00573</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════  07 · REGULATORY & ORERA COMPLIANCE  ═══════════════════════ -->
+<section class="section section--split section--right" id="verification" data-chapter="7">
+  <div class="split">
+    <div class="panel panel--right" data-reveal>
+      <p class="label"><span>07</span> Statutory Transparency</p>
+      <h2 class="display">Verified facts.<br /><em>Zero marketing ambiguity.</em></h2>
+      <p class="lede">
+        Every specification, land title, and timeline published on this platform is backed by official filings with the Odisha Real Estate Regulatory Authority.
+      </p>
+
+      <ul class="verify">
+        <li><span class="verify__k">Phase 1 ORERA Reg.</span><span class="verify__v">RP/19/2023/00854 (Triplex Villas)</span></li>
+        <li><span class="verify__k">Phase 2 ORERA Reg.</span><span class="verify__v">MP/19/2024/01244 (Crestview Tower)</span></li>
+        <li><span class="verify__k">Phase 3 ORERA Reg.</span><span class="verify__v">RP/19/2026/01487 (Horizon Heights)</span></li>
+        <li><span class="verify__k">Sanctioning Authority</span><span class="verify__v">Bhubaneswar Development Authority (BDA)</span></li>
+        <li><span class="verify__k">Tower Structure</span><span class="verify__v">Basement + Stilt + 12 Floors</span></li>
+        <li><span class="verify__k">Master Promoter</span><span class="verify__v">Sai Harmony Pvt. Ltd. (CIN U45203OR2021PTC038077)</span></li>
+        <li><span class="verify__k">Corporate GSTIN</span><span class="verify__v">21ABHCS2378C1ZM</span></li>
+        <li><span class="verify__k">Structural Consultants</span><span class="verify__v">SR Engineering (Zone III Seismic Compliant)</span></li>
+        <li><span class="verify__k">Architectural Design</span><span class="verify__v">Vogue Architect</span></li>
+        <li><span class="verify__k">Promoter Head Office</span><span class="verify__v">Plot No. 83, Prachi Enclave, Chandrasekharpur, Bhubaneswar – 751016</span></li>
+      </ul>
+    </div>
+
+    <figure class="split__media" data-reveal data-reveal-delay="120">
+      <img src="assets/site-entrance.webp" alt="Costa Furtune completed entrance archway and security plaza" loading="lazy" decoding="async" width="1800" height="1012" />
+      <figcaption><span>On Site · Verified</span>The completed entrance archway and security plaza</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════════════  08 · PRIVATE VIP VIEWING & COST SHEET  ═══════════════════════ -->
+<section class="section section--enquire" id="enquire" data-chapter="8">
+  <div class="enquire" data-reveal>
+    <aside class="enquire__aside">
+      <figure class="enquire__media">
+        <img src="assets/render-tower.webp" alt="Costa Furtune Crestview tower elevation" loading="lazy" decoding="async" width="1200" height="1323" />
+        <figcaption><span>Phase 2 · Crestview</span>B+S+12 · 144 residences</figcaption>
+      </figure>
+      <ul class="enquire__facts">
+        <li><b>ORERA</b><span>MP/19/2024/01244</span></li>
+        <li><b>Possession</b><span>19 August 2028</span></li>
+        <li><b>Promoter</b><span>Sai Harmony Pvt. Ltd.</span></li>
+      </ul>
+      <blockquote class="enquire__quote">
+        “Every number on this page is traceable to an ORERA filing.”
+        <cite>— Sai Harmony Pvt. Ltd.</cite>
+      </blockquote>
+    </aside>
+
+    <div class="enquire__panel">
+    <p class="label"><span>08</span> VIP Consultation</p>
+    <h2 class="display">Schedule a<br /><em>Private Site Visit.</em></h2>
+    <p class="lede">
+      Private chauffeured viewings available seven days a week. Connect directly with Sai Harmony sales leadership for unit allocations and customized payment schedules.
+    </p>
+
+    <form class="form" id="enquiryForm" novalidate>
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required placeholder="e.g. Dr. Ashok Kumar Mohapatra" />
+      </div>
+      <div class="field">
+        <label for="phone">WhatsApp / Mobile</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+91 98765 43210" />
+      </div>
+      <div class="field">
+        <label for="interest">3 BHK Typology Preference</label>
+        <select id="interest" name="interest">
+          <option selected>Type 1 · 3 BHK · 1,845 sq ft · ₹1.01 Cr*</option>
+          <option>Type 5 · 3 BHK · 1,941 sq ft · ₹1.06 Cr*</option>
+          <option>Types 4 &amp; 6 · 3 BHK · 2,013 sq ft · ₹1.10 Cr*</option>
+          <option>Type 2 · 3 BHK · 2,033 sq ft · ₹1.11 Cr*</option>
+          <option>Phase 1 Triplex Villa Consultation</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="when">Preferred Visit Timing</label>
+        <select id="when" name="when">
+          <option>This Weekend (Saturday/Sunday)</option>
+          <option>Weekday Morning (10 AM - 1 PM)</option>
+          <option>Weekday Afternoon (2 PM - 5 PM)</option>
+          <option>Direct Call / Video Walkthrough</option>
+        </select>
+      </div>
+
+      <button class="btn btn--gold btn--full" type="submit">
+        Confirm VIP Site Visit &amp; Request Cost Sheet
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.3"/></svg>
+      </button>
+      <p class="form__note">Direct promoter response. Zero brokerage. Strict privacy policy.</p>
+    </form>
+
+    <div class="enquire__contact">
+      <a href="tel:+917735536906">+91 77355 36906</a>
+      <a href="tel:+919937715505">+91 99377 15505 (MD Office)</a>
+      <a href="mailto:saiharmony2021@gmail.com">saiharmony2021@gmail.com</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════  CLOSING VISION  ═══════════════════════ -->
+<section class="closing" aria-label="Closing vision">
+  <img src="assets/brochure/entrance-evening.webp" alt="Evening view of the Costa Furtune entrance and residential tower" loading="lazy" decoding="async" width="2400" height="1200" data-parallax="0.16" />
+  <div class="closing__veil"></div>
+  <div class="closing__text" data-reveal>
+    <p class="label"><span>—</span> Possession August 2028</p>
+    <h2 class="display display--xl">Your legacy address in<br /><em>Bhubaneswar's green corridor.</em></h2>
+    <p class="closing__meta">Costa Furtune Master Township · Kantabada, Chandaka Road, Bhubaneswar</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ─────────────────────────  CINEMATIC 45S 3D DRONE TOUR MODAL  ───────────────────────── -->
+<div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="video-modal__box">
+    <div class="video-modal__bar">
+      <span class="video-modal__title">Costa Furtune Master Township · 45-Second 3D Drone Flight</span>
+      <button class="video-modal__close" id="closeVideoModal" aria-label="Close modal">&times;</button>
+    </div>
+    <div class="video-modal__frame">
+      <video id="masterVideoPlayer" src="assets/video/costa-furtune-master-cinematic.mp4" controls preload="metadata"></video>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────  INTERACTIVE TOWNSHIP PHASE EXPLORER MODAL  ───────────────────────── -->
+<div class="phase-modal" id="phaseModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="phase-modal__box">
+    <div class="phase-modal__bar">
+      <span class="phase-modal__title" id="phaseModalTitle">Costa Fortune Triplex · Official Architecture &amp; Floor Plans</span>
+      <button class="phase-modal__close" id="closePhaseModal" aria-label="Close modal">&times;</button>
+    </div>
+    
+    <div class="phase-modal__body">
+      <!-- CONTENT: TRIPLEX -->
+      <div class="phase-detail-pane" id="paneTriplex">
+        <div class="phase-detail__header">
+          <div>
+            <span class="badge-exclusive">Phase 1 · Gated Villa Community · ORERA RP/19/2023/00854</span>
+            <h3>Costa Fortune Triplex Residences</h3>
+            <p>2,480 &amp; 2,530 Sq. Ft. Super Built-up Area (G+2 Floors) · Dedicated 500W Power Backup · Private Porch &amp; Terrace</p>
+          </div>
+          <div class="phase-detail__badges">
+            <span class="badge-exclusive">Ready / Limited Allotments</span>
+          </div>
+        </div>
+
+        <div class="phase-gallery-grid">
+          <figure class="phase-gallery-item">
+            <img src="assets/phases/phase2-triplex-villas.webp" alt="Costa Fortune Triplex Villa Architectural Elevation" loading="lazy" />
+            <figcaption>Official Architectural 3D Elevation (G+2 Villa)</figcaption>
+          </figure>
+          <figure class="phase-gallery-item">
+            <img src="assets/phases/costa-triplex-isometric.webp" alt="Costa Fortune Triplex 3D Isometric Cutaway Floor Plan" loading="lazy" />
+            <figcaption>3D Isometric Level Cutaway (Ground + 1st + 2nd Floor)</figcaption>
+          </figure>
+          <figure class="phase-gallery-item">
+            <img src="assets/phases/costa-triplex-floorplan-2530.webp" alt="Costa Fortune Triplex Type-1 Architectural CAD Layout" loading="lazy" />
+            <figcaption>Typical Floor Plan Type-1 · 2,530 Sq. Ft. SBA (Plots 08–15, 21–28)</figcaption>
+          </figure>
+          <figure class="phase-gallery-item">
+            <img src="assets/phases/costa-triplex-row.webp" alt="Costa Fortune Triplex Illuminated Villa Row" loading="lazy" />
+            <figcaption>Illuminated Streetscape &amp; Avenue Landscaping</figcaption>
+          </figure>
+        </div>
+
+        <div class="phase-specs-matrix">
+          <h4>Verified Villa Specifications (Source: Official Sai Harmony Brochure)</h4>
+          <div class="phase-specs-grid">
+            <div class="phase-spec-pill"><b>Structure:</b><span>Earthquake Resistant RCC Frame (Vizag / SAIL Steel &amp; M20 Concrete)</span></div>
+            <div class="phase-spec-pill"><b>Door Frames:</b><span>Authentic Sal Wood Choukath with TATA Prabesh Main Door &amp; Godrej Locks</span></div>
+            <div class="phase-spec-pill"><b>Flooring:</b><span>600×1200 mm Vitrified Tiles (Johnson / Somany) in Living; 600×600 in Bedrooms</span></div>
+            <div class="phase-spec-pill"><b>Windows:</b><span>Heavy UPVC / Powder Coated Aluminum with MS Safety Grill and Bug Mesh</span></div>
+            <div class="phase-spec-pill"><b>Power Backup:</b><span>Dedicated 500 Watts Backup to Each Villa + 100% Common Areas</span></div>
+            <div class="phase-spec-pill"><b>Sanitary &amp; CP:</b><span>Kohler / Hindware Branded CP &amp; Wall-Mounted Sanitary Fixtures</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT: HORIZON HEIGHTS -->
+      <div class="phase-detail-pane" id="paneHorizon" style="display:none;">
+        <div class="phase-detail__header">
+          <div>
+            <span class="badge-exclusive">Phase 3 · Skyward Expansion</span>
+            <h3>Costa Furtune Horizon Heights</h3>
+            <p>Twin Panoramic Towers (B+S+11) · Plot No. 2 · ORERA RP/19/2026/01487 · Overlooking Chandaka Green Belt</p>
+          </div>
+          <div class="phase-detail__badges">
+            <span class="badge-exclusive">EOI Bookings Open</span>
+          </div>
+        </div>
+
+        <div class="phase-gallery-grid">
+          <figure class="phase-gallery-item">
+            <img src="assets/phases/phase3-horizon-heights.webp" alt="Costa Furtune Horizon Heights Twin Towers Elevation" loading="lazy" />
+            <figcaption>Twin-Tower High-Rise Architectural Render (B+S+11)</figcaption>
+          </figure>
+          <figure class="phase-gallery-item">
+            <img src="assets/phases/township-aerial-3phases.webp" alt="Costa Furtune Master Township 3 Phases Aerial Layout" loading="lazy" />
+            <figcaption>Township Aerial Integration (Crestview + Triplex + Club + Horizon Heights)</figcaption>
+          </figure>
+          <figure class="phase-gallery-item">
+            <img src="assets/phases/horizon-heights-layout.webp" alt="Costa Furtune Horizon Heights Architectural Layout" loading="lazy" />
+            <figcaption>Typical Tower CAD Layout &amp; Unit Orientation</figcaption>
+          </figure>
+          <figure class="phase-gallery-item">
+            <img src="assets/phases/horizon-heights-specifications.webp" alt="Costa Furtune Horizon Heights Features &amp; Specifications" loading="lazy" />
+            <figcaption>Structural Features &amp; Luxury Specifications</figcaption>
+          </figure>
+        </div>
+
+        <div class="phase-specs-matrix">
+          <h4>Horizon Heights Highlights &amp; Statutory Approvals</h4>
+          <div class="phase-specs-grid">
+            <div class="phase-spec-pill"><b>ORERA Registration:</b><span>RP/19/2026/01487 (Plot No. 2 Expansion)</span></div>
+            <div class="phase-spec-pill"><b>Typologies:</b><span>Spacious 3 BHK Residences &amp; Duplex Penthouses</span></div>
+            <div class="phase-spec-pill"><b>Commercial Hub:</b><span>Ground-Floor Convenience Retail, Cafe, Pharmacy &amp; Daily Needs Hub</span></div>
+            <div class="phase-spec-pill"><b>Club Privilege:</b><span>Lifetime Access to Club Costa Fantasy G+4 Lifestyle Infrastructure</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────  FOOTER  ───────────────────────── -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__mark">
+      <img src="assets/logos/costa-furtune-crest.svg" alt="Costa Furtune Crestview" width="340" height="70" />
+      <p>
+        Sai Harmony Pvt. Ltd. · Plot No. 83, Ground Floor, Prachi Enclave, Chandrasekharpur, Bhubaneswar – 751016.
+      </p>
+      <a class="footer__brochure" href="https://www.saiharmony.com/_files/ugd/06bd43_413c9c71aa79400c8ca91a2597b8d41e.pdf" target="_blank" rel="noopener">
+        Download the official brochure
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0l3.2-3.2M8 10L4.8 6.8M2.5 12.5h11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <small>PDF &middot; 25 pages</small>
+      </a>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h4>Township Portfolio</h4>
+        <a href="triplex.html">Costa Fortune Triplex (Phase 1 · Sold Out)</a>
+        <a href="crestview.html">Costa Furtune Crestview (Phase 2 · 3 BHK)</a>
+        <a href="horizon-heights.html">Horizon Heights (Phase 3 · Twin Towers)</a>
+        <a href="clubhouse.html">Club Costa Fantasy (Construction Ready)</a>
+      </div>
+      <div>
+        <h4>3 BHK Residences</h4>
+        <a href="#residences">Type 1 (1,845 sq ft)</a>
+        <a href="#residences">Type 5 (1,941 sq ft)</a>
+        <a href="#residences">Types 4 &amp; 6 (2,013 sq ft)</a>
+        <a href="#residences">Type 2 (2,033 sq ft)</a>
+      </div>
+      <div>
+        <h4>Corporate Governance</h4>
+        <a href="#leadership">Managing Director Desk</a>
+        <a href="https://rera.odisha.gov.in/search-result?search=MP/19/2024/01244" target="_blank" rel="noopener">ORERA MP/19/2024/01244</a>
+        <a href="https://rera.odisha.gov.in" target="_blank" rel="noopener">ORERA RP/19/2026/01487</a>
+        <a href="#verification">BDA Sanction Plan</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__legal">
+    <p>
+      Costa Furtune Crestview &amp; Master Township is promoted by Sai Harmony Pvt. Ltd. (CIN: U45203OR2021PTC038077).
+      Managing Director: Ashok Kumar Pattnaik. Directors: Manoj Kumar Dash, Sarada Prasad Mohanty.
+      All dimensions, carpet areas, and balcony areas comply strictly with ORERA declarations. Indicative pricing subject to applicable taxes, stamp duties, and regulatory levies.
+      Renderings and walkthroughs are architectural representations; on-site construction photographs reflect verified live execution status.
+    </p>
+    <p class="footer__copy">© 2026 Sai Harmony Pvt. Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

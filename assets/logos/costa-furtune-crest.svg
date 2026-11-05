@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 70" fill="none">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8D08D"/>
+      <stop offset="30%" stop-color="#D4AF37"/>
+      <stop offset="70%" stop-color="#F3E5AB"/>
+      <stop offset="100%" stop-color="#AA7C11"/>
+    </linearGradient>
+    <linearGradient id="goldGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#996515"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#FFF2B2"/>
+    </linearGradient>
+  </defs>
+  <!-- Architectural Crown / Crest Glyph -->
+  <g transform="translate(10, 8)">
+    <path d="M26 3L48 42H4L26 3Z" stroke="url(#goldGrad)" stroke-width="1.8" fill="none"/>
+    <path d="M26 13L40 40H12L26 13Z" stroke="url(#goldGrad2)" stroke-width="1.2" fill="none"/>
+    <line x1="26" y1="3" x2="26" y2="42" stroke="url(#goldGrad)" stroke-width="1.2" stroke-dasharray="2 2"/>
+    <circle cx="26" cy="2" r="2.2" fill="url(#goldGrad)"/>
+    <path d="M16 48H36" stroke="url(#goldGrad)" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M20 52H32" stroke="url(#goldGrad)" stroke-width="1" stroke-linecap="round"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="72" y="28" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="600" letter-spacing="0.14em" fill="url(#goldGrad)">COSTA FURTUNE</text>
+  <text x="73" y="46" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="400" letter-spacing="0.38em" fill="#F3EEE4" opacity="0.9">CRESTVIEW · BHUBANESWAR</text>
+</svg>

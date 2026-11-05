@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" fill="none" role="img" aria-label="Costa Furtune Crestview">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D9C38B"/>
+      <stop offset="45%" stop-color="#B8914B"/>
+      <stop offset="100%" stop-color="#8A6A20"/>
+    </linearGradient>
+  </defs>
+  <!-- Architectural crest glyph -->
+  <g transform="translate(4, 6)">
+    <path d="M24 2L44 38H4L24 2Z" stroke="url(#goldGrad)" stroke-width="1.6" fill="none"/>
+    <path d="M24 11L37 36H11L24 11Z" stroke="url(#goldGrad)" stroke-width="1" fill="none" opacity=".7"/>
+    <line x1="24" y1="2" x2="24" y2="38" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="2 2" opacity=".8"/>
+    <circle cx="24" cy="1.6" r="2" fill="url(#goldGrad)"/>
+    <path d="M15 44H33" stroke="url(#goldGrad)" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M19 48H29" stroke="url(#goldGrad)" stroke-width="1" stroke-linecap="round" opacity=".8"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="66" y="26" font-family="'Playfair Display', Georgia, serif" font-size="19" font-weight="500" letter-spacing="0.13em" fill="#12161C">COSTA FURTUNE</text>
+  <text x="67" y="44" font-family="'Outfit', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="500" letter-spacing="0.34em" fill="#8A8F98">CRESTVIEW · BHUBANESWAR</text>
+</svg>
