@@ -1,0 +1,14 @@
+# Robots.txt for Costa Furtune Crestview
+# All pages are public and should be indexed
+
+Sitemap: https://buddyaipartners.github.io/costa-furtune/sitemap.xml
+
+# Disallow sensitive files
+Disallow: /.git/
+Disallow: /.svn/
+Disallow: /node_modules/
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all other pages
+# All other paths are allowed

@@ -368,12 +368,37 @@ function initForm() {
 function initVideoModal() {
   const modal = document.querySelector('#videoModal');
   const player = document.querySelector('#masterVideoPlayer');
+  const modalTitle = document.querySelector('#videoModalTitle');
   const btnHeader = document.querySelector('#btnTourModal');
   const btnHero = document.querySelector('#btnHeroTour');
+  const btnHeroWalkthrough = document.querySelector('#btnHeroWalkthrough');
   const btnClose = document.querySelector('#closeVideoModal');
+  const tabBtns = [...document.querySelectorAll('.btn-video-tab')];
   if (!modal || !player) return;
 
-  function openModal() {
+  function setVideo(src, title) {
+    if (!src) return;
+    if (player.src !== src && !player.src.endsWith(src)) {
+      player.pause();
+      player.src = src;
+      player.load();
+    }
+    if (modalTitle && title) {
+      modalTitle.textContent = title;
+    }
+    tabBtns.forEach(btn => {
+      const match = btn.getAttribute('data-src') === src;
+      btn.classList.toggle('is-active', match);
+      btn.style.border = match ? '1px solid var(--gold)' : '1px solid var(--line-2)';
+      btn.style.background = match ? 'rgba(184,145,75,0.18)' : 'transparent';
+      btn.style.color = match ? 'var(--gold-3)' : 'var(--muted)';
+    });
+  }
+
+  function openModal(defaultSrc, defaultTitle) {
+    if (defaultSrc) {
+      setVideo(defaultSrc, defaultTitle);
+    }
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -398,8 +423,20 @@ function initVideoModal() {
     }
   }
 
-  if (btnHeader) btnHeader.addEventListener('click', openModal);
-  if (btnHero) btnHero.addEventListener('click', openModal);
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.getAttribute('data-src');
+      const title = btn.getAttribute('data-title');
+      setVideo(src, title);
+      try {
+        player.play();
+      } catch (e) {}
+    });
+  });
+
+  if (btnHeader) btnHeader.addEventListener('click', () => openModal('assets/video/costa-furtune-master-cinematic.mp4', 'Costa Furtune · 31s Drone Aerial Flight'));
+  if (btnHero) btnHero.addEventListener('click', () => openModal('assets/video/costa-furtune-master-cinematic.mp4', 'Costa Furtune · 31s Drone Aerial Flight'));
+  if (btnHeroWalkthrough) btnHeroWalkthrough.addEventListener('click', () => openModal('assets/video/costa-furtune-master-walkthrough.mp4', 'Costa Furtune · 45s Architectural Walkthrough & Club Fantacy'));
   if (btnClose) btnClose.addEventListener('click', closeModal);
 
   modal.addEventListener('click', (e) => {
