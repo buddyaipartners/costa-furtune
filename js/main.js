@@ -744,213 +744,88 @@ initPriceCalculator();
    OFFICIAL BUILDER 3D VIRTUAL TOUR & LEAD FUNNEL CONTROLLER
    ========================================================================== */
 
-function initVirtualTour() {
-  const modeBtns = document.querySelectorAll('.vtour-btn');
-  const stages = {
-    drone: document.getElementById('stageDrone'),
-    floorplan: document.getElementById('stageFloorplan'),
-    clubhouse: document.getElementById('stageClubhouse')
-  };
+function initCinemaAndBlueprints() {
+  // 1. 4K Cinema Video Switcher
+  const cinemaPlayer = document.getElementById('cinemaPlayer');
+  const cinemaLabel = document.getElementById('cinemaVideoLabel');
+  const cinemaBtns = document.querySelectorAll('.btn-cinema-switch');
 
-  modeBtns.forEach(btn => {
+  cinemaBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      modeBtns.forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      const targetMode = btn.getAttribute('data-tour-mode');
-
-      Object.entries(stages).forEach(([key, stage]) => {
-        if (!stage) return;
-        if (key === targetMode) {
-          stage.classList.add('is-active');
-        } else {
-          stage.classList.remove('is-active');
-        }
+      cinemaBtns.forEach(b => {
+        b.classList.remove('is-active');
+        b.style.background = 'rgba(255,255,255,0.06)';
+        b.style.color = '#D8D2C4';
+        b.style.borderColor = 'rgba(255,255,255,0.15)';
       });
-    });
-  });
-
-  // Drone Radar Hotspots
-  const radarHotspots = document.querySelectorAll('.radar-hotspot');
-  const hudCard = document.getElementById('droneHudCard');
-  const hudTag = document.getElementById('hudTag');
-  const hudTitle = document.getElementById('hudTitle');
-  const hudDesc = document.getElementById('hudDesc');
-
-  const radarData = {
-    towers: {
-      tag: "Phase 01 · 4.5-Acre Township",
-      title: "Costa Furtune Crestview (144 Flats · B+S+12)",
-      desc: "Total Built-Up Area 2,05,368 sq.ft across G+14 shear-wall towers. 30,785 sq.ft central open space ensuring 60% open cross-ventilation per residence."
-    },
-    clubhouse: {
-      tag: "Resident Leisure Pavilion",
-      title: "Costa Club Fantacy (10,296 Sq.Ft B.U.A)",
-      desc: "3-level private clubhouse with 2,574 sq.ft open terrace lounge, billiards salon, squash court, banquet hall, and high-tech fitness studio."
-    },
-    pool: {
-      tag: "Aquatic Sanctuary",
-      title: "Semi-Olympic Swimming Pool (2,650 Sq.Ft)",
-      desc: "2,650 sq.ft crystal swimming pool deck with dedicated kids splash pool, sun loungers, poolside cabanas, and forest canopy views."
-    },
-    entrance: {
-      tag: "Dual Highway Corridor",
-      title: "Chandaka & Khordha Link Boulevard (12.19m Wide)",
-      desc: "12.19-meter wide private access boulevard connecting directly to Chandaka Road & Khordha Highway, 15 minutes to BBI Airport & Infocity."
-    },
-    podium: {
-      tag: "Township Master Plan",
-      title: "Complete 3-Phase Ecosystem (Horizon & Triplex)",
-      desc: "Costa Furtune Horizon Heights (88 flats, 2,14,212 sq.ft BUA) and Costa Furtune Triplex Villas (24 units) surrounding 30,785 sq.ft landscaped greens."
-    }
-  };
-
-  radarHotspots.forEach(spot => {
-    spot.addEventListener('click', () => {
-      radarHotspots.forEach(s => s.classList.remove('is-active'));
-      spot.classList.add('is-active');
-      const spotId = spot.getAttribute('data-hotspot');
-      const data = radarData[spotId];
-      if (data && hudCard) {
-        hudCard.style.opacity = '0';
-        hudCard.style.transform = 'translateY(10px)';
-        setTimeout(() => {
-          if (hudTag) hudTag.textContent = data.tag;
-          if (hudTitle) hudTitle.textContent = data.title;
-          if (hudDesc) hudDesc.textContent = data.desc;
-          hudCard.style.opacity = '1';
-          hudCard.style.transform = 'translateY(0)';
-        }, 150);
-      }
-    });
-  });
-
-  // Floor Plan Typology Switcher
-  const planTabBtns = document.querySelectorAll('.plan-tab-btn');
-  const planImg = document.getElementById('vtourPlanImage');
-  const planPaths = {
-    '1845': 'assets/plans/crestview/floor_plan_3bhk_type_101.webp',
-    '1941': 'assets/plans/crestview/floor_plan_3bhk_type_105.webp',
-    '2013': 'assets/plans/crestview/floor_plan_3bhk_type_104_106.webp'
-  };
-
-  planTabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      planTabBtns.forEach(b => b.classList.remove('is-active'));
       btn.classList.add('is-active');
-      const size = btn.getAttribute('data-plan-size');
-      if (planImg && planPaths[size]) {
-        planImg.style.opacity = '0.3';
-        planImg.style.transform = 'scale(0.98)';
+      btn.style.background = 'linear-gradient(135deg, #7A805E 0%, #614F33 100%)';
+      btn.style.color = '#FFFFFF';
+      btn.style.borderColor = '#D4AF37';
+
+      const videoSrc = btn.getAttribute('data-video');
+      const posterSrc = btn.getAttribute('data-poster');
+      const title = btn.getAttribute('data-title');
+
+      if (cinemaPlayer && videoSrc) {
+        cinemaPlayer.src = videoSrc;
+        if (posterSrc) cinemaPlayer.poster = posterSrc;
+        cinemaPlayer.play().catch(() => {});
+      }
+      if (cinemaLabel && title) {
+        cinemaLabel.textContent = title;
+      }
+    });
+  });
+
+  // 2. Architectural Blueprint Studio Tab Switcher
+  const bpTabs = document.querySelectorAll('.btn-bp-tab');
+  const bpImg = document.getElementById('bpMainImage');
+  const bpTitle = document.getElementById('bpCurrentTitle');
+  const bpBua = document.getElementById('bpBua');
+  const bpLiving = document.getElementById('bpLiving');
+  const bpMaster = document.getElementById('bpMaster');
+  const bpKitchen = document.getElementById('bpKitchen');
+  const bpFacing = document.getElementById('bpFacing');
+  const bpDownload = document.getElementById('btnBpDownload');
+
+  bpTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      bpTabs.forEach(t => {
+        t.classList.remove('is-active');
+        t.style.background = 'rgba(30,34,42,0.06)';
+        t.style.color = 'var(--ink)';
+        t.style.borderColor = 'rgba(184,145,75,0.3)';
+      });
+      tab.classList.add('is-active');
+      tab.style.background = 'linear-gradient(135deg, #7A805E 0%, #614F33 100%)';
+      tab.style.color = '#FFFFFF';
+      tab.style.borderColor = '#D4AF37';
+
+      const planSrc = tab.getAttribute('data-plan');
+      const title = tab.getAttribute('data-title');
+      const bua = tab.getAttribute('data-bua');
+      const living = tab.getAttribute('data-living');
+      const master = tab.getAttribute('data-master');
+      const kitchen = tab.getAttribute('data-kitchen');
+      const facing = tab.getAttribute('data-facing');
+
+      if (bpImg && planSrc) {
+        bpImg.style.opacity = '0.2';
+        bpImg.style.transform = 'scale(0.97)';
         setTimeout(() => {
-          planImg.src = planPaths[size];
-          planImg.style.opacity = '1';
-          planImg.style.transform = 'scale(1)';
-        }, 200);
+          bpImg.src = planSrc;
+          bpImg.style.opacity = '1';
+          bpImg.style.transform = 'scale(1)';
+        }, 180);
       }
-    });
-  });
-
-  // Room Inspector Pins
-  const roomPins = document.querySelectorAll('.room-pin');
-  const inspTitle = document.getElementById('inspRoomTitle');
-  const inspDim = document.getElementById('inspDimensions');
-  const inspImg = document.getElementById('inspRoomImg');
-  const inspSpecs = document.getElementById('inspSpecsList');
-
-  const roomData = {
-    living: {
-      title: "Expansive Living & Dining Salon",
-      dim: "24 ft × 13.5 ft · Clear Height 11 ft",
-      img: "assets/virtual_tour/wt_double_height_lobby.jpg",
-      specs: [
-        "Imported Italian marble-finish vitrified flooring (8ft × 4ft slabs)",
-        "Direct floor-to-ceiling glass slider opening to Chandaka forest deck",
-        "Concealed Daikin/Mitsubishi VRV air-conditioning provisions",
-        "Acoustically insulated Saint-Gobain DGU toughened glass"
-      ]
-    },
-    master: {
-      title: "Master Suite & Private Walk-In Wardrobe",
-      dim: "16 ft × 14 ft + Walk-In Dresser",
-      img: "assets/virtual_tour/wt_club_facade.jpg",
-      specs: [
-        "Warm laminated German wooden flooring with sound-dampening underlay",
-        "Attached 5-fixture master bathroom with Grohe rain shower & Kohler vanity",
-        "Private corner forest-facing picture window with solar-heat reject tint",
-        "High-speed CAT-6 ethernet & fiber-to-home smart bedside switches"
-      ]
-    },
-    kitchen: {
-      title: "German-Engineered Modular Kitchen",
-      dim: "12.5 ft × 9 ft + Utility Enclosure",
-      img: "assets/virtual_tour/wt_banquet_hall.jpg",
-      specs: [
-        "Quartz stone heat-resistant countertop with dual-bowl Franke sink",
-        "Dedicated piped gas provision & heavy-duty chimney exhaust duct",
-        "Separate 6ft utility & wet-service balcony for washing & dishwashing",
-        "Water purifier point and anti-skid matte vitrified designer flooring"
-      ]
-    },
-    bed2: {
-      title: "Bedroom 2 (Guest Sanctuary)",
-      dim: "13.5 ft × 12 ft · En-suite Bath",
-      img: "assets/virtual_tour/wt_billiards_lounge.jpg",
-      specs: [
-        "Generous wardrobe recess optimizing carpet area utility",
-        "En-suite designer bathroom with Jaguar/Kohler premium fixtures",
-        "UPVC sliding windows with integrated insect mesh screen",
-        "Concealed copper piping for independent split AC unit"
-      ]
-    },
-    bed3: {
-      title: "Bedroom 3 (Children's / Study Suite)",
-      dim: "12 ft × 11.5 ft · Dual Aspect Daylight",
-      img: "assets/virtual_tour/wt_fitness_gym.jpg",
-      specs: [
-        "Generous natural sunlight with cross-ventilation ventilation channels",
-        "Non-toxic low-VOC paint and antimicrobial flooring surfaces",
-        "Dedicated work-from-home/study nook with multiple universal power ports",
-        "Direct access to adjacent powder room and guest washroom"
-      ]
-    },
-    balcony: {
-      title: "Panoramic Forest Sky Deck",
-      dim: "14 ft × 6 ft · 180° Forest Canopy",
-      img: "assets/virtual_tour/wt_infinity_pool_deck.jpg",
-      specs: [
-        "Frameless toughened safety glass railing with SS 316 handrail",
-        "Weatherproof wood-finish ceramic decking with rapid rainwater run-off",
-        "Electrical waterproof sockets for outdoor ambient mood lighting",
-        "Unimpeded panoramic sunsets over Chandaka Reserve green belt"
-      ]
-    }
-  };
-
-  roomPins.forEach(pin => {
-    pin.addEventListener('click', () => {
-      roomPins.forEach(p => p.classList.remove('is-active'));
-      pin.classList.add('is-active');
-      const roomId = pin.getAttribute('data-room');
-      const r = roomData[roomId];
-      if (r) {
-        if (inspTitle) inspTitle.textContent = r.title;
-        if (inspDim) inspDim.textContent = r.dim;
-        if (inspImg) inspImg.src = r.img;
-        if (inspSpecs) {
-          inspSpecs.innerHTML = r.specs.map(s => `<li>${s}</li>`).join('');
-        }
-      }
-    });
-  });
-
-  // Clubhouse Card Click to Open Master Video Lightbox
-  const clubCards = document.querySelectorAll('.vtour__club-card');
-  clubCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const videoTrigger = document.querySelector('[data-video-modal-trigger]');
-      if (videoTrigger) {
-        videoTrigger.click();
-      }
+      if (bpTitle && title) bpTitle.textContent = title;
+      if (bpBua && bua) bpBua.textContent = bua;
+      if (bpLiving && living) bpLiving.innerHTML = living;
+      if (bpMaster && master) bpMaster.innerHTML = master;
+      if (bpKitchen && kitchen) bpKitchen.innerHTML = kitchen;
+      if (bpFacing && facing) bpFacing.innerHTML = facing;
+      if (bpDownload && planSrc) bpDownload.href = planSrc;
     });
   });
 }
@@ -1148,11 +1023,11 @@ function initLeadFunnels() {
 // Initialize on DOM load
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
-    initVirtualTour();
+    initCinemaAndBlueprints();
     initLeadFunnels();
   });
 } else {
-  initVirtualTour();
+  initCinemaAndBlueprints();
   initLeadFunnels();
 }
 
