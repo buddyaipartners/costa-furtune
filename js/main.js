@@ -32,45 +32,14 @@ function paintLoader() {
 const loadTick = hasLoader ? setInterval(paintLoader, 40) : 0;
 
 async function boot() {
-  /* Preload hero building render for immediate display */
-  const heroImg = new Image();
-  heroImg.src = 'assets/render-elevation.webp';
-  target = 1;
-
-  const finish = () => {
-    const elapsed = performance.now() - t0;
-    if (shown < 0.985 && elapsed < 600) {
-      requestAnimationFrame(finish);
-      return;
-    }
+  document.body.classList.remove('is-loading');
+  document.body.classList.add('is-ready', 'at-hero');
+  if (hasLoader) {
     clearInterval(loadTick);
-    paintLoader();
-    if (hasLoader) {
-      loadBar.style.width = '100%';
-      loadPct.textContent = '100';
-    }
-
-    setTimeout(() => {
-      if (hasLoader) loader.classList.add('is-done');
-      document.body.classList.remove('is-loading');
-      document.body.classList.add('is-ready');
-      document.body.classList.add('at-hero');
-      try { startReveals(); } catch (e) { console.warn('[main] reveals', e); }
-      try { measure(); } catch (e) { console.warn('[main] measure', e); }
-    }, 240);
-  };
-  requestAnimationFrame(finish);
-
-  /* safety net */
-  setTimeout(() => {
-    if (!document.body.classList.contains('is-ready')) {
-      if (hasLoader) loader.classList.add('is-done');
-      document.body.classList.remove('is-loading');
-      document.body.classList.add('is-ready');
-      document.body.classList.add('at-hero');
-      try { startReveals(); measure(); } catch (e) { console.warn('[main] safety', e); }
-    }
-  }, 1800);
+    loader.classList.add('is-done');
+  }
+  try { startReveals(); } catch (e) { console.warn('[main] reveals', e); }
+  try { measure(); } catch (e) { console.warn('[main] measure', e); }
 }
 
 /* ── build animation ────────────────────────────────────────── */
@@ -678,12 +647,12 @@ function initLightbox() {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeLightbox();
   });
 
-  document.querySelectorAll('.phase-gallery-item, .lightbox-trigger').forEach(item => {
+  document.querySelectorAll('.phase-gallery-item, .lightbox-trigger, .visual-card').forEach(item => {
     item.style.cursor = 'zoom-in';
     item.addEventListener('click', () => {
-      const img = item.querySelector('img') || (item.tagName === 'IMG' ? item : null);
-      const cap = item.getAttribute('data-caption') || item.querySelector('figcaption')?.textContent || img?.alt || '';
-      if (img?.src) openLightbox(img.src, cap);
+      const src = item.getAttribute('data-lightbox') || item.querySelector('img')?.src || (item.tagName === 'IMG' ? item.src : null);
+      const cap = item.getAttribute('data-caption') || item.querySelector('figcaption h4')?.textContent || item.querySelector('figcaption')?.textContent || item.querySelector('img')?.alt || '';
+      if (src) openLightbox(src, cap);
     });
   });
 }

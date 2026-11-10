@@ -194,33 +194,12 @@
 </script>
 </head>
 
-<body class="is-loading">
+<body class="is-ready at-hero">
 
-<!-- ─────────────────────────  PRELOADER  ───────────────────────── -->
-<div class="loader" id="loader">
-  <div class="loader__inner">
-    <div class="loader__mark">
-      <img src="assets/logos/costa-furtune-brochure-official.webp" alt="Costa Furtune Brochure Logo" width="56" height="56" style="object-fit:contain;" />
-    </div>
-    <div class="loader__name">Sai Harmony · Costa Furtune</div>
-    <div class="loader__bar"><span id="loadBar"></span></div>
-    <div class="loader__pct"><span id="loadPct">0</span><small>%</small></div>
-  </div>
-</div>
+<!-- PRELOADER (non-blocking) -->
 <script>
-  (function() {
-    function dismissLoader() {
-      var l = document.getElementById('loader');
-      if (l && !l.classList.contains('is-done')) {
-        l.classList.add('is-done');
-        document.body.classList.remove('is-loading');
-        document.body.classList.add('is-ready');
-        document.body.classList.add('at-hero');
-      }
-    }
-    setTimeout(dismissLoader, 900);
-    window.addEventListener('load', function() { setTimeout(dismissLoader, 200); });
-  })();
+  document.body.classList.add('is-ready', 'at-hero');
+  document.body.classList.remove('is-loading');
 </script>
 
 <!-- FIXED 3D PROCEDURAL CANVAS (hidden in light theme) -->
@@ -246,10 +225,10 @@
   <nav class="nav__links" aria-label="Sections">
     <a href="#cinema" class="nav__highlight" style="background:linear-gradient(135deg, #7A805E 0%, #614F33 100%) !important; color:#FAF8F5 !important; border:1px solid rgba(212,175,55,0.4) !important;">🎥 4K Drone Cinema</a>
     <a href="#township">3 Phases</a>
-    <a href="#residences">Residences &amp; CAD Plans</a>
+    <a href="#blueprints">CAD Blueprints</a>
     <a href="#amenities">Clubhouse</a>
+    <a href="#gallery">Visual Gallery</a>
     <a href="#location">Location</a>
-    <a href="#progress">Progress</a>
     <a href="#verification">ORERA Law</a>
   </nav>
 
@@ -261,19 +240,21 @@
 
 <div class="navmenu" id="navMenu" aria-hidden="true">
   <nav aria-label="Mobile sections">
+    <a href="#cinema" style="color:#D4AF37 !important;"><span>🎥</span>4K Drone Township Cinema</a>
     <a href="#developer"><span>00</span>Master Developer (Sai Harmony)</a>
     <a href="#township"><span>01</span>Complete Township (All 3 Phases)</a>
-    <a href="#virtual-tour"><span>02</span>Interactive 3D Virtual Tour &amp; Plans</a>
+    <a href="#blueprints"><span>02</span>CAD Blueprints &amp; Specifications</a>
     <a href="triplex.html" class="navmenu__sub"><span>→</span>Costa Fortune Triplex — Phase 1 (Sold Out)</a>
     <a href="crestview.html" class="navmenu__sub"><span>→</span>Costa Furtune Crestview — Phase 2 (3 BHK Focus)</a>
     <a href="horizon-heights.html" class="navmenu__sub"><span>→</span>Horizon Heights — Phase 3 (Twin Towers)</a>
     <a href="clubhouse.html" class="navmenu__sub"><span>→</span>Club Costa Fantasy (Construction Ready)</a>
-    <a href="#residences"><span>02</span>Exclusive 3 BHK Collection</a>
-    <a href="#amenities"><span>03</span>Club Costa Fantasy</a>
-    <a href="#progress"><span>04</span>Construction Progress</a>
-    <a href="#leadership"><span>05</span>Leadership &amp; MD Desk</a>
-    <a href="#verification"><span>06</span>ORERA Verification</a>
-    <a href="#enquire"><span>07</span>Private VIP Viewing</a>
+    <a href="#residences"><span>03</span>Exclusive 3 BHK Collection</a>
+    <a href="#amenities"><span>04</span>Club Costa Fantasy</a>
+    <a href="#gallery"><span>05</span>Visual Architecture Portfolio</a>
+    <a href="#progress"><span>06</span>Construction Progress</a>
+    <a href="#leadership"><span>07</span>Leadership &amp; MD Desk</a>
+    <a href="#verification"><span>08</span>ORERA Statutory Verification</a>
+    <a href="#enquire"><span>09</span>Private VIP Viewing</a>
   </nav>
   <div class="navmenu__foot">
     <a href="tel:+917735536906">+91 77355 36906</a>
@@ -326,7 +307,7 @@
       <span class="dot"></span>
       <span>ORERA MP/19/2024/01244</span>
       <span class="dot"></span>
-      <span>Possession Dec 2026</span>
+      <span>Possession Aug 2028</span>
     </div>
 
     <div class="hero__actions" data-reveal data-reveal-delay="320">
@@ -345,7 +326,7 @@
         <strong>Direct Developer Allocation &middot; Early-Mover Window</strong>
       </div>
       <form class="quick-card__form" id="heroQuickForm">
-        <div class="quick-card__fields">
+        <div class="quick-card__inputs">
           <select id="quickUnit" required>
             <option value="" disabled selected>Select 3 BHK Typology</option>
             <option value="Type 1 · 1,845 sq ft (₹1.05 Cr*)">Type 1 · 1,845 sq ft (₹1.05 Cr*)</option>
@@ -922,6 +903,125 @@
   </div>
 </section>
 
+<!-- ═══════════════════════  04.5 · MASTER ARCHITECTURAL VISUAL SHOWCASE  ═══════════════════════ -->
+<section class="section section--wide" id="gallery" data-chapter="4.5" style="padding-top:clamp(70px, 9vh, 120px); background:#070B0F; color:#FAF8F5; border-top:1px solid rgba(212,175,55,0.22); border-bottom:1px solid rgba(212,175,55,0.22);">
+  <div class="wide__head" data-reveal>
+    <p class="label" style="justify-content:center; color:#D4AF37;"><span>✦</span> Curated Architectural Portfolio</p>
+    <h2 class="display" style="color:#FAF8F5;">Visual Architecture<br /><em style="color:#E5C368;">&amp; Resort Lifestyle Portfolio.</em></h2>
+    <p class="lede lede--center" style="color:#D8D2C4; max-width:68ch; margin:0 auto; font-size:16px;">
+      Direct high-definition captures from the architectural master brochure. Click any photograph to view in full-screen uncompressed resolution.
+    </p>
+  </div>
+
+  <div style="max-width:1320px; margin:0 auto;" data-reveal data-reveal-delay="100">
+    <div class="visual-portfolio-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:22px;">
+      <!-- 01: Infinity Pool at Dusk -->
+      <figure class="visual-card" data-lightbox="assets/brochure/pool-dusk.webp" data-caption="Club Costa Fantacy · Semi-Covered Infinity Lap Pool &amp; Sunset Deck (Level 1)">
+        <div class="visual-card__img-wrap">
+          <img src="assets/brochure/pool-dusk.webp" alt="Club Costa Fantacy Semi-Covered Infinity Lap Pool &amp; Sunset Deck" loading="lazy" />
+          <span class="visual-card__zoom-cue">🔍 Click to Enlarge</span>
+        </div>
+        <figcaption>
+          <span class="visual-card__tag">Level 1 · Resident Privilege</span>
+          <h4>Semi-Covered Infinity Lap Pool &amp; Sunset Cabanas</h4>
+          <p>Weather-sheltered year-round heated pool deck with sunken loungers overlooking the open greens.</p>
+        </figcaption>
+      </figure>
+
+      <!-- 02: Double Height Entrance Lobby -->
+      <figure class="visual-card" data-lightbox="assets/brochure/entrance-evening.webp" data-caption="Double-Height Grand Entrance Lobby &amp; Welcome Foyer (Level 0)">
+        <div class="visual-card__img-wrap">
+          <img src="assets/brochure/entrance-evening.webp" alt="Double-Height Grand Entrance Lobby &amp; Welcome Foyer" loading="lazy" />
+          <span class="visual-card__zoom-cue">🔍 Click to Enlarge</span>
+        </div>
+        <figcaption>
+          <span class="visual-card__tag">Level 0 · Arrival Salon</span>
+          <h4>Grand Double-Height Reception Foyer</h4>
+          <p>Air-conditioned welcome lobby with 24/7 security concierge desk and Italian marble cladding.</p>
+        </figcaption>
+      </figure>
+
+      <!-- 03: Delivered Triplex Sovereign Villas -->
+      <figure class="visual-card" data-lightbox="assets/phases/costa-triplex-elevation-day.webp" data-caption="Costa Fortune Phase 1 · Sovereign Triplex Villas (Delivered &amp; Occupied)">
+        <div class="visual-card__img-wrap">
+          <img src="assets/phases/costa-triplex-elevation-day.webp" alt="Costa Fortune Phase 1 Delivered Sovereign Triplex Villas" loading="lazy" />
+          <span class="visual-card__zoom-cue">🔍 Click to Enlarge</span>
+        </div>
+        <figcaption>
+          <span class="visual-card__tag">Phase 1 · Delivered Benchmark</span>
+          <h4>Sovereign G+2 Triplex Villas</h4>
+          <p>24 delivered private residences with individual car porches, private terrace gardens, and gated tranquility.</p>
+        </figcaption>
+      </figure>
+
+      <!-- 04: Crestview Twin Towers Perspective -->
+      <figure class="visual-card" data-lightbox="assets/render-elevation.webp" data-caption="Crestview Twin Towers · 144 Luxury 3 BHK Residences (Aug 2028)">
+        <div class="visual-card__img-wrap">
+          <img src="assets/render-elevation.webp" alt="Crestview Twin Towers B+S+12 Architecture" loading="lazy" />
+          <span class="visual-card__zoom-cue">🔍 Click to Enlarge</span>
+        </div>
+        <figcaption>
+          <span class="visual-card__tag">Phase 2 · August 2028</span>
+          <h4>Crestview Twin Towers (B+S+12)</h4>
+          <p>Low-density residential towers engineered with 3-side open ventilation and 6ft forest balconies.</p>
+        </figcaption>
+      </figure>
+
+      <!-- 05: Multi-Station Gymnasium -->
+      <figure class="visual-card" data-lightbox="assets/render-gym.webp" data-caption="Club Costa Fantacy · Cardio &amp; Strength Health Club (Level 3)">
+        <div class="visual-card__img-wrap">
+          <img src="assets/render-gym.webp" alt="Club Costa Fantacy Cardio &amp; Strength Health Club" loading="lazy" />
+          <span class="visual-card__zoom-cue">🔍 Click to Enlarge</span>
+        </div>
+        <figcaption>
+          <span class="visual-card__tag">Level 3 · Wellness Studio</span>
+          <h4>Cardio &amp; Resistance Fitness Center</h4>
+          <p>Air-conditioned fitness floor equipped with certified cardiovascular stations, weights, and yoga space.</p>
+        </figcaption>
+      </figure>
+
+      <!-- 06: Grand Celebration Banquet -->
+      <figure class="visual-card" data-lightbox="assets/brochure/banquet-hall.webp" data-caption="Club Costa Fantacy · Grand Ballroom &amp; Celebration Banquet (Level 4)">
+        <div class="visual-card__img-wrap">
+          <img src="assets/brochure/banquet-hall.webp" alt="Club Costa Fantacy Grand Ballroom &amp; Celebration Banquet" loading="lazy" />
+          <span class="visual-card__zoom-cue">🔍 Click to Enlarge</span>
+        </div>
+        <figcaption>
+          <span class="visual-card__tag">Level 4 · Hospitality</span>
+          <h4>Open Terrace Banquet Ballroom</h4>
+          <p>Multi-purpose resident celebration hall with forest mural feature wall and connected open terrace lawns.</p>
+        </figcaption>
+      </figure>
+
+      <!-- 07: Billiards & Snooker Lounge -->
+      <figure class="visual-card" data-lightbox="assets/render-billiards.webp" data-caption="Club Costa Fantacy · Billiards &amp; Indoor Sports Club (Level 2)">
+        <div class="visual-card__img-wrap">
+          <img src="assets/render-billiards.webp" alt="Club Costa Fantacy Billiards &amp; Indoor Sports Club" loading="lazy" />
+          <span class="visual-card__zoom-cue">🔍 Click to Enlarge</span>
+        </div>
+        <figcaption>
+          <span class="visual-card__tag">Level 2 · Games Salon</span>
+          <h4>Billiards, Table Tennis &amp; Chess Salon</h4>
+          <p>Resident leisure lounge dedicated to cue sports, board games, and quiet afternoon social relaxation.</p>
+        </figcaption>
+      </figure>
+
+      <!-- 08: 4.5-Acre Master Township Aerial Sweep -->
+      <figure class="visual-card" data-lightbox="assets/brochure/hero-aerial.webp" data-caption="Costa Furtune · 4.5-Acre Master Community &amp; Chandaka Forest Canopy">
+        <div class="visual-card__img-wrap">
+          <img src="assets/brochure/hero-aerial.webp" alt="Costa Furtune 4.5-Acre Master Community &amp; Chandaka Forest Canopy" loading="lazy" />
+          <span class="visual-card__zoom-cue">🔍 Click to Enlarge</span>
+        </div>
+        <figcaption>
+          <span class="visual-card__tag">Master Township Enclave</span>
+          <h4>4.5-Acre Master Community Biosphere</h4>
+          <p>Surrounded by 30,785 sq.ft central open landscaped lawns and the permanent green buffer of Chandaka.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════════  05 · LIVE CONSTRUCTION PROGRESS  ═══════════════════════ -->
 <section class="section section--wide" id="progress" data-chapter="5">
   <div class="wide__head" data-reveal>
@@ -1304,6 +1404,17 @@
 </section>
 
 </main>
+
+<!-- ─────────────────────────  MUSEUM-GRADE IMAGE LIGHTBOX MODAL  ───────────────────────── -->
+<div class="img-lightbox" id="imgLightbox" role="dialog" aria-modal="true" aria-hidden="true" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(4,8,12,0.95); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); align-items:center; justify-content:center; padding:24px;">
+  <div style="position:relative; max-width:1200px; max-height:92vh; width:100%; display:flex; flex-direction:column; align-items:center;">
+    <button type="button" id="closeImgLightbox" aria-label="Close image lightbox" style="position:absolute; top:-40px; right:0; background:none; border:none; color:#FAF8F5; font-size:36px; cursor:pointer; line-height:1; padding:4px 12px;">&times;</button>
+    <div style="width:100%; text-align:center; max-height:80vh; overflow:hidden; border-radius:10px; border:1px solid rgba(212,175,55,0.4); box-shadow:0 30px 80px rgba(0,0,0,0.9); background:#000;">
+      <img id="lightboxImg" src="" alt="Enlarged architectural photograph" style="max-width:100%; max-height:78vh; object-fit:contain; display:inline-block;" />
+    </div>
+    <p id="lightboxCaption" style="font-family:var(--ui); font-size:13px; color:#D4AF37; margin-top:14px; text-align:center; letter-spacing:0.04em; text-transform:uppercase;"></p>
+  </div>
+</div>
 
 <!-- ─────────────────────────  CINEMATIC 3D DRONE & WALKTHROUGH TOUR MODAL  ───────────────────────── -->
 <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-hidden="true">
