@@ -994,10 +994,12 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initCinemaAndBlueprints();
     initLeadFunnels();
+    initFinancialStudio();
   });
 } else {
   initCinemaAndBlueprints();
   initLeadFunnels();
+  initFinancialStudio();
 }
 
 /* ── Ultra-Luxury Parallax Scroll & Autoplay Handler ────────── */
@@ -1019,6 +1021,234 @@ window.addEventListener('load', () => {
     }
   }
 });
+
+/* ==========================================================================
+   INTERACTIVE FINANCIAL STUDIO (EMI & ROI) CONTROLLER
+   ========================================================================== */
+function initFinancialStudio() {
+  const modal = document.getElementById('financialStudioModal');
+  const closeBtn = document.getElementById('closeFinStudio');
+  if (!modal) return;
+
+  const unitTitleEl = document.getElementById('finUnitTitle');
+  const basePriceEl = document.getElementById('finBasePrice');
+
+  // Sliders
+  const rangeLoanPct = document.getElementById('rangeLoanPct');
+  const rangeInterest = document.getElementById('rangeInterestRate');
+  const rangeTenure = document.getElementById('rangeTenure');
+  const rangeGrowth = document.getElementById('rangeGrowthRate');
+  const rangeRent = document.getElementById('rangeEstRent');
+
+  // Displays - EMI
+  const dispLoanAmt = document.getElementById('dispLoanAmt');
+  const dispDownPmt = document.getElementById('dispDownPmt');
+  const dispInterestRate = document.getElementById('dispInterestRate');
+  const dispTenure = document.getElementById('dispTenure');
+  const dispMonthlyEmi = document.getElementById('dispMonthlyEmi');
+  const dispStatPrincipal = document.getElementById('dispStatPrincipal');
+  const dispStatInterest = document.getElementById('dispStatInterest');
+  const dispStatTotal = document.getElementById('dispStatTotal');
+  const barPrincipal = document.getElementById('barPrincipal');
+  const barInterest = document.getElementById('barInterest');
+  const pctPrincipal = document.getElementById('pctPrincipal');
+  const pctInterest = document.getElementById('pctInterest');
+
+  // Displays - ROI
+  const dispGrowthRate = document.getElementById('dispGrowthRate');
+  const dispEstRent = document.getElementById('dispEstRent');
+  const roiAcqPrice = document.getElementById('roiAcqPrice');
+  const roiPossessionVal = document.getElementById('roiPossessionVal');
+  const roi5YrVal = document.getElementById('roi5YrVal');
+  const dispTotalWealthGain = document.getElementById('dispTotalWealthGain');
+  const dispCapitalGain = document.getElementById('dispCapitalGain');
+  const dispRentalYield = document.getElementById('dispRentalYield');
+  const disp5YrRent = document.getElementById('disp5YrRent');
+  const dispTotalRoiPct = document.getElementById('dispTotalRoiPct');
+
+  // CTAs
+  const btnWhatsapp = document.getElementById('btnFinWhatsapp');
+  const btnShare = document.getElementById('btnShareFinQuote');
+
+  // Tabs
+  const tabEmi = document.getElementById('tabFinEmi');
+  const tabRoi = document.getElementById('tabFinRoi');
+  const paneEmi = document.getElementById('paneFinEmi');
+  const paneRoi = document.getElementById('paneFinRoi');
+
+  let currentPrice = 10516500;
+  let currentUnitName = "Type 1 · Grand Three (1,845 sq ft)";
+  let currentRent = 32000;
+
+  function formatRupees(num) {
+    return '₹' + Math.round(num).toLocaleString('en-IN');
+  }
+
+  function formatCrores(num) {
+    const cr = num / 10000000;
+    return '₹' + cr.toFixed(2) + ' Cr';
+  }
+
+  function formatLakhs(num) {
+    const lk = num / 100000;
+    return '₹' + lk.toFixed(1) + ' Lakhs';
+  }
+
+  function recalculate() {
+    // 1. EMI Calculation
+    const loanPct = parseFloat(rangeLoanPct.value) / 100;
+    const principal = currentPrice * loanPct;
+    const downPayment = currentPrice - principal;
+
+    const annualRate = parseFloat(rangeInterest.value);
+    const monthlyRate = (annualRate / 12) / 100;
+    const years = parseInt(rangeTenure.value, 10);
+    const months = years * 12;
+
+    const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+    const totalPayment = emi * months;
+    const totalInterest = totalPayment - principal;
+
+    dispLoanAmt.textContent = `${formatRupees(principal)} (${rangeLoanPct.value}%)`;
+    dispDownPmt.textContent = `${formatRupees(downPayment)} (${100 - parseInt(rangeLoanPct.value, 10)}%)`;
+    dispInterestRate.textContent = `${annualRate.toFixed(2)}% p.a.`;
+    dispTenure.textContent = `${years} Years (${months} Mos)`;
+
+    dispMonthlyEmi.innerHTML = `${formatRupees(emi)} <small>/ month</small>`;
+    dispStatPrincipal.textContent = formatRupees(principal);
+    dispStatInterest.textContent = formatRupees(totalInterest);
+    dispStatTotal.textContent = formatRupees(totalPayment);
+
+    const principalPct = Math.round((principal / totalPayment) * 100);
+    const interestPct = 100 - principalPct;
+    barPrincipal.style.width = `${principalPct}%`;
+    barInterest.style.width = `${interestPct}%`;
+    pctPrincipal.textContent = `${principalPct}%`;
+    pctInterest.textContent = `${interestPct}%`;
+
+    // 2. ROI Calculation
+    const growthRate = parseFloat(rangeGrowth.value) / 100;
+    const monthlyRent = parseFloat(rangeRent.value);
+
+    dispGrowthRate.textContent = `${(growthRate * 100).toFixed(2)}% CAGR`;
+    dispEstRent.textContent = `${formatRupees(monthlyRent)} / month`;
+
+    roiAcqPrice.textContent = formatCrores(currentPrice);
+    // Aug 2028 is 2.5 years from early 2026
+    const valPossession = currentPrice * Math.pow(1 + growthRate, 2.5);
+    roiPossessionVal.textContent = formatCrores(valPossession);
+
+    // 5-Year horizon (2031)
+    const val5Yr = currentPrice * Math.pow(1 + growthRate, 5);
+    roi5YrVal.textContent = formatCrores(val5Yr);
+
+    const capitalGain = val5Yr - currentPrice;
+    dispCapitalGain.textContent = `+${formatLakhs(capitalGain)}`;
+
+    const annualRent = monthlyRent * 12;
+    const grossYield = (annualRent / currentPrice) * 100;
+    dispRentalYield.textContent = `${grossYield.toFixed(2)}% p.a.`;
+
+    const cumulativeRent = annualRent * 5;
+    disp5YrRent.textContent = formatLakhs(cumulativeRent);
+
+    const totalWealthGain = capitalGain + cumulativeRent;
+    dispTotalWealthGain.textContent = `+${formatLakhs(totalWealthGain)}`;
+
+    const totalRoiPct = (totalWealthGain / currentPrice) * 100;
+    dispTotalRoiPct.textContent = `+${totalRoiPct.toFixed(1)}%`;
+
+    // Update WhatsApp action link
+    const waPhone = "917735536906";
+    const waText = encodeURIComponent(
+      `Namaste Sai Harmony Finance Desk!\n\nI configured the Financial Studio for *${currentUnitName}*.\n- Unit Price: ${formatCrores(currentPrice)}\n- Loan Amount: ${formatRupees(principal)} (${rangeLoanPct.value}%)\n- Tenure: ${years} Years @ ${annualRate}% p.a.\n- Estimated EMI: ${formatRupees(emi)}/month\n- Projected 5-Year Wealth Gain: +${formatLakhs(totalWealthGain)}\n\nPlease assist me with Nationalized Bank Pre-Approval (SBI/HDFC/ICICI) and VIP priority unit lock.`
+    );
+    btnWhatsapp.href = `https://wa.me/${waPhone}?text=${waText}`;
+
+    // Share / Copy button
+    btnShare.onclick = () => {
+      const summary = `Costa Furtune Crestview — Investment Summary\nUnit: ${currentUnitName}\nPrice: ${formatCrores(currentPrice)}\nEstimated EMI: ${formatRupees(emi)}/mo (${years} yrs @ ${annualRate}%)\n5-Yr Projected Value: ${formatCrores(val5Yr)}\nTotal Wealth Gain: +${formatLakhs(totalWealthGain)}\nOfficial Portal: https://buddyaipartners.github.io/costa-furtune/`;
+      navigator.clipboard.writeText(summary).then(() => {
+        alert("Investment summary copied to clipboard!");
+      }).catch(() => {
+        alert(summary);
+      });
+    };
+  }
+
+  // Sliders listeners
+  [rangeLoanPct, rangeInterest, rangeTenure, rangeGrowth, rangeRent].forEach(slider => {
+    slider?.addEventListener('input', recalculate);
+  });
+
+  // Tab listeners
+  tabEmi?.addEventListener('click', () => {
+    tabEmi.classList.add('is-active');
+    tabRoi.classList.remove('is-active');
+    paneEmi.classList.add('is-active');
+    paneRoi.classList.remove('is-active');
+  });
+
+  tabRoi?.addEventListener('click', () => {
+    tabRoi.classList.add('is-active');
+    tabEmi.classList.remove('is-active');
+    paneRoi.classList.add('is-active');
+    paneEmi.classList.remove('is-active');
+  });
+
+  // Open / Close modal
+  function openStudio(unitName, price, rent) {
+    currentUnitName = unitName;
+    currentPrice = price;
+    currentRent = rent || 32000;
+
+    unitTitleEl.textContent = currentUnitName;
+    basePriceEl.textContent = `${formatRupees(currentPrice)}*`;
+    rangeRent.value = currentRent;
+
+    recalculate();
+    modal.classList.add('is-open');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeStudio() {
+    modal.classList.remove('is-open');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  closeBtn?.addEventListener('click', closeStudio);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeStudio();
+  });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeStudio();
+  });
+
+  // Attach to button triggers
+  document.querySelectorAll('.btn-calc-studio').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const unit = btn.getAttribute('data-unit-name');
+      const price = parseFloat(btn.getAttribute('data-price')) || 10516500;
+      const rent = parseFloat(btn.getAttribute('data-rent')) || 32000;
+      openStudio(unit, price, rent);
+    });
+  });
+
+  // Also clicking a size card opens the studio
+  document.querySelectorAll('.unit--3bhk').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      // If clicking zoom or link, don't hijack
+      if (e.target.closest('.unit__floorplan-wrap') || e.target.closest('a')) return;
+      const btn = card.querySelector('.btn-calc-studio');
+      if (btn) btn.click();
+    });
+  });
+}
+
 
 
 
