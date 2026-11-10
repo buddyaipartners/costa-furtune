@@ -207,6 +207,21 @@
     <div class="loader__pct"><span id="loadPct">0</span><small>%</small></div>
   </div>
 </div>
+<script>
+  (function() {
+    function dismissLoader() {
+      var l = document.getElementById('loader');
+      if (l && !l.classList.contains('is-done')) {
+        l.classList.add('is-done');
+        document.body.classList.remove('is-loading');
+        document.body.classList.add('is-ready');
+        document.body.classList.add('at-hero');
+      }
+    }
+    setTimeout(dismissLoader, 900);
+    window.addEventListener('load', function() { setTimeout(dismissLoader, 200); });
+  })();
+</script>
 
 <!-- FIXED 3D PROCEDURAL CANVAS (hidden in light theme) -->
 <canvas id="scene" aria-hidden="true"></canvas>

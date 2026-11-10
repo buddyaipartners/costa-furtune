@@ -860,7 +860,7 @@ function initVirtualTour() {
   const roomData = {
     living: {
       title: "Expansive Living & Dining Salon",
-      dim: "24' 0" × 13' 6" · Clear Height 11' 0"",
+      dim: "24 ft × 13.5 ft · Clear Height 11 ft",
       img: "assets/virtual_tour/wt_double_height_lobby.jpg",
       specs: [
         "Imported Italian marble-finish vitrified flooring (8ft × 4ft slabs)",
@@ -871,7 +871,7 @@ function initVirtualTour() {
     },
     master: {
       title: "Master Suite & Private Walk-In Wardrobe",
-      dim: "16' 0" × 14' 0" + Walk-In Dresser",
+      dim: "16 ft × 14 ft + Walk-In Dresser",
       img: "assets/virtual_tour/wt_club_facade.jpg",
       specs: [
         "Warm laminated German wooden flooring with sound-dampening underlay",
@@ -882,18 +882,18 @@ function initVirtualTour() {
     },
     kitchen: {
       title: "German-Engineered Modular Kitchen",
-      dim: "12' 6" × 9' 0" + Utility Enclosure",
+      dim: "12.5 ft × 9 ft + Utility Enclosure",
       img: "assets/virtual_tour/wt_banquet_hall.jpg",
       specs: [
         "Quartz stone heat-resistant countertop with dual-bowl Franke sink",
         "Dedicated piped gas provision & heavy-duty chimney exhaust duct",
-        "Separate 6'0" utility & wet-service balcony for washing & dishwashing",
+        "Separate 6ft utility & wet-service balcony for washing & dishwashing",
         "Water purifier point and anti-skid matte vitrified designer flooring"
       ]
     },
     bed2: {
       title: "Bedroom 2 (Guest Sanctuary)",
-      dim: "13' 6" × 12' 0" · En-suite Bath",
+      dim: "13.5 ft × 12 ft · En-suite Bath",
       img: "assets/virtual_tour/wt_billiards_lounge.jpg",
       specs: [
         "Generous wardrobe recess optimizing carpet area utility",
@@ -904,7 +904,7 @@ function initVirtualTour() {
     },
     bed3: {
       title: "Bedroom 3 (Children's / Study Suite)",
-      dim: "12' 0" × 11' 6" · Dual Aspect Daylight",
+      dim: "12 ft × 11.5 ft · Dual Aspect Daylight",
       img: "assets/virtual_tour/wt_fitness_gym.jpg",
       specs: [
         "Generous natural sunlight with cross-ventilation ventilation channels",
@@ -915,7 +915,7 @@ function initVirtualTour() {
     },
     balcony: {
       title: "Panoramic Forest Sky Deck",
-      dim: "14' 0" × 6' 0" · 180° Forest Canopy",
+      dim: "14 ft × 6 ft · 180° Forest Canopy",
       img: "assets/virtual_tour/wt_infinity_pool_deck.jpg",
       specs: [
         "Frameless toughened safety glass railing with SS 316 handrail",
