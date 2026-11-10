@@ -326,7 +326,7 @@ function initForm() {
       `Name: ${name}\nPhone: ${phone}\nInterested in: ${interest}\nPreferred time: ${when}\n\n` +
       `Sent from the Crestview presentation.`;
 
-    window.open(`https://wa.me/917735536906?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    window.open(`https://wa.me/917328089908?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
     showToast('Opening WhatsApp — we will confirm shortly');
   });
 }
@@ -801,7 +801,7 @@ function initCinemaAndBlueprints() {
 
 /* ── MULTI-CHANNEL LEAD FUNNELS & EMI CALCULATOR ─────────────── */
 function initLeadFunnels() {
-  const WHATSAPP_PHONE = "918249690478";
+  const WHATSAPP_PHONE = "917328089908";
 
   // Dispatch Lead helper
   const dispatchLead = (leadType, data) => {
@@ -1159,7 +1159,7 @@ function initFinancialStudio() {
     dispTotalRoiPct.textContent = `+${totalRoiPct.toFixed(1)}%`;
 
     // Update WhatsApp action link
-    const waPhone = "917735536906";
+    const waPhone = "917328089908";
     const waText = encodeURIComponent(
       `Namaste Sai Harmony Finance Desk!\n\nI configured the Financial Studio for *${currentUnitName}*.\n- Unit Price: ${formatCrores(currentPrice)}\n- Loan Amount: ${formatRupees(principal)} (${rangeLoanPct.value}%)\n- Tenure: ${years} Years @ ${annualRate}% p.a.\n- Estimated EMI: ${formatRupees(emi)}/month\n- Projected 5-Year Wealth Gain: +${formatLakhs(totalWealthGain)}\n\nPlease assist me with Nationalized Bank Pre-Approval (SBI/HDFC/ICICI) and VIP priority unit lock.`
     );
