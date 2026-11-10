@@ -738,3 +738,421 @@ function initPriceCalculator() {
 initAmbientAudio();
 initLightbox();
 initPriceCalculator();
+
+
+/* ==========================================================================
+   OFFICIAL BUILDER 3D VIRTUAL TOUR & LEAD FUNNEL CONTROLLER
+   ========================================================================== */
+
+function initVirtualTour() {
+  const modeBtns = document.querySelectorAll('.vtour-btn');
+  const stages = {
+    drone: document.getElementById('stageDrone'),
+    floorplan: document.getElementById('stageFloorplan'),
+    clubhouse: document.getElementById('stageClubhouse')
+  };
+
+  modeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modeBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const targetMode = btn.getAttribute('data-tour-mode');
+
+      Object.entries(stages).forEach(([key, stage]) => {
+        if (!stage) return;
+        if (key === targetMode) {
+          stage.classList.add('is-active');
+        } else {
+          stage.classList.remove('is-active');
+        }
+      });
+    });
+  });
+
+  // Drone Radar Hotspots
+  const radarHotspots = document.querySelectorAll('.radar-hotspot');
+  const hudCard = document.getElementById('droneHudCard');
+  const hudTag = document.getElementById('hudTag');
+  const hudTitle = document.getElementById('hudTitle');
+  const hudDesc = document.getElementById('hudDesc');
+
+  const radarData = {
+    towers: {
+      tag: "Architectural Elevation",
+      title: "Twin Crestview Towers (G+14)",
+      desc: "Earthquake-resistant RCC framed shear-wall structure with unobstructed 270° views across the Chandaka Elephant Reserve forest canopy."
+    },
+    clubhouse: {
+      tag: "Private Club Membership",
+      title: "Club Costa Fantacy (20,000 Sq. Ft.)",
+      desc: "Odisha's most expansive private residential clubhouse featuring double-height lobby, temperature-regulated pool, squash, and fine dining."
+    },
+    pool: {
+      tag: "Forest-Edge Leisure",
+      title: "Infinity Pool & Sky Sundeck",
+      desc: "Suspended azure infinity pool perched over lush green canopy, complete with private cabanas, jacuzzi jets, and kids splash sanctuary."
+    },
+    entrance: {
+      tag: "Access & Security",
+      title: "Grand Entrance & 40ft Boulevard",
+      desc: "Double-height biometric gatehouse with 3-tier perimeter sensors, automated RFID vehicle boom barriers, and illuminated water cascades."
+    },
+    podium: {
+      tag: "Eco-Sanctuary",
+      title: "1.5-Acre Central Podium Greens",
+      desc: "Zero-vehicle podium living with reflexology pathways, sensory aroma gardens, yoga pavilion, and dedicated pet walking boulevard."
+    }
+  };
+
+  radarHotspots.forEach(spot => {
+    spot.addEventListener('click', () => {
+      radarHotspots.forEach(s => s.classList.remove('is-active'));
+      spot.classList.add('is-active');
+      const spotId = spot.getAttribute('data-hotspot');
+      const data = radarData[spotId];
+      if (data && hudCard) {
+        hudCard.style.opacity = '0';
+        hudCard.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+          if (hudTag) hudTag.textContent = data.tag;
+          if (hudTitle) hudTitle.textContent = data.title;
+          if (hudDesc) hudDesc.textContent = data.desc;
+          hudCard.style.opacity = '1';
+          hudCard.style.transform = 'translateY(0)';
+        }, 150);
+      }
+    });
+  });
+
+  // Floor Plan Typology Switcher
+  const planTabBtns = document.querySelectorAll('.plan-tab-btn');
+  const planImg = document.getElementById('vtourPlanImage');
+  const planPaths = {
+    '1845': 'assets/plans/crestview/floor_plan_3bhk_type_101.webp',
+    '1941': 'assets/plans/crestview/floor_plan_3bhk_type_105.webp',
+    '2013': 'assets/plans/crestview/floor_plan_3bhk_type_104_106.webp'
+  };
+
+  planTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      planTabBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const size = btn.getAttribute('data-plan-size');
+      if (planImg && planPaths[size]) {
+        planImg.style.opacity = '0.3';
+        planImg.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+          planImg.src = planPaths[size];
+          planImg.style.opacity = '1';
+          planImg.style.transform = 'scale(1)';
+        }, 200);
+      }
+    });
+  });
+
+  // Room Inspector Pins
+  const roomPins = document.querySelectorAll('.room-pin');
+  const inspTitle = document.getElementById('inspRoomTitle');
+  const inspDim = document.getElementById('inspDimensions');
+  const inspImg = document.getElementById('inspRoomImg');
+  const inspSpecs = document.getElementById('inspSpecsList');
+
+  const roomData = {
+    living: {
+      title: "Expansive Living & Dining Salon",
+      dim: "24' 0" × 13' 6" · Clear Height 11' 0"",
+      img: "assets/virtual_tour/wt_double_height_lobby.jpg",
+      specs: [
+        "Imported Italian marble-finish vitrified flooring (8ft × 4ft slabs)",
+        "Direct floor-to-ceiling glass slider opening to Chandaka forest deck",
+        "Concealed Daikin/Mitsubishi VRV air-conditioning provisions",
+        "Acoustically insulated Saint-Gobain DGU toughened glass"
+      ]
+    },
+    master: {
+      title: "Master Suite & Private Walk-In Wardrobe",
+      dim: "16' 0" × 14' 0" + Walk-In Dresser",
+      img: "assets/virtual_tour/wt_club_facade.jpg",
+      specs: [
+        "Warm laminated German wooden flooring with sound-dampening underlay",
+        "Attached 5-fixture master bathroom with Grohe rain shower & Kohler vanity",
+        "Private corner forest-facing picture window with solar-heat reject tint",
+        "High-speed CAT-6 ethernet & fiber-to-home smart bedside switches"
+      ]
+    },
+    kitchen: {
+      title: "German-Engineered Modular Kitchen",
+      dim: "12' 6" × 9' 0" + Utility Enclosure",
+      img: "assets/virtual_tour/wt_banquet_hall.jpg",
+      specs: [
+        "Quartz stone heat-resistant countertop with dual-bowl Franke sink",
+        "Dedicated piped gas provision & heavy-duty chimney exhaust duct",
+        "Separate 6'0" utility & wet-service balcony for washing & dishwashing",
+        "Water purifier point and anti-skid matte vitrified designer flooring"
+      ]
+    },
+    bed2: {
+      title: "Bedroom 2 (Guest Sanctuary)",
+      dim: "13' 6" × 12' 0" · En-suite Bath",
+      img: "assets/virtual_tour/wt_billiards_lounge.jpg",
+      specs: [
+        "Generous wardrobe recess optimizing carpet area utility",
+        "En-suite designer bathroom with Jaguar/Kohler premium fixtures",
+        "UPVC sliding windows with integrated insect mesh screen",
+        "Concealed copper piping for independent split AC unit"
+      ]
+    },
+    bed3: {
+      title: "Bedroom 3 (Children's / Study Suite)",
+      dim: "12' 0" × 11' 6" · Dual Aspect Daylight",
+      img: "assets/virtual_tour/wt_fitness_gym.jpg",
+      specs: [
+        "Generous natural sunlight with cross-ventilation ventilation channels",
+        "Non-toxic low-VOC paint and antimicrobial flooring surfaces",
+        "Dedicated work-from-home/study nook with multiple universal power ports",
+        "Direct access to adjacent powder room and guest washroom"
+      ]
+    },
+    balcony: {
+      title: "Panoramic Forest Sky Deck",
+      dim: "14' 0" × 6' 0" · 180° Forest Canopy",
+      img: "assets/virtual_tour/wt_infinity_pool_deck.jpg",
+      specs: [
+        "Frameless toughened safety glass railing with SS 316 handrail",
+        "Weatherproof wood-finish ceramic decking with rapid rainwater run-off",
+        "Electrical waterproof sockets for outdoor ambient mood lighting",
+        "Unimpeded panoramic sunsets over Chandaka Reserve green belt"
+      ]
+    }
+  };
+
+  roomPins.forEach(pin => {
+    pin.addEventListener('click', () => {
+      roomPins.forEach(p => p.classList.remove('is-active'));
+      pin.classList.add('is-active');
+      const roomId = pin.getAttribute('data-room');
+      const r = roomData[roomId];
+      if (r) {
+        if (inspTitle) inspTitle.textContent = r.title;
+        if (inspDim) inspDim.textContent = r.dim;
+        if (inspImg) inspImg.src = r.img;
+        if (inspSpecs) {
+          inspSpecs.innerHTML = r.specs.map(s => `<li>${s}</li>`).join('');
+        }
+      }
+    });
+  });
+
+  // Clubhouse Card Click to Open Master Video Lightbox
+  const clubCards = document.querySelectorAll('.vtour__club-card');
+  clubCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const videoTrigger = document.querySelector('[data-video-modal-trigger]');
+      if (videoTrigger) {
+        videoTrigger.click();
+      }
+    });
+  });
+}
+
+/* ── MULTI-CHANNEL LEAD FUNNELS & EMI CALCULATOR ─────────────── */
+function initLeadFunnels() {
+  const WHATSAPP_PHONE = "918249690478";
+
+  // Dispatch Lead helper
+  const dispatchLead = (leadType, data) => {
+    try {
+      const stored = JSON.parse(localStorage.getItem('cf_leads_crm') || '[]');
+      stored.push({
+        id: 'CF-' + Date.now(),
+        type: leadType,
+        timestamp: new Date().toISOString(),
+        ...data
+      });
+      localStorage.setItem('cf_leads_crm', JSON.stringify(stored));
+    } catch (e) {
+      console.warn("Storage error", e);
+    }
+  };
+
+  // 1. Hero Quick Allocation Form
+  const heroQuickForm = document.getElementById('heroQuickForm');
+  if (heroQuickForm) {
+    heroQuickForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = heroQuickForm.querySelector('input[name="name"]')?.value || 'Guest';
+      const phone = heroQuickForm.querySelector('input[name="phone"]')?.value || '';
+      const unit = heroQuickForm.querySelector('select[name="typology"]')?.value || '3 BHK 1,845 sq.ft';
+
+      if (!phone || phone.length < 10) {
+        alert("Please enter a valid 10-digit mobile number for priority allocation.");
+        return;
+      }
+
+      dispatchLead('hero_priority_allocation', { name, phone, unit });
+
+      const msg = `Namaste Sai Harmony Builder Sales!%0A%0AI want to lock direct developer pricing at ₹5,700/sq.ft for Costa Furtune Crestview.%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Mobile:* ${encodeURIComponent(phone)}%0A*Preferred Typology:* ${encodeURIComponent(unit)}%0A*Request:* Priority developer unit allocation & VIP site visit.`;
+      
+      alert(`Thank you, ${name}! Your direct developer priority allocation request has been registered. Connecting you with our Senior Relationship Manager.`);
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank');
+    });
+  }
+
+  // 2. Enquire Funnel Tabs
+  const tabBtns = document.querySelectorAll('.enquire-tab-btn');
+  const tabPanes = document.querySelectorAll('.enquire__tab-pane');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('is-active'));
+      tabPanes.forEach(p => p.classList.remove('is-active'));
+
+      btn.classList.add('is-active');
+      const targetPane = document.getElementById(btn.getAttribute('data-tab'));
+      if (targetPane) targetPane.classList.add('is-active');
+    });
+  });
+
+  // 3. Interactive EMI & Cost Calculator
+  const emiUnitSelect = document.getElementById('emiUnitSelect');
+  const dpSlider = document.getElementById('dpSlider');
+  const dpValDisplay = document.getElementById('dpValDisplay');
+  const tenureSlider = document.getElementById('tenureSlider');
+  const tenureValDisplay = document.getElementById('tenureValDisplay');
+  const intSlider = document.getElementById('intSlider');
+  const intValDisplay = document.getElementById('intValDisplay');
+
+  const emiTotalPrice = document.getElementById('emiTotalPrice');
+  const emiDownPayment = document.getElementById('emiDownPayment');
+  const emiLoanAmount = document.getElementById('emiLoanAmount');
+  const emiMonthly = document.getElementById('emiMonthly');
+  const emiTotalInterest = document.getElementById('emiTotalInterest');
+
+  const formatINR = (val) => '₹ ' + Math.round(val).toLocaleString('en-IN');
+
+  const recalculateEMI = () => {
+    const sba = parseFloat(emiUnitSelect?.value || '1845');
+    const baseRate = 5700;
+    const basePrice = sba * baseRate;
+    // Include 5% GST and standard 1 car parking ₹2,50,000
+    const parking = 250000;
+    const gst = basePrice * 0.05;
+    const allInclusiveCost = basePrice + parking + gst;
+
+    const dpPercent = parseFloat(dpSlider?.value || '20');
+    const tenureYears = parseInt(tenureSlider?.value || '20');
+    const annualRate = parseFloat(intSlider?.value || '8.5');
+
+    if (dpValDisplay) dpValDisplay.textContent = dpPercent + '%';
+    if (tenureValDisplay) tenureValDisplay.textContent = tenureYears + ' Yrs';
+    if (intValDisplay) intValDisplay.textContent = annualRate.toFixed(1) + '%';
+
+    const downPayment = (allInclusiveCost * dpPercent) / 100;
+    const principalLoan = allInclusiveCost - downPayment;
+
+    // EMI formula: P * r * (1+r)^N / ((1+r)^N - 1)
+    const monthlyRate = annualRate / 12 / 100;
+    const totalMonths = tenureYears * 12;
+    const emi = (principalLoan * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+    const totalPayment = emi * totalMonths;
+    const totalInterest = totalPayment - principalLoan;
+
+    if (emiTotalPrice) emiTotalPrice.textContent = formatINR(allInclusiveCost);
+    if (emiDownPayment) emiDownPayment.textContent = formatINR(downPayment);
+    if (emiLoanAmount) emiLoanAmount.textContent = formatINR(principalLoan);
+    if (emiMonthly) emiMonthly.textContent = formatINR(emi) + ' / mo';
+    if (emiTotalInterest) emiTotalInterest.textContent = formatINR(totalInterest);
+  };
+
+  if (emiUnitSelect && dpSlider && tenureSlider && intSlider) {
+    emiUnitSelect.addEventListener('change', recalculateEMI);
+    dpSlider.addEventListener('input', recalculateEMI);
+    tenureSlider.addEventListener('input', recalculateEMI);
+    intSlider.addEventListener('input', recalculateEMI);
+    recalculateEMI();
+  }
+
+  // 4. Download Cost Sheet Form
+  const calcGateForm = document.getElementById('calcGateForm');
+  if (calcGateForm) {
+    calcGateForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = calcGateForm.querySelector('input[name="calc_name"]')?.value || 'Guest';
+      const phone = calcGateForm.querySelector('input[name="calc_phone"]')?.value || '';
+      const unit = emiUnitSelect?.options[emiUnitSelect.selectedIndex]?.text || '3 BHK 1,845 sq.ft';
+      const monthlyEmiVal = emiMonthly?.textContent || '';
+
+      if (!phone || phone.length < 10) {
+        alert("Please enter a valid phone number to receive the official cost sheet.");
+        return;
+      }
+
+      dispatchLead('cost_sheet_download', { name, phone, unit, monthlyEmiVal });
+
+      const msg = `Namaste Sai Harmony!%0A%0APlease send the official itemized cost break-up & payment schedule for Costa Furtune Crestview.%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Unit Typology:* ${encodeURIComponent(unit)}%0A*Est. Monthly EMI:* ${encodeURIComponent(monthlyEmiVal)}`;
+
+      alert(`Official Cost Sheet for ${unit} has been generated! Opening WhatsApp for instant PDF delivery.`);
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank');
+    });
+  }
+
+  // 5. VIP Chauffeur Visit Form
+  const visitForm = document.getElementById('visitForm');
+  if (visitForm) {
+    visitForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = visitForm.querySelector('input[name="visit_name"]')?.value || 'Guest';
+      const phone = visitForm.querySelector('input[name="visit_phone"]')?.value || '';
+      const date = visitForm.querySelector('input[name="visit_date"]')?.value || 'Upcoming Weekend';
+      const pickup = visitForm.querySelector('select[name="pickup_location"]')?.value || 'Direct Site Arrival';
+
+      if (!phone || phone.length < 10) {
+        alert("Please enter a valid phone number to schedule chauffeur pickup.");
+        return;
+      }
+
+      dispatchLead('chauffeur_site_visit', { name, phone, date, pickup });
+
+      const msg = `Namaste Sai Harmony!%0A%0AI would like to book a complimentary VIP Chauffeur-driven site visit to Costa Furtune Crestview, Kantabada.%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Preferred Date:* ${encodeURIComponent(date)}%0A*Pickup Point:* ${encodeURIComponent(pickup)}`;
+
+      alert(`Thank you, ${name}! Your VIP Chauffeur Site Visit booking has been confirmed. Our fleet manager will call you to confirm pickup coordinates.`);
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank');
+    });
+  }
+
+  // 6. NRI Video Concierge Form
+  const nriForm = document.getElementById('nriForm');
+  if (nriForm) {
+    nriForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = nriForm.querySelector('input[name="nri_name"]')?.value || 'Guest';
+      const country = nriForm.querySelector('input[name="nri_country"]')?.value || 'Overseas';
+      const phone = nriForm.querySelector('input[name="nri_phone"]')?.value || '';
+      const platform = nriForm.querySelector('select[name="nri_platform"]')?.value || 'WhatsApp Video';
+
+      if (!phone || phone.length < 8) {
+        alert("Please provide an international phone or WhatsApp number.");
+        return;
+      }
+
+      dispatchLead('nri_concierge_consult', { name, country, phone, platform });
+
+      const msg = `Namaste Sai Harmony NRI Desk!%0A%0AI would like to schedule an exclusive 1-on-1 3D Live Video Walkthrough & NRI Repatriation / Power of Attorney consultation for Costa Furtune Crestview.%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Country/City:* ${encodeURIComponent(country)}%0A*WhatsApp:* ${encodeURIComponent(phone)}%0A*Preferred Channel:* ${encodeURIComponent(platform)}`;
+
+      alert(`Thank you, ${name}! Your NRI Video Concierge session has been registered. Our Global NRI Desk will reach out via ${platform}.`);
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank');
+    });
+  }
+}
+
+// Initialize on DOM load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    initVirtualTour();
+    initLeadFunnels();
+  });
+} else {
+  initVirtualTour();
+  initLeadFunnels();
+}
+
