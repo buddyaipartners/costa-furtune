@@ -1006,13 +1006,19 @@ window.addEventListener('scroll', () => {
   document.documentElement.style.setProperty('--scroll-y', `${scrollY}px`);
 }, { passive: true });
 
-// Ensure ambient hero drone video autoplays on mobile touch
-document.addEventListener('touchstart', function playOnTouch() {
-  const heroVid = document.querySelector('.hero__video-bg');
-  if (heroVid && heroVid.paused) {
-    heroVid.play().catch(() => {});
+// Auto-scroll handler for deep links & hash
+window.addEventListener('load', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const targetId = urlParams.get('scroll') || (window.location.hash ? window.location.hash.substring(1) : null);
+  if (targetId) {
+    const el = document.getElementById(targetId);
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'instant', block: 'start' });
+      }, 60);
+    }
   }
-  document.removeEventListener('touchstart', playOnTouch);
-}, { once: true, passive: true });
+});
+
 
 
