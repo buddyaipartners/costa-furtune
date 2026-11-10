@@ -778,29 +778,29 @@ function initVirtualTour() {
 
   const radarData = {
     towers: {
-      tag: "Architectural Elevation",
-      title: "Twin Crestview Towers (G+14)",
-      desc: "Earthquake-resistant RCC framed shear-wall structure with unobstructed 270° views across the Chandaka Elephant Reserve forest canopy."
+      tag: "Phase 01 · 4.5-Acre Township",
+      title: "Costa Furtune Crestview (144 Flats · B+S+12)",
+      desc: "Total Built-Up Area 2,05,368 sq.ft across G+14 shear-wall towers. 30,785 sq.ft central open space ensuring 60% open cross-ventilation per residence."
     },
     clubhouse: {
-      tag: "Private Club Membership",
-      title: "Club Costa Fantacy (20,000 Sq. Ft.)",
-      desc: "Odisha's most expansive private residential clubhouse featuring double-height lobby, temperature-regulated pool, squash, and fine dining."
+      tag: "Resident Leisure Pavilion",
+      title: "Costa Club Fantacy (10,296 Sq.Ft B.U.A)",
+      desc: "3-level private clubhouse with 2,574 sq.ft open terrace lounge, billiards salon, squash court, banquet hall, and high-tech fitness studio."
     },
     pool: {
-      tag: "Forest-Edge Leisure",
-      title: "Infinity Pool & Sky Sundeck",
-      desc: "Suspended azure infinity pool perched over lush green canopy, complete with private cabanas, jacuzzi jets, and kids splash sanctuary."
+      tag: "Aquatic Sanctuary",
+      title: "Semi-Olympic Swimming Pool (2,650 Sq.Ft)",
+      desc: "2,650 sq.ft crystal swimming pool deck with dedicated kids splash pool, sun loungers, poolside cabanas, and forest canopy views."
     },
     entrance: {
-      tag: "Access & Security",
-      title: "Grand Entrance & 40ft Boulevard",
-      desc: "Double-height biometric gatehouse with 3-tier perimeter sensors, automated RFID vehicle boom barriers, and illuminated water cascades."
+      tag: "Dual Highway Corridor",
+      title: "Chandaka & Khordha Link Boulevard (12.19m Wide)",
+      desc: "12.19-meter wide private access boulevard connecting directly to Chandaka Road & Khordha Highway, 15 minutes to BBI Airport & Infocity."
     },
     podium: {
-      tag: "Eco-Sanctuary",
-      title: "1.5-Acre Central Podium Greens",
-      desc: "Zero-vehicle podium living with reflexology pathways, sensory aroma gardens, yoga pavilion, and dedicated pet walking boulevard."
+      tag: "Township Master Plan",
+      title: "Complete 3-Phase Ecosystem (Horizon & Triplex)",
+      desc: "Costa Furtune Horizon Heights (88 flats, 2,14,212 sq.ft BUA) and Costa Furtune Triplex Villas (24 units) surrounding 30,785 sq.ft landscaped greens."
     }
   };
 
@@ -1155,4 +1155,20 @@ if (document.readyState === 'loading') {
   initVirtualTour();
   initLeadFunnels();
 }
+
+/* ── Ultra-Luxury Parallax Scroll & Autoplay Handler ────────── */
+window.addEventListener('scroll', () => {
+  const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+  document.documentElement.style.setProperty('--scroll-y', `${scrollY}px`);
+}, { passive: true });
+
+// Ensure ambient hero drone video autoplays on mobile touch
+document.addEventListener('touchstart', function playOnTouch() {
+  const heroVid = document.querySelector('.hero__video-bg');
+  if (heroVid && heroVid.paused) {
+    heroVid.play().catch(() => {});
+  }
+  document.removeEventListener('touchstart', playOnTouch);
+}, { once: true, passive: true });
+
 

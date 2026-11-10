@@ -302,10 +302,10 @@
 <!-- ═══════════════════════  00 · HERO  ═══════════════════════ -->
 <section class="section section--hero" data-chapter="0">
   <div class="hero__media">
-    <picture>
-      <source media="(max-width:900px), (orientation:portrait)" srcset="assets/brochure/tower-portrait.webp">
-      <img src="assets/brochure/hero-aerial.webp" alt="Costa Furtune Crestview master township aerial — tower, triplex villas and forest" loading="eager" decoding="async" width="2200" height="1320" />
-    </picture>
+    <video class="hero__video-bg" autoplay muted loop playsinline poster="assets/drone_scenes/drone_township_master_poster.webp">
+      <source src="assets/video/costa-furtune-drone-hero.mp4" type="video/mp4">
+      <img src="assets/drone_scenes/drone_township_master_poster.webp" alt="Costa Furtune Crestview Master Township 4K Drone Aerial View" />
+    </video>
     <div class="hero__media__veil"></div>
   </div>
   <div class="hero__content">
@@ -780,7 +780,7 @@
     <!-- PANE 1: OUTER DRONE RADAR TOUR -->
     <div class="vtour__pane is-active" id="paneDroneTour">
       <div class="vtour__drone-stage">
-        <video class="vtour__drone-video" id="vtourDroneVideo" src="assets/video/costa-furtune-master-cinematic.mp4" autoplay loop muted playsinline></video>
+        <video class="vtour__drone-video" id="vtourDroneVideo" src="assets/video/costa-furtune-drone-hero.mp4" poster="assets/drone_scenes/drone_township_master_poster.webp" autoplay loop muted playsinline></video>
         <div class="vtour__drone-overlay"></div>
         
         <!-- RADAR HOTSPOTS ON DRONE VIEW -->
@@ -933,7 +933,16 @@
         <button type="button" class="btn btn--gold" id="btnOpenClubhouseVideo">Play 45s Walkthrough Film</button>
       </div>
 
-      <div class="vtour__club-grid">
+          <!-- CLUB FANTACY WALKTHROUGH VIDEO STAGE -->
+    <div class="vtour__club-featured-video" style="margin-bottom:28px; border-radius:16px; overflow:hidden; border:1px solid rgba(212,175,55,0.3); background:#060d08; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
+      <div style="padding:14px 20px; background:linear-gradient(90deg, #111B14 0%, #1D2A20 100%); display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(212,175,55,0.2);">
+        <strong style="color:#D4AF37; font-size:14px; letter-spacing:0.04em;">✦ CLUB COSTA FANTACY &middot; 20,000 SQ.FT ARCHITECTURAL WALKTHROUGH</strong>
+        <span style="font-size:11px; color:#989F7C; text-transform:uppercase; letter-spacing:0.08em; font-weight:600;">Official Master Video</span>
+      </div>
+      <video id="clubFantacyVideoPlayer" src="assets/video/costa-furtune-club-fantacy-walkthrough.mp4" poster="assets/phases/club-costa-fantasy-official.webp" controls playsinline style="width:100%; aspect-ratio:16/9; display:block; background:#000;"></video>
+    </div>
+
+    <div class="vtour__club-grid">
         <figure class="club-card" data-full="assets/virtual_tour/wt_double_height_lobby.jpg">
           <img src="assets/virtual_tour/wt_double_height_lobby.jpg" alt="Double-height reception lobby" loading="lazy" />
           <figcaption><b>Level 0:</b> Grand Double-Height Welcome Foyer</figcaption>
@@ -1404,7 +1413,7 @@
       <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
         <span class="video-modal__title" id="videoModalTitle">Costa Furtune · 31s Drone Aerial Flight</span>
         <div class="video-tabs" style="display:flex; gap:6px;">
-          <button type="button" class="btn-video-tab is-active" data-src="assets/video/costa-furtune-master-cinematic.mp4" data-title="Costa Furtune · 31s Drone Aerial Flight" style="padding:5px 12px; font-family:var(--ui); font-size:9px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--gold); background:rgba(184,145,75,0.18); color:var(--gold-3); cursor:pointer;">🎥 Drone Flight · 31s</button>
+          <button type="button" class="btn-video-tab is-active" data-src="assets/video/costa-furtune-drone-hero.mp4" poster="assets/drone_scenes/drone_township_master_poster.webp" data-title="Costa Furtune · 31s Drone Aerial Flight" style="padding:5px 12px; font-family:var(--ui); font-size:9px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--gold); background:rgba(184,145,75,0.18); color:var(--gold-3); cursor:pointer;">🎥 Drone Flight · 31s</button>
           <button type="button" class="btn-video-tab" data-src="assets/video/costa-furtune-master-walkthrough.mp4" data-title="Costa Furtune · 45s Architectural Walkthrough &amp; Club Fantacy" style="padding:5px 12px; font-family:var(--ui); font-size:9px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--line-2); background:transparent; color:var(--muted); cursor:pointer;">🏛️ Walkthrough &amp; Club Fantacy · 45s</button>
         </div>
       </div>
@@ -1414,7 +1423,7 @@
       </div>
     </div>
     <div class="video-modal__frame">
-      <video id="masterVideoPlayer" src="assets/video/costa-furtune-master-cinematic.mp4" controls preload="metadata"></video>
+      <video id="masterVideoPlayer" src="assets/video/costa-furtune-drone-hero.mp4" poster="assets/drone_scenes/drone_township_master_poster.webp" controls preload="metadata"></video>
     </div>
   </div>
 </div>
