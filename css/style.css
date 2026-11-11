@@ -2276,7 +2276,7 @@ html, body{ overflow-x:clip; }
     position:absolute;
     inset:0;
     z-index:2;
-    background:linear-gradient(180deg, rgba(10,18,13,0.45) 0%, rgba(10,18,13,0.72) 45%, rgba(10,18,13,0.95) 90%, #0A120D 100%) !important;
+    background:linear-gradient(180deg, rgba(10,18,13,0.25) 0%, rgba(10,18,13,0.38) 45%, rgba(10,18,13,0.65) 90%, #0A120D 100%) !important;
   }
   .hero__content{
     position:relative;
@@ -3668,7 +3668,7 @@ html, body{ overflow-x:clip; }
 .hero__media__veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 18, 13, 0.40) 0%, rgba(10, 18, 13, 0.68) 55%, #080C10 100%);
+  background: linear-gradient(180deg, rgba(10, 18, 13, 0.20) 0%, rgba(10, 18, 13, 0.38) 55%, rgba(8, 12, 16, 0.70) 100%);
   z-index: 2;
   pointer-events: none;
 }
