@@ -17,7 +17,7 @@ j=d.createElement(s),dl=l!='&l'?'&l='+l:'';j.async=true;j.src=
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="is-ready">
+<body class="is-ready at-hero" style="background:#070E09; color:#FAF8F5;">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLR2TVT5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -43,7 +43,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="index.html#verification">Verification</a>
   </nav>
 
-  <a class="btn btn--primary nav__cta" href="#enquire">Book Site Visit</a>
+  <a class="btn btn-lux-primary nav__cta" href="#enquire" style="padding:10px 20px; font-size:11px;">Book VIP Visit</a>
   <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open navigation menu">
     <span></span><span></span><span></span><em>Menu</em>
   </button>
@@ -84,178 +84,225 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <main id="top">
 
-<section class="section section--hero">
-  <div class="hero__media">
+<section class="section section--hero" style="min-height:92svh; display:flex; flex-direction:column; justify-content:center; padding:150px var(--gutter) 60px; position:relative; overflow:hidden;">
+  <div class="hero__media" style="position:absolute; inset:0; z-index:1;">
     <picture>
       <source media="(max-width:900px), (orientation:portrait)" srcset="assets/phases/costa-triplex-isometric.webp">
-      <img src="assets/phases/costa-triplex-row.webp" alt="Costa Fortune Triplex villa row, Phase 1 of the master township" loading="eager" decoding="async" width="1323" height="929" />
+      <img src="assets/phases/costa-triplex-elevation-day.webp" alt="Costa Fortune Triplex delivered villa elevation" loading="eager" decoding="async" width="1323" height="929" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;" />
     </picture>
-    <div class="hero__media__veil"></div>
+    <div class="hero__media__veil" style="position:absolute; inset:0; z-index:2; background:linear-gradient(180deg, rgba(7,14,9,0.72) 0%, rgba(7,14,9,0.50) 45%, rgba(7,14,9,0.85) 90%, #070E09 100%) !important;"></div>
   </div>
 
-  <div class="hero__content">
-    <p class="eyebrow" data-reveal><span class="eyebrow__rule"></span>Phase 1 &middot; Delivered &middot; ORERA RP/19/2023/00854</p>
-    <h1 class="hero__title" data-reveal data-reveal-delay="80">
-      <span class="hero__line">Costa</span>
-<span class="hero__line hero__line--accent">Fortune</span>
-<span class="hero__line hero__line--small">Triplex Villas</span>
+  <div class="hero__content" style="position:relative; z-index:3; max-width:1000px;">
+    <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 16px; border-radius:999px; background:rgba(212,175,55,0.18); border:1px solid rgba(212,175,55,0.5); margin-bottom:18px; backdrop-filter:blur(10px);">
+      <span style="font-size:11px; font-family:var(--ui); font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#D4AF37;">👑 Phase 1 &middot; Delivered &middot; ORERA RP/19/2023/00854</span>
+    </div>
+
+    <h1 class="hero__title" style="margin-bottom:18px; text-shadow:0 4px 28px rgba(0,0,0,0.85);">
+      <span class="hero__line" style="color:#FAF8F5;">Costa</span>
+      <span class="hero__line hero__line--accent" style="color:#D4AF37;">Fortune</span>
+      <span class="hero__line hero__line--small" style="color:#E5C368; letter-spacing:0.3em;">Triplex Villas</span>
     </h1>
-    <p class="hero__sub" data-reveal data-reveal-delay="180">The delivered G+2 villa enclave &mdash; <strong>100% sold out and handed over</strong>. Owner resale and waitlist enquiries are handled directly by the promoter desk.</p>
-    <div class="hero__meta" data-reveal data-reveal-delay="240">
-      <span>Phase 1 &middot; Handed Over</span>
-      <span class="dot"></span>
-      <span>G + 2 Villas</span>
-      <span class="dot"></span>
-      <span>ORERA RP/19/2023/00854</span>
-    </div>
-    <div class="hero__actions" data-reveal data-reveal-delay="300">
-      <a class="btn btn--gold" href="#resale">Resale &amp; Waitlist Desk</a>
-      <a class="btn btn--ghost" href="index.html#township">See All 3 Phases</a>
-    </div>
-  </div>
 
-  <div class="hero__foot">
-    <div class="hero__scroll">
-      <span class="hero__scroll-line"></span>
-      <span>Scroll to explore</span>
+    <p class="hero__sub" style="font-size:19px; line-height:1.6; color:#EDE8DF; text-shadow:0 2px 14px rgba(0,0,0,0.8); max-width:620px; margin-bottom:28px;">
+      The delivered G+2 luxury villa enclave &mdash; <strong style="color:#F8D98C;">100% sold out and handed over</strong>. Owner resale, secondary transfers, and waitlist allocations are handled directly by the developer desk.
+    </p>
+
+    <div class="hero__meta" style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:30px;">
+      <span style="padding:7px 16px; border-radius:999px; background:rgba(10,18,13,0.75); border:1px solid rgba(212,175,55,0.35); color:#FAF8F5; font-size:11.5px; font-family:var(--ui); font-weight:600;">Phase 1 &middot; Handed Over</span>
+      <span style="padding:7px 16px; border-radius:999px; background:rgba(10,18,13,0.75); border:1px solid rgba(212,175,55,0.35); color:#FAF8F5; font-size:11.5px; font-family:var(--ui); font-weight:600;">G + 2 Independent Living</span>
+      <span style="padding:7px 16px; border-radius:999px; background:rgba(10,18,13,0.75); border:1px solid rgba(212,175,55,0.35); color:#FAF8F5; font-size:11.5px; font-family:var(--ui); font-weight:600;">ORERA RP/19/2023/00854</span>
+      <span style="padding:7px 16px; border-radius:999px; background:rgba(10,18,13,0.75); border:1px solid rgba(212,175,55,0.35); color:#FAF8F5; font-size:11.5px; font-family:var(--ui); font-weight:600;">2,530 Sq. Ft. Typology</span>
+    </div>
+
+    <div class="hero__actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+      <a class="btn btn-lux-primary" href="#enquire" style="padding:13px 26px;">
+        🏛️ Resale &amp; Waitlist Register &rarr;
+      </a>
+      <button type="button" class="btn btn-lux-gold btn-brochure" onclick="openBrochureGate('assets/brochure/costa-furtune-crestview-official.pdf', 'Costa-Furtune-Phase1-Triplex-Official-Brochure.pdf', 'Costa Fortune Triplex')" style="padding:13px 24px; cursor:pointer;">
+        📄 Official Brochure PDF
+      </button>
+      <a class="btn btn-lux-outline" href="index.html#township">
+        See All 3 Phases
+      </a>
     </div>
   </div>
 </section>
 
-<section class="section section--split">
-  <div class="split">
-    <div class="panel panel--left" data-reveal>
-      <p class="label"><span>01</span> Delivered Architecture</p>
-      <h2 class="display">Built. Handed over.<br /><em>Still the benchmark.</em></h2>
-      <p class="lede">Phase 1 set the standard for the township: a row of G+2 triplex villas with private terraces, individual entries and a shared landscaped spine.</p>
-      <p class="body">Because the enclave is complete, everything about it can be inspected in person rather than imagined &mdash; the plaster, the joinery, the drainage, the finish. That is the advantage of buying into a delivered phase.</p>
-      <dl class="stats">
-        <div class="stat"><dt>G+2</dt><dd>Villa configuration</dd></div>
-        <div class="stat"><dt>100%</dt><dd>Sold out &amp; handed over</dd></div>
-        <div class="stat"><dt>RERA</dt><dd>RP/19/2023/00854</dd></div>
-        <div class="stat"><dt>Phase 1</dt><dd>Of three</dd></div>
+<!-- ═══════════════════════  01 · DELIVERED ARCHITECTURE  ═══════════════════════ -->
+<section class="section section--split" style="background:#070E09; padding:90px 24px; border-top:1px solid rgba(212,175,55,0.2);">
+  <div class="split" style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:48px; align-items:center;">
+    <div class="panel panel--left" style="background:#0D1711; border:1px solid rgba(212,175,55,0.3); border-radius:12px; padding:clamp(28px, 4vw, 46px); box-shadow:0 24px 60px rgba(0,0,0,0.6);">
+      <p class="label" style="color:#D4AF37; margin-bottom:16px;"><span>01</span> Delivered Architecture</p>
+      <h2 class="display" style="color:#FAF8F5; font-size:clamp(32px, 3.4vw, 46px); line-height:1.15; margin-bottom:18px;">Built. Handed over.<br /><em style="color:#E5C368;">Still the benchmark.</em></h2>
+      <p class="lede" style="color:#D8D2C4; font-size:16px; line-height:1.75; margin-bottom:16px;">
+        Phase 1 set the structural standard for the entire Costa Furtune master township: an elegant row of G+2 triplex villas featuring private open-air terraces, individual vehicle porches, and an integrated central landscaped spine.
+      </p>
+      <p class="body" style="color:#A39E93; font-size:14.5px; line-height:1.75; margin-bottom:28px;">
+        Because the enclave is fully delivered, every element can be verified in person on site &mdash; the plaster finish, solid joinery, storm water drainage, and structural longevity. That is the tangible trust of a promoter with a completed track record.
+      </p>
+      <dl class="stats" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; border-top:1px solid rgba(212,175,55,0.25); padding-top:20px;">
+        <div class="stat"><dt style="color:#D4AF37; font-family:var(--serif); font-size:28px; font-weight:700;">G+2</dt><dd style="color:#FAF8F5; font-size:12px; font-family:var(--ui); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">Villa configuration</dd></div>
+        <div class="stat"><dt style="color:#0E873D; font-family:var(--serif); font-size:28px; font-weight:700;">100%</dt><dd style="color:#FAF8F5; font-size:12px; font-family:var(--ui); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">Sold out &amp; handed over</dd></div>
+        <div class="stat"><dt style="color:#D4AF37; font-family:var(--serif); font-size:24px; font-weight:700;">RP/19/2023</dt><dd style="color:#FAF8F5; font-size:12px; font-family:var(--ui); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">ORERA Registered /00854</dd></div>
+        <div class="stat"><dt style="color:#E5C368; font-family:var(--serif); font-size:28px; font-weight:700;">Phase 1</dt><dd style="color:#FAF8F5; font-size:12px; font-family:var(--ui); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">Of 3 Enclave Phases</dd></div>
       </dl>
-      
     </div>
 
-    <figure class="split__media" data-reveal data-reveal-delay="120">
-      <img src="assets/phases/costa-triplex-elevation-day.webp" alt="Costa Fortune Triplex villa elevation in daylight" loading="lazy" decoding="async" width="1323" height="929" />
-      <figcaption><span>Phase 1 &middot; Delivered</span>G + 2 triplex villas, day elevation</figcaption>
+    <figure class="split__media" style="position:relative; overflow:hidden; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow:0 24px 60px rgba(0,0,0,0.6);">
+      <img src="assets/phases/costa-triplex-elevation-day.webp" alt="Costa Fortune Triplex villa elevation in daylight" loading="lazy" decoding="async" width="1323" height="929" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      <figcaption style="position:absolute; left:0; right:0; bottom:0; padding:16px 20px; background:linear-gradient(0deg, rgba(7,14,9,0.92) 0%, rgba(7,14,9,0) 100%); color:#FAF8F5; font-family:var(--ui); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">
+        <span style="color:#D4AF37; font-weight:700;">Phase 1 &middot; Delivered &middot;</span> G + 2 triplex villas, day elevation
+      </figcaption>
     </figure>
   </div>
 </section>
 
-<section class="section section--wide">
-  <div class="wide__head" data-reveal>
-    <p class="label"><span>02</span> Villa Architecture</p>
-    <h2 class="display">The plans, as built.<br /><em>Not as rendered.</em></h2>
-    <p class="lede lede--center">Drawings and isometrics of the delivered villa typology, taken from the Phase 1 documentation.</p>
+<!-- ═══════════════════════  02 · VILLA ARCHITECTURE & PLANS  ═══════════════════════ -->
+<section class="section section--wide" style="background:#0B121A; padding:90px 24px; border-top:1px solid rgba(212,175,55,0.25); border-bottom:1px solid rgba(212,175,55,0.25);">
+  <div class="wide__head" style="text-align:center; max-width:880px; margin:0 auto 50px;">
+    <p class="label" style="justify-content:center; color:#D4AF37;"><span>02</span> Villa Architecture</p>
+    <h2 class="display" style="color:#FAF8F5; font-size:clamp(32px, 3.8vw, 44px); line-height:1.15;">The plans, as built.<br /><em style="color:#E5C368;">Not as rendered.</em></h2>
+    <p class="lede lede--center" style="color:#A39E93; font-size:16px;">
+      Authentic technical drawings, floor plates, and isometric renderings of the delivered 2,530 sq. ft. villa typology, filed with ORERA.
+    </p>
   </div>
 
-  <div class="gallery" data-reveal data-reveal-delay="0">
-    <figure class="gallery__item gallery__item--wide">
-      <img src="assets/phases/costa-triplex-isometric.webp" alt="Costa Fortune Triplex isometric view of villa cluster" loading="lazy" decoding="async" width="1323" height="929" />
-      <figcaption><span>01</span>Villa Cluster &middot; Isometric</figcaption>
+  <div class="gallery" style="max-width:1240px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
+    <figure class="gallery__item" style="background:#070E09; border:1px solid rgba(212,175,55,0.3); border-radius:10px; overflow:hidden;">
+      <div style="background:#000; padding:8px;">
+        <img src="assets/phases/costa-triplex-isometric.webp" alt="Costa Fortune Triplex isometric view of villa cluster" loading="lazy" decoding="async" width="1323" height="929" style="width:100%; height:220px; object-fit:cover;" />
+      </div>
+      <figcaption style="padding:14px 18px; color:#FAF8F5; font-family:var(--ui); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">
+        <span style="color:#D4AF37; font-weight:700;">Plate 01 &middot;</span> Villa Cluster Isometric
+      </figcaption>
     </figure>
-    <figure class="gallery__item">
-      <img src="assets/phases/costa-triplex-row.webp" alt="Costa Fortune Triplex villa row elevation" loading="lazy" decoding="async" width="1323" height="929" />
-      <figcaption><span>02</span>The Villa Row</figcaption>
+
+    <figure class="gallery__item" style="background:#070E09; border:1px solid rgba(212,175,55,0.3); border-radius:10px; overflow:hidden;">
+      <div style="background:#000; padding:8px;">
+        <img src="assets/phases/costa-triplex-row.webp" alt="Costa Fortune Triplex villa row elevation" loading="lazy" decoding="async" width="1323" height="929" style="width:100%; height:220px; object-fit:cover;" />
+      </div>
+      <figcaption style="padding:14px 18px; color:#FAF8F5; font-family:var(--ui); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">
+        <span style="color:#D4AF37; font-weight:700;">Plate 02 &middot;</span> The Villa Boulevard
+      </figcaption>
     </figure>
-    <figure class="gallery__item">
-      <img src="assets/phases/costa-triplex-floorplan-2530.webp" alt="Costa Fortune Triplex villa floor plan" loading="lazy" decoding="async" width="1323" height="929" />
-      <figcaption><span>03</span>Villa Floor Plate</figcaption>
+
+    <figure class="gallery__item" style="background:#070E09; border:1px solid rgba(212,175,55,0.3); border-radius:10px; overflow:hidden;">
+      <div style="background:#000; padding:8px;">
+        <img src="assets/phases/costa-triplex-floorplan-2530.webp" alt="Costa Fortune Triplex villa floor plan" loading="lazy" decoding="async" width="1323" height="929" style="width:100%; height:220px; object-fit:cover;" />
+      </div>
+      <figcaption style="padding:14px 18px; color:#FAF8F5; font-family:var(--ui); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">
+        <span style="color:#D4AF37; font-weight:700;">Plate 03 &middot;</span> 2,530 Sq. Ft. Villa Floor Plate
+      </figcaption>
     </figure>
-    <figure class="gallery__item">
-      <img src="assets/phases/phase2-triplex-villas.webp" alt="Triplex villas within the master township" loading="lazy" decoding="async" width="1323" height="929" />
-      <figcaption><span>04</span>Within the Master Plan</figcaption>
+
+    <figure class="gallery__item" style="background:#070E09; border:1px solid rgba(212,175,55,0.3); border-radius:10px; overflow:hidden;">
+      <div style="background:#000; padding:8px;">
+        <img src="assets/phases/phase2-triplex-villas.webp" alt="Triplex villas within the master township" loading="lazy" decoding="async" width="1323" height="929" style="width:100%; height:220px; object-fit:cover;" />
+      </div>
+      <figcaption style="padding:14px 18px; color:#FAF8F5; font-family:var(--ui); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">
+        <span style="color:#D4AF37; font-weight:700;">Plate 04 &middot;</span> Master Township Integration
+      </figcaption>
     </figure>
   </div>
 </section>
 
-<section class="section section--split">
-  <div class="split">
-    <figure class="split__media" data-reveal data-reveal-delay="120">
-      <img src="assets/phases/phase2-triplex-villas.webp" alt="Triplex villas seen within the wider master township" loading="lazy" decoding="async" width="1323" height="929" />
-      <figcaption><span>Phase 1 &middot; Delivered</span>Triplex enclave within the master township</figcaption>
+<!-- ═══════════════════════  03 · PROMOTER RESALE DESK  ═══════════════════════ -->
+<section class="section section--split" style="background:#070E09; padding:90px 24px;">
+  <div class="split" style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:48px; align-items:center;">
+    <figure class="split__media" style="position:relative; overflow:hidden; border-radius:12px; border:1px solid rgba(212,175,55,0.3); box-shadow:0 24px 60px rgba(0,0,0,0.6);">
+      <img src="assets/phases/phase2-triplex-villas.webp" alt="Triplex villas seen within the wider master township" loading="lazy" decoding="async" width="1323" height="929" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      <figcaption style="position:absolute; left:0; right:0; bottom:0; padding:16px 20px; background:linear-gradient(0deg, rgba(7,14,9,0.92) 0%, rgba(7,14,9,0) 100%); color:#FAF8F5; font-family:var(--ui); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">
+        <span style="color:#D4AF37; font-weight:700;">Delivered Enclave &middot;</span> Triplex rows bordering Central Park
+      </figcaption>
     </figure>
-    <div class="panel panel--right" data-reveal>
-      <p class="label"><span>03</span> The Resale Desk</p>
-      <h2 class="display">Sold out once.<br /><em>Occasionally available again.</em></h2>
-      <p class="lede">The developer holds no primary inventory in Phase 1. What moves is owner resale, and it moves quietly.</p>
-      <p class="body">We register interest and call in order. There is no brokerage on a promoter-handled resale, and every transaction is checked against the original ORERA allotment before it is offered.</p>
-      <dl class="stats">
-        <div class="stat"><dt>0</dt><dd>Primary units left</dd></div>
-        <div class="stat"><dt>Direct</dt><dd>Promoter-handled resale</dd></div>
-        <div class="stat"><dt>No fee</dt><dd>Zero brokerage</dd></div>
-        <div class="stat"><dt>Verified</dt><dd>Against ORERA allotment</dd></div>
+
+    <div class="panel panel--right" style="background:#0D1711; border:1px solid rgba(212,175,55,0.3); border-radius:12px; padding:clamp(28px, 4vw, 46px); box-shadow:0 24px 60px rgba(0,0,0,0.6);">
+      <p class="label" style="color:#D4AF37; margin-bottom:16px;"><span>03</span> The Resale Desk</p>
+      <h2 class="display" style="color:#FAF8F5; font-size:clamp(32px, 3.4vw, 46px); line-height:1.15; margin-bottom:18px;">Sold out once.<br /><em style="color:#E5C368;">Occasionally available again.</em></h2>
+      <p class="lede" style="color:#D8D2C4; font-size:16px; line-height:1.75; margin-bottom:16px;">
+        Sai Harmony Pvt. Ltd. holds zero primary inventory in Phase 1. What transacts is secondary owner resales, and they move quietly through registered interest.
+      </p>
+      <p class="body" style="color:#A39E93; font-size:14.5px; line-height:1.75; margin-bottom:28px;">
+        We maintain the official owner resale waiting register and contact verified buyers in sequential order. Zero brokerage is charged on promoter-handled transfers, and all documents are cross-verified against original ORERA allotments before closure.
+      </p>
+      <dl class="stats" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; border-top:1px solid rgba(212,175,55,0.25); padding-top:20px;">
+        <div class="stat"><dt style="color:#D4AF37; font-family:var(--serif); font-size:28px; font-weight:700;">0</dt><dd style="color:#FAF8F5; font-size:12px; font-family:var(--ui); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">Primary units left</dd></div>
+        <div class="stat"><dt style="color:#0E873D; font-family:var(--serif); font-size:24px; font-weight:700;">Direct</dt><dd style="color:#FAF8F5; font-size:12px; font-family:var(--ui); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">Promoter-handled transfer</dd></div>
+        <div class="stat"><dt style="color:#D4AF37; font-family:var(--serif); font-size:28px; font-weight:700;">₹0</dt><dd style="color:#FAF8F5; font-size:12px; font-family:var(--ui); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">Zero Brokerage Fee</dd></div>
+        <div class="stat"><dt style="color:#E5C368; font-family:var(--serif); font-size:24px; font-weight:700;">100%</dt><dd style="color:#FAF8F5; font-size:12px; font-family:var(--ui); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">ORERA Verified Allotment</dd></div>
       </dl>
-      
     </div>
   </div>
 </section>
 
-<section class="section section--enquire" id="enquire">
-  <div class="enquire" data-reveal>
-    <aside class="enquire__aside">
-      <figure class="enquire__media">
-        <img src="assets/phases/costa-triplex-elevation-day.webp" alt="Costa Fortune Triplex villa elevation" loading="lazy" decoding="async" width="1323" height="929" />
-        <figcaption><span>Phase 1 &middot; Delivered</span>G+2 &middot; 100% sold out</figcaption>
+<!-- ═══════════════════════  04 · VIP RESALE REGISTER  ═══════════════════════ -->
+<section class="section section--enquire" id="enquire" style="background:#050B07; padding:90px 24px; border-top:1px solid rgba(212,175,55,0.25);">
+  <div class="enquire" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:40px; align-items:flex-start;">
+    <aside class="enquire__aside" style="background:#0D1711; border:1px solid rgba(212,175,55,0.3); border-radius:12px; padding:28px; box-shadow:0 20px 50px rgba(0,0,0,0.5);">
+      <figure class="enquire__media" style="margin:0 0 20px; border-radius:8px; overflow:hidden; border:1px solid rgba(212,175,55,0.25);">
+        <img src="assets/phases/costa-triplex-elevation-day.webp" alt="Costa Fortune Triplex villa elevation" loading="lazy" decoding="async" width="1323" height="929" style="width:100%; height:200px; object-fit:cover; display:block;" />
+        <figcaption style="padding:10px 14px; background:rgba(7,14,9,0.95); color:#FAF8F5; font-family:var(--ui); font-size:10px; letter-spacing:0.1em; text-transform:uppercase;">
+          <span style="color:#D4AF37; font-weight:700;">Phase 1 &middot; Delivered &middot;</span> 100% Handed Over
+        </figcaption>
       </figure>
-      <ul class="enquire__facts">
-        <li><b>ORERA</b><span>RP/19/2023/00854</span></li>
-        <li><b>Status</b><span>Delivered &amp; handed over</span></li>
-        <li><b>Promoter</b><span>Sai Harmony Pvt. Ltd.</span></li>
+      <ul class="enquire__facts" style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:12px; font-size:13px; border-bottom:1px solid rgba(212,175,55,0.2); padding-bottom:16px;">
+        <li style="display:flex; justify-content:space-between;"><b style="color:#D4AF37;">ORERA Registration</b><span style="color:#FAF8F5;">RP/19/2023/00854</span></li>
+        <li style="display:flex; justify-content:space-between;"><b style="color:#D4AF37;">Current Status</b><span style="color:#0E873D; font-weight:600;">Delivered &amp; Handed Over</span></li>
+        <li style="display:flex; justify-content:space-between;"><b style="color:#D4AF37;">Master Developer</b><span style="color:#FAF8F5;">Sai Harmony Pvt. Ltd.</span></li>
+        <li style="display:flex; justify-content:space-between;"><b style="color:#D4AF37;">Transfer Mode</b><span style="color:#FAF8F5;">Owner Resale Waitlist</span></li>
       </ul>
-      <blockquote class="enquire__quote">
-        &ldquo;Every number on this page is traceable to an ORERA filing.&rdquo;
-        <cite>&mdash; Sai Harmony Pvt. Ltd.</cite>
+      <blockquote class="enquire__quote" style="margin:0; font-family:var(--serif); font-style:italic; font-size:14px; color:#EDE8DF; line-height:1.6; border-left:3px solid #D4AF37; padding-left:14px;">
+        &ldquo;Every transaction in Costa Fortune Triplex is strictly verified against original ORERA records before release.&rdquo;
+        <cite style="display:block; margin-top:8px; font-family:var(--ui); font-size:11px; font-style:normal; color:#D4AF37; text-transform:uppercase; letter-spacing:0.1em;">&mdash; Sai Harmony Promoter Desk</cite>
       </blockquote>
     </aside>
 
-    <div class="enquire__panel">
-      <p class="label"><span>04</span> VIP Consultation</p>
-      <h2 class="display">Join the<br /><em>Resale Register.</em></h2>
-      <p class="lede">Tell us the configuration and budget you are tracking. We call in registration order when an owner release is verified.</p>
+    <div class="enquire__panel" style="background:#0D1711; border:1px solid rgba(212,175,55,0.3); border-radius:12px; padding:clamp(28px, 4vw, 42px); box-shadow:0 24px 60px rgba(0,0,0,0.6);">
+      <p class="label" style="color:#D4AF37; margin-bottom:14px;"><span>04</span> VIP Consultation</p>
+      <h2 class="display" style="color:#FAF8F5; font-size:clamp(28px, 3.2vw, 38px); line-height:1.2; margin-bottom:14px;">Join the<br /><em style="color:#E5C368;">Resale Register.</em></h2>
+      <p class="lede" style="color:#D8D2C4; font-size:15px; line-height:1.65; margin-bottom:24px;">
+        Tell us your budget and requirements. We reach out in sequential registration order when an owner resale is confirmed.
+      </p>
 
-      <form class="form" id="enquiryForm" novalidate>
-        <div class="field">
-          <label for="name">Full Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required placeholder="e.g. Dr. Ashok Kumar Mohapatra" />
+      <form class="form" id="enquiryForm" novalidate style="display:flex; flex-direction:column; gap:16px;">
+        <div class="field" style="display:flex; flex-direction:column; gap:6px;">
+          <label for="name" style="color:#D4AF37; font-family:var(--ui); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Full Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required placeholder="e.g. Dr. Ashok Kumar Mohapatra" style="background:rgba(255,255,255,0.06); border:1px solid rgba(212,175,55,0.4); border-radius:8px; padding:12px 14px; color:#FAF8F5; font-size:14px;" />
         </div>
-        <div class="field">
-          <label for="phone">WhatsApp / Mobile</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+91 98765 43210" />
+        <div class="field" style="display:flex; flex-direction:column; gap:6px;">
+          <label for="phone" style="color:#D4AF37; font-family:var(--ui); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">WhatsApp / Mobile</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+91 73280 89908" style="background:rgba(255,255,255,0.06); border:1px solid rgba(212,175,55,0.4); border-radius:8px; padding:12px 14px; color:#FAF8F5; font-size:14px;" />
         </div>
-        <div class="field">
-          <label for="interest">Requirement</label>
-          <select id="interest" name="interest">
-          <option>Phase 1 Triplex &mdash; resale register</option>
-          <option>Phase 1 Triplex &mdash; rental enquiry</option>
-          <option>Phase 2 Crestview &mdash; 3 BHK</option>
-          <option>Phase 3 Horizon Heights &mdash; EOI</option>
+        <div class="field" style="display:flex; flex-direction:column; gap:6px;">
+          <label for="interest" style="color:#D4AF37; font-family:var(--ui); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Requirement</label>
+          <select id="interest" name="interest" style="background:#070E09; border:1px solid rgba(212,175,55,0.4); border-radius:8px; padding:12px 14px; color:#FAF8F5; font-size:14px;">
+            <option value="Phase 1 Triplex — resale register">Phase 1 Triplex &mdash; Resale Register (Villas)</option>
+            <option value="Phase 1 Triplex — rental enquiry">Phase 1 Triplex &mdash; Rental Enquiry</option>
+            <option value="Phase 2 Crestview — 3 BHK">Phase 2 Crestview &mdash; 3 BHK High-Rise (from ₹5,700/sqft)</option>
+            <option value="Phase 3 Horizon Heights — EOI">Phase 3 Horizon Heights &mdash; Twin Towers &amp; Duplex Penthouse</option>
           </select>
         </div>
-        <div class="field">
-          <label for="when">Preferred Visit Timing</label>
-          <select id="when" name="when">
-            <option>This Weekend (Saturday/Sunday)</option>
-            <option>Weekday Morning (10 AM - 1 PM)</option>
-            <option>Weekday Afternoon (2 PM - 5 PM)</option>
-            <option>Direct Call / Video Walkthrough</option>
+        <div class="field" style="display:flex; flex-direction:column; gap:6px;">
+          <label for="when" style="color:#D4AF37; font-family:var(--ui); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Preferred Visit Timing</label>
+          <select id="when" name="when" style="background:#070E09; border:1px solid rgba(212,175,55,0.4); border-radius:8px; padding:12px 14px; color:#FAF8F5; font-size:14px;">
+            <option value="This Weekend (Saturday/Sunday)">This Weekend (Saturday/Sunday)</option>
+            <option value="Weekday Morning (10 AM - 1 PM)">Weekday Morning (10 AM - 1 PM)</option>
+            <option value="Weekday Afternoon (2 PM - 5 PM)">Weekday Afternoon (2 PM - 5 PM)</option>
+            <option value="Direct Call / Video Walkthrough">Direct Call / Video Walkthrough</option>
           </select>
         </div>
 
-        <button class="btn btn--gold btn--full" type="submit">
-          Confirm VIP Site Visit &amp; Request Cost Sheet
-          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.3"/></svg>
+        <button class="btn btn-lux-primary btn--full" type="submit" style="padding:14px 22px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; border-radius:8px; margin-top:8px;">
+          Confirm VIP Site Visit &amp; Request Resale Sheet &rarr;
         </button>
-        <p class="form__note">Direct promoter response. Zero brokerage. Strict privacy policy.</p>
+        <p class="form__note" style="color:#7A766F; font-size:11.5px; text-align:center; margin:4px 0 0;">Direct promoter response. Zero brokerage. Strict privacy policy.</p>
       </form>
 
-      <div class="enquire__contact">
-        <a href="tel:+917328089908">+91 73280 89908</a>
-        <a href="tel:+919937715505">+91 99377 15505 (MD Office)</a>
-        <a href="mailto:saiharmony2021@gmail.com">saiharmony2021@gmail.com</a>
+      <div class="enquire__contact" style="display:flex; flex-direction:column; gap:8px; margin-top:20px; padding-top:16px; border-top:1px solid rgba(212,175,55,0.2); font-size:13px; color:#A39E93;">
+        <a href="tel:+917328089908" style="color:#D4AF37; font-weight:600;">📞 Developer Desk: +91 73280 89908</a>
+        <a href="tel:+919937715505" style="color:#FAF8F5;">🏛️ MD Office: +91 99377 15505</a>
+        <a href="mailto:saiharmony2021@gmail.com" style="color:#FAF8F5;">✉️ saiharmony2021@gmail.com</a>
       </div>
     </div>
   </div>

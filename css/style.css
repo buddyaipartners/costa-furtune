@@ -3745,7 +3745,7 @@ html, body{ overflow-x:clip; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(1.22) contrast(1.08) saturate(1.18) !important;
+  filter: none !important;
   transition: filter 0.5s ease;
 }
 .hero__media__veil {
@@ -3889,13 +3889,51 @@ html, body{ overflow-x:clip; }
 /* ── Ultra-Luxury Scroll Motion & Stagger Engine ─────────────── */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
+[data-reveal].is-in,
 [data-reveal].is-revealed {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
+/* ── Global Dark Theme Contrast & Panel Harmonization ────────── */
+body[style*="background:#0"] .panel,
+body[style*="background: #0"] .panel,
+.panel.is-dark {
+  background: #0C1510 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: #FAF8F5 !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+}
+body[style*="background:#0"] .panel .display,
+body[style*="background: #0"] .panel .display {
+  color: #FAF8F5 !important;
+}
+body[style*="background:#0"] .panel .lede,
+body[style*="background: #0"] .panel .lede {
+  color: #D8D2C4 !important;
+}
+body[style*="background:#0"] .panel .body,
+body[style*="background: #0"] .panel .body {
+  color: #B8B0A2 !important;
+}
+body[style*="background:#0"] .panel .stats,
+body[style*="background: #0"] .panel .stats {
+  border-top: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+body[style*="background:#0"] .stat dt,
+body[style*="background: #0"] .stat dt {
+  color: #D4AF37 !important;
+}
+body[style*="background:#0"] .stat dd,
+body[style*="background: #0"] .stat dd {
+  color: #FAF8F5 !important;
 }
 [data-reveal-delay="100"] { transition-delay: 0.1s; }
 [data-reveal-delay="200"] { transition-delay: 0.2s; }

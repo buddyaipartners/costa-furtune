@@ -151,9 +151,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a class="btn btn-lux-primary" href="#enquire" style="padding:14px 28px;">
         Register Priority EOI &rarr;
       </a>
-      <a class="btn btn-lux-gold" href="assets/brochure/costa-furtune-horizon-heights-official.pdf" download="Costa-Furtune-Horizon-Heights-Official-Brochure.pdf" style="padding:14px 24px;">
+      <button type="button" class="btn btn-lux-gold btn-brochure" onclick="openBrochureGate('assets/brochure/costa-furtune-horizon-heights-official.pdf', 'Costa-Furtune-Horizon-Heights-Official-Brochure.pdf', 'Horizon Heights')" style="padding:14px 24px; cursor:pointer;">
         📥 Official 22-Page Brochure (PDF)
-      </a>
+      </button>
       <a class="btn btn-lux-glass" href="#cinema" style="padding:14px 22px;">
         🎥 Watch 4K Cinema &darr;
       </a>
@@ -207,9 +207,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div style="display:flex; gap:10px; align-items:center;">
-        <a href="assets/brochure/costa-furtune-horizon-heights-official.pdf" target="_blank" rel="noopener" class="btn btn-lux-gold" style="padding:9px 16px; font-size:11px; text-decoration:none;">
-          📄 Open 22-Page Official Brochure PDF &rarr;
-        </a>
+        <button type="button" class="btn btn-lux-gold btn-brochure" onclick="openBrochureGate('assets/brochure/costa-furtune-horizon-heights-official.pdf', 'Costa-Furtune-Horizon-Heights-Official-Brochure.pdf', 'Horizon Heights')" style="padding:9px 16px; font-size:11px; cursor:pointer;">
+          📄 Download 22-Page Official Brochure PDF &rarr;
+        </button>
       </div>
     </div>
   </div>
@@ -345,57 +345,137 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ═══════════════════════  04 · SANCTIONED BLUEPRINTS & SPECS  ═══════════════════════ -->
-<section class="section section--wide" id="blueprints" style="padding:90px 24px; background:#FAF8F5;">
+<!-- ═══════════════════════  04 · SANCTIONED BLUEPRINTS & OFFICIAL FLOOR PLANS  ═══════════════════════ -->
+<section class="section section--wide" id="blueprints" style="padding:90px 24px; background:#070E09; color:#FAF8F5; border-top:1px solid rgba(212,175,55,0.25);">
   <div class="wide__head" style="text-align:center; max-width:880px; margin:0 auto 50px;">
-    <p class="label" style="justify-content:center; color:#7A805E;"><span>04</span> Sanctioned Documentation</p>
-    <h2 class="display" style="color:#12161C; font-size:38px;">Engineering Plans<br /><em>&amp; Official Layout Schedule.</em></h2>
-    <p class="lede lede--center" style="color:#4A4843; font-size:16px;">
-      Approved architectural layouts and specification sheets filed under ORERA registration <strong>RP/19/2026/01487</strong>.
+    <p class="label" style="justify-content:center; color:#D4AF37;"><span>04</span> Official Sanctioned Blueprints</p>
+    <h2 class="display" style="color:#FAF8F5; font-size:clamp(32px, 3.8vw, 44px); line-height:1.15;">Engineering Plans &amp; Floor Layouts<br /><em style="color:#E5C368;">Extracted Directly from Official Brochure.</em></h2>
+    <p class="lede lede--center" style="color:#D8D2C4; font-size:16px;">
+      Authentic technical drawings, unit floor plates, and structural schedules filed under ORERA registration <strong>RP/19/2026/01487</strong>. Click any blueprint to zoom in high-definition.
     </p>
   </div>
 
-  <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:28px;">
-    <!-- LAYOUT SHEET -->
-    <div class="visual-card" data-lightbox="assets/phases/horizon-heights-layout.webp" data-caption="Horizon Heights &middot; Official Sanctioned CAD Layout Plate" style="background:#0E1622 !important; border:1px solid rgba(212,175,55,0.3) !important;">
-      <div class="visual-card__thumb" style="background:#070C12; border-bottom:1px solid rgba(212,175,55,0.2);">
-        <img src="assets/phases/horizon-heights-layout.webp" alt="Horizon Heights Sanctioned Layout" loading="lazy" style="object-fit:contain; padding:12px;" />
-        <span class="visual-card__zoom">🔍 Zoom CAD Plan</span>
+  <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px;">
+    
+    <!-- CARD 1: TRUPPLE HOME 3BHK UNIT PLAN (PAGE 12) -->
+    <div class="visual-card" data-lightbox="assets/phases/horizon/horizon-plan-trupple-3bhk-2054.webp" data-caption="Horizon Heights &middot; Trupple Home 3BHK (3B 3T 3BA) 2,054 Sq.Ft. Dwelling Unit Plan" style="background:#0D1711 !important; border:1px solid rgba(212,175,55,0.3) !important;">
+      <div class="visual-card__thumb" style="background:#040806; border-bottom:1px solid rgba(212,175,55,0.2);">
+        <img src="assets/phases/horizon/horizon-plan-trupple-3bhk-2054.webp" alt="Horizon Heights 3BHK 2054 Sq Ft Floor Plan" loading="lazy" style="object-fit:contain; padding:10px; height:240px; width:100%;" />
+        <span class="visual-card__zoom">🔍 Zoom Unit Plan</span>
       </div>
-      <div class="visual-card__meta" style="background:transparent; color:#FAF8F5;">
-        <span class="visual-card__tag">Sanctioned Drawing Plate</span>
-        <h4 style="color:#FAF8F5 !important;">Official Master Floor Plate</h4>
-        <p style="color:#D8D2C4 !important;">Detailed unit distribution across twin towers with core lift lobbies and dual fire exit staircases.</p>
+      <div class="visual-card__meta" style="background:transparent; color:#FAF8F5; padding:18px 20px;">
+        <span class="visual-card__tag" style="color:#D4AF37;">★ Featured Unit &middot; 2,054 Sq. Ft.</span>
+        <h4 style="color:#FAF8F5 !important; font-size:18px; margin:0 0 6px;">Trupple Home (3B 3T 3BA)</h4>
+        <p style="color:#D8D2C4 !important; font-size:13px; line-height:1.5;">Flats 201-204 &amp; 301-308 on 2nd-10th floors. Master bed (14'0"x11'3"), 3 ensuite toilets, spacious kitchen, and 3 balconies with Bhagabatipur mountain views.</p>
       </div>
     </div>
 
-    <!-- SPECIFICATION SHEET -->
-    <div class="visual-card" data-lightbox="assets/phases/horizon-heights-specifications.webp" data-caption="Horizon Heights &middot; Engineering Material Schedule &amp; Structural Specs" style="background:#0E1622 !important; border:1px solid rgba(212,175,55,0.3) !important;">
-      <div class="visual-card__thumb" style="background:#070C12; border-bottom:1px solid rgba(212,175,55,0.2);">
-        <img src="assets/phases/horizon-heights-specifications.webp" alt="Horizon Heights Specifications" loading="lazy" style="object-fit:contain; padding:12px;" />
-        <span class="visual-card__zoom">🔍 Zoom Specs</span>
+    <!-- CARD 2: PENTHOUSE DUPLEX UNIT PLAN (PAGE 17) -->
+    <div class="visual-card" data-lightbox="assets/phases/horizon/horizon-plan-penthouse-duplex.webp" data-caption="Horizon Heights &middot; Penthouse Duplex 11th &amp; 12th Floor Dwelling Unit Plan (4B 5T 3BA 4T)" style="background:#0D1711 !important; border:1px solid rgba(212,175,55,0.3) !important;">
+      <div class="visual-card__thumb" style="background:#040806; border-bottom:1px solid rgba(212,175,55,0.2);">
+        <img src="assets/phases/horizon/horizon-plan-penthouse-duplex.webp" alt="Horizon Heights Penthouse Duplex Unit Plan" loading="lazy" style="object-fit:contain; padding:10px; height:240px; width:100%;" />
+        <span class="visual-card__zoom">🔍 Zoom Penthouse</span>
       </div>
-      <div class="visual-card__meta" style="background:transparent; color:#FAF8F5;">
-        <span class="visual-card__tag">Material &amp; Finish Schedule</span>
-        <h4 style="color:#FAF8F5 !important;">Superstructure Specifications</h4>
-        <p style="color:#D8D2C4 !important;">RCC framed structure, M25 concrete, Sal wood door frames, and Johnson premium vitrified flooring.</p>
+      <div class="visual-card__meta" style="background:transparent; color:#FAF8F5; padding:18px 20px;">
+        <span class="visual-card__tag" style="color:#E5C368;">👑 Sky Duplex &middot; 4B 5T 3BA 4T</span>
+        <h4 style="color:#FAF8F5 !important; font-size:18px; margin:0 0 6px;">Duplex Penthouse (11th &amp; 12th Floors)</h4>
+        <p style="color:#D8D2C4 !important; font-size:13px; line-height:1.5;">Ultra-luxury two-level duplex penthouse with double-height living hall, 4 open-to-sky celebration terraces, private internal staircase, and 5 bathrooms.</p>
       </div>
     </div>
+
+    <!-- CARD 3: TYPICAL FLOOR MASTER PLATE (PAGE 11) -->
+    <div class="visual-card" data-lightbox="assets/phases/horizon/horizon-plan-typical-floor.webp" data-caption="Horizon Heights &middot; Typical Floor Master Plan (Floors 2 to 10)" style="background:#0D1711 !important; border:1px solid rgba(212,175,55,0.3) !important;">
+      <div class="visual-card__thumb" style="background:#040806; border-bottom:1px solid rgba(212,175,55,0.2);">
+        <img src="assets/phases/horizon/horizon-plan-typical-floor.webp" alt="Horizon Heights Typical Floor Plan" loading="lazy" style="object-fit:contain; padding:10px; height:240px; width:100%;" />
+        <span class="visual-card__zoom">🔍 Zoom Floor Plate</span>
+      </div>
+      <div class="visual-card__meta" style="background:transparent; color:#FAF8F5; padding:18px 20px;">
+        <span class="visual-card__tag" style="color:#D4AF37;">Master Plate &middot; 2nd to 10th Floors</span>
+        <h4 style="color:#FAF8F5 !important; font-size:18px; margin:0 0 6px;">Typical Residential Floor Plate</h4>
+        <p style="color:#D8D2C4 !important; font-size:13px; line-height:1.5;">Symmetrical twin tower floor distribution, 4 high-speed elevators, dual fire exit staircases, and fan-blade spatial core ensuring cross-ventilation.</p>
+      </div>
+    </div>
+
+    <!-- CARD 4: FIRST FLOOR PLAN (PAGE 10) -->
+    <div class="visual-card" data-lightbox="assets/phases/horizon/horizon-plan-first-floor.webp" data-caption="Horizon Heights &middot; First Floor Architectural Layout" style="background:#0D1711 !important; border:1px solid rgba(212,175,55,0.3) !important;">
+      <div class="visual-card__thumb" style="background:#040806; border-bottom:1px solid rgba(212,175,55,0.2);">
+        <img src="assets/phases/horizon/horizon-plan-first-floor.webp" alt="Horizon Heights First Floor Plan" loading="lazy" style="object-fit:contain; padding:10px; height:240px; width:100%;" />
+        <span class="visual-card__zoom">🔍 Zoom Level 1</span>
+      </div>
+      <div class="visual-card__meta" style="background:transparent; color:#FAF8F5; padding:18px 20px;">
+        <span class="visual-card__tag" style="color:#D4AF37;">Level 1 &middot; Podium Residential</span>
+        <h4 style="color:#FAF8F5 !important; font-size:18px; margin:0 0 6px;">First Floor Architectural Plan</h4>
+        <p style="color:#D8D2C4 !important; font-size:13px; line-height:1.5;">Podium residential configuration directly above stilt parking and the front commercial boulevard arcade.</p>
+      </div>
+    </div>
+
+    <!-- CARD 5: BASEMENT & STILT PARKING (PAGE 14) -->
+    <div class="visual-card" data-lightbox="assets/phases/horizon/horizon-plan-basement-stilt.webp" data-caption="Horizon Heights &middot; Basement &amp; Stilt Parking Circulation Plan" style="background:#0D1711 !important; border:1px solid rgba(212,175,55,0.3) !important;">
+      <div class="visual-card__thumb" style="background:#040806; border-bottom:1px solid rgba(212,175,55,0.2);">
+        <img src="assets/phases/horizon/horizon-plan-basement-stilt.webp" alt="Horizon Heights Basement and Stilt Parking Plan" loading="lazy" style="object-fit:contain; padding:10px; height:240px; width:100%;" />
+        <span class="visual-card__zoom">🔍 Zoom Parking</span>
+      </div>
+      <div class="visual-card__meta" style="background:transparent; color:#FAF8F5; padding:18px 20px;">
+        <span class="visual-card__tag" style="color:#D4AF37;">Vehicle Infrastructure &middot; B+S</span>
+        <h4 style="color:#FAF8F5 !important; font-size:18px; margin:0 0 6px;">Basement &amp; Stilt Parking Plan</h4>
+        <p style="color:#D8D2C4 !important; font-size:13px; line-height:1.5;">Wide dual-ramp vehicular circulation, EV charging conduits, rainwater recovery sump, and direct lift lobby access.</p>
+      </div>
+    </div>
+
+    <!-- CARD 6: 11TH & 12TH PENTHOUSE FLOORS (PAGE 15 & 16) -->
+    <div class="visual-card" data-lightbox="assets/phases/horizon/horizon-plan-11th-floor.webp" data-caption="Horizon Heights &middot; 11th &amp; 12th Floor Architectural Levels" style="background:#0D1711 !important; border:1px solid rgba(212,175,55,0.3) !important;">
+      <div class="visual-card__thumb" style="background:#040806; border-bottom:1px solid rgba(212,175,55,0.2);">
+        <img src="assets/phases/horizon/horizon-plan-11th-floor.webp" alt="Horizon Heights 11th and 12th Floor Plan" loading="lazy" style="object-fit:contain; padding:10px; height:240px; width:100%;" />
+        <span class="visual-card__zoom">🔍 Zoom Duplex Levels</span>
+      </div>
+      <div class="visual-card__meta" style="background:transparent; color:#FAF8F5; padding:18px 20px;">
+        <span class="visual-card__tag" style="color:#E5C368;">Crown Levels &middot; 11th &amp; 12th Floors</span>
+        <h4 style="color:#FAF8F5 !important; font-size:18px; margin:0 0 6px;">Penthouse Upper Floor Plates</h4>
+        <p style="color:#D8D2C4 !important; font-size:13px; line-height:1.5;">Tower summit floor plates engineered for duplex penthouses and open sky terraces overlooking Chandaka reserve.</p>
+      </div>
+    </div>
+
+    <!-- CARD 7: STATUTORY PAYMENT SCHEDULE (PAGE 18) -->
+    <div class="visual-card" data-lightbox="assets/phases/horizon/horizon-payment-schedule.webp" data-caption="Horizon Heights &middot; 13-Milestone Construction-Linked Payment Schedule" style="background:#0D1711 !important; border:1px solid rgba(212,175,55,0.3) !important;">
+      <div class="visual-card__thumb" style="background:#040806; border-bottom:1px solid rgba(212,175,55,0.2);">
+        <img src="assets/phases/horizon/horizon-payment-schedule.webp" alt="Horizon Heights Payment Schedule" loading="lazy" style="object-fit:contain; padding:10px; height:240px; width:100%;" />
+        <span class="visual-card__zoom">🔍 Zoom Payment Sheet</span>
+      </div>
+      <div class="visual-card__meta" style="background:transparent; color:#FAF8F5; padding:18px 20px;">
+        <span class="visual-card__tag" style="color:#D4AF37;">Financial Discipline &middot; ORERA</span>
+        <h4 style="color:#FAF8F5 !important; font-size:18px; margin:0 0 6px;">13-Stage Construction Payment Plan</h4>
+        <p style="color:#D8D2C4 !important; font-size:13px; line-height:1.5;">Statutory milestone schedule tying disbursements directly to certified foundation, basement, and floor slab castings.</p>
+      </div>
+    </div>
+
+    <!-- CARD 8: SPECIFICATIONS SHEET (PAGE 20) -->
+    <div class="visual-card" data-lightbox="assets/phases/horizon/horizon-specifications.webp" data-caption="Horizon Heights &middot; Structural Specifications &amp; Material Schedule" style="background:#0D1711 !important; border:1px solid rgba(212,175,55,0.3) !important;">
+      <div class="visual-card__thumb" style="background:#040806; border-bottom:1px solid rgba(212,175,55,0.2);">
+        <img src="assets/phases/horizon/horizon-specifications.webp" alt="Horizon Heights Specifications" loading="lazy" style="object-fit:contain; padding:10px; height:240px; width:100%;" />
+        <span class="visual-card__zoom">🔍 Zoom Specifications</span>
+      </div>
+      <div class="visual-card__meta" style="background:transparent; color:#FAF8F5; padding:18px 20px;">
+        <span class="visual-card__tag" style="color:#D4AF37;">Engineering Authority &middot; Materials</span>
+        <h4 style="color:#FAF8F5 !important; font-size:18px; margin:0 0 6px;">RCC Superstructure Specifications</h4>
+        <p style="color:#D8D2C4 !important; font-size:13px; line-height:1.5;">Pile foundation with raft, earthquake-resistant framed structure, seasoned Sal wood frames, and premium vitrified flooring.</p>
+      </div>
+    </div>
+
   </div>
 
   <!-- SPECS MATRIX -->
-  <div style="max-width:1200px; margin:40px auto 0; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
-    <div style="background:#FFFFFF; padding:24px; border-radius:10px; border-left:4px solid #D4AF37; box-shadow:0 10px 24px rgba(0,0,0,0.04);">
-      <h4 style="font-family:var(--serif); font-size:18px; color:#12161C; margin:0 0 8px;">ORERA Escrow Compliance</h4>
-      <p style="font-size:13.5px; color:#3B3935; line-height:1.5; margin:0;">Registered under ORERA RP/19/2026/01487. 70% of all customer funds held in dedicated bank escrow for construction only.</p>
+  <div style="max-width:1280px; margin:40px auto 0; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+    <div style="background:#0D1711; padding:24px; border-radius:10px; border-left:4px solid #D4AF37; box-shadow:0 10px 24px rgba(0,0,0,0.5); border-top:1px solid rgba(212,175,55,0.2); border-right:1px solid rgba(212,175,55,0.2); border-bottom:1px solid rgba(212,175,55,0.2);">
+      <h4 style="font-family:var(--serif); font-size:18px; color:#FAF8F5; margin:0 0 8px;">ORERA Escrow Protection</h4>
+      <p style="font-size:13.5px; color:#D8D2C4; line-height:1.5; margin:0;">Registered under ORERA RP/19/2026/01487. 70% of all customer funds held in dedicated bank escrow strictly for construction.</p>
     </div>
-    <div style="background:#FFFFFF; padding:24px; border-radius:10px; border-left:4px solid #7A805E; box-shadow:0 10px 24px rgba(0,0,0,0.04);">
-      <h4 style="font-family:var(--serif); font-size:18px; color:#12161C; margin:0 0 8px;">Dual Core Elevators &amp; Safety</h4>
-      <p style="font-size:13.5px; color:#3B3935; line-height:1.5; margin:0;">High-speed automatic elevators with ARD rescue devices and dedicated fire fighting wet risers on all residential floors.</p>
+    <div style="background:#0D1711; padding:24px; border-radius:10px; border-left:4px solid #7A805E; box-shadow:0 10px 24px rgba(0,0,0,0.5); border-top:1px solid rgba(212,175,55,0.2); border-right:1px solid rgba(212,175,55,0.2); border-bottom:1px solid rgba(212,175,55,0.2);">
+      <h4 style="font-family:var(--serif); font-size:18px; color:#FAF8F5; margin:0 0 8px;">Dual Core Elevators &amp; Safety</h4>
+      <p style="font-size:13.5px; color:#D8D2C4; line-height:1.5; margin:0;">Four high-speed automatic elevators with ARD rescue devices and dedicated fire fighting wet risers on all residential floors.</p>
     </div>
-    <div style="background:#FFFFFF; padding:24px; border-radius:10px; border-left:4px solid #0E873D; box-shadow:0 10px 24px rgba(0,0,0,0.04);">
-      <h4 style="font-family:var(--serif); font-size:18px; color:#12161C; margin:0 0 8px;">Lifetime Clubhouse Access</h4>
-      <p style="font-size:13.5px; color:#3B3935; line-height:1.5; margin:0;">All Horizon Heights resident buyers receive full lifetime recreational privileges to the G+3 Club Costa Fantasy (10,296 Sq.Ft) including the air-conditioned Gymnasium, Indoor Games Arena, Banquet Hall, and 4th Floor Open-to-Sky Party Terrace with Swimming Pool.</p>
+    <div style="background:#0D1711; padding:24px; border-radius:10px; border-left:4px solid #0E873D; box-shadow:0 10px 24px rgba(0,0,0,0.5); border-top:1px solid rgba(212,175,55,0.2); border-right:1px solid rgba(212,175,55,0.2); border-bottom:1px solid rgba(212,175,55,0.2);">
+      <h4 style="font-family:var(--serif); font-size:18px; color:#FAF8F5; margin:0 0 8px;">Lifetime Clubhouse Access</h4>
+      <p style="font-size:13.5px; color:#D8D2C4; line-height:1.5; margin:0;">All Horizon Heights resident buyers receive full lifetime recreational privileges to the G+3 Club Costa Fantasy (10,296 Sq.Ft) including the Gymnasium, Banquet Hall, and 4th Floor Open-to-Sky Party Terrace with Swimming Pool.</p>
     </div>
   </div>
 </section>
