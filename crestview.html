@@ -59,7 +59,7 @@
     <a href="triplex.html" class="navmenu__sub"><span>&rarr;</span>Costa Fortune Triplex &mdash; Phase 1 (Sold Out)</a>
     <a href="crestview.html" class="navmenu__sub"><span>&rarr;</span>Costa Furtune Crestview &mdash; Phase 2 (3 BHK Dedicated)</a>
     <a href="horizon-heights.html" class="navmenu__sub"><span>&rarr;</span>Horizon Heights &mdash; Phase 3 (Twin Towers)</a>
-    <a href="clubhouse.html" class="navmenu__sub"><span>&rarr;</span>Club Costa Fantasy (G+4 Clubhouse)</a>
+    <a href="clubhouse.html" class="navmenu__sub"><span>&rarr;</span>Club Costa Fantasy (G+3 Clubhouse &amp; Sky Terrace)</a>
     <a href="#cinema"><span>02</span>4K Master Drone Cinema</a>
     <a href="#units"><span>03</span>3 BHK Blueprints &amp; Floor Plans</a>
     <a href="#amenities"><span>04</span>Club Costa Fantasy Amenities</a>
@@ -404,9 +404,9 @@
 <section class="section section--wide" id="amenities" style="background:#070B0F; padding:90px 24px; border-top:1px solid rgba(212,175,55,0.15);">
   <div class="wide__head" style="text-align:center; max-width:880px; margin:0 auto 50px;">
     <p class="label" style="color:#D4AF37;"><span>04</span> Club Costa Fantasy</p>
-    <h2 class="display" style="color:#FAF8F5; font-size:38px;">G+4 Lifestyle Anchor &amp; Wellness Sanctuary</h2>
+    <h2 class="display" style="color:#FAF8F5; font-size:38px;">G+3 Lifestyle Anchor &amp; Open-to-Sky Party Terrace</h2>
     <p class="lede lede--center" style="color:#A39E93; font-size:16px;">
-      Over 10,000 sq. ft. of curated club privileges exclusively for Costa Furtune residents &mdash; featuring our authentic high-capacity gymnasium, semi-covered infinity lap pool, grand banquet, and executive billiards club.
+      Over 10,000 sq. ft. of curated club privileges exclusively for Costa Furtune residents &mdash; featuring our authentic high-capacity gymnasium, semi-covered infinity lap pool, grand banquet, executive billiards club, and 4th floor open-to-sky party terrace.
     </p>
   </div>
 
@@ -607,10 +607,10 @@
       </blockquote>
     </aside>
 
-    <div class="enquire__panel" style="padding:40px;">
+    <div class="enquire__panel" style="padding:40px; background:linear-gradient(180deg, #101E16 0%, #08110B 100%) !important; color:#FAF8F5 !important;">
       <p class="label" style="color:#D4AF37;"><span>07</span> VIP Developer Allocation</p>
-      <h2 class="display" style="color:#FAF8F5; font-size:32px; line-height:1.2; margin-bottom:14px;">Schedule a Private Viewing</h2>
-      <p class="lede" style="color:#A39E93; font-size:14.5px; line-height:1.6; margin-bottom:24px;">
+      <h2 class="display" style="color:#FAF8F5 !important; font-size:32px; line-height:1.2; margin-bottom:14px;">Schedule a Private Viewing</h2>
+      <p class="lede" style="color:#D8D2C4 !important; font-size:14.5px; line-height:1.6; margin-bottom:24px;">
         Chauffeured site visits available seven days a week with complimentary pickup from Bhubaneswar Airport / Railway Station.
       </p>
 
@@ -898,7 +898,7 @@
         <a href="triplex.html">Costa Fortune Triplex (Phase 1 &middot; Sold Out)</a>
         <a href="crestview.html">Costa Furtune Crestview (Phase 2 &middot; 3 BHK Dedicated)</a>
         <a href="horizon-heights.html">Horizon Heights (Phase 3 &middot; Twin Towers)</a>
-        <a href="clubhouse.html">Club Costa Fantasy (G+4 Clubhouse)</a>
+        <a href="clubhouse.html">Club Costa Fantasy (G+3 Clubhouse)</a>
       </div>
       <div>
         <h4>3 BHK Residences</h4>
@@ -946,6 +946,46 @@
 </a>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ─────────────────────────  OFFICIAL BROCHURE DOWNLOAD LEAD GATE MODAL  ───────────────────────── -->
+<div class="brochure-modal" id="brochureModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="brochure-modal__box">
+    <button type="button" class="brochure-modal__close" id="closeBrochureModal" aria-label="Close Brochure Modal">&times;</button>
+    <div class="brochure-modal__badge">👑 Verified Developer Documentation</div>
+    <h3 class="brochure-modal__title">Download Official Project Brochure &amp; Floor Plans</h3>
+    <p class="brochure-modal__sub">Enter your details to instantly receive the 25-page ORERA-certified brochure, high-resolution CAD floor plans, and current developer price sheet.</p>
+
+    <form class="brochure-modal__form" id="brochureGateForm" novalidate>
+      <div class="brochure-modal__field">
+        <label for="brochureName">Full Name</label>
+        <input id="brochureName" name="name" type="text" autocomplete="name" required placeholder="e.g. Dr. Ashok Kumar Mohapatra" />
+      </div>
+
+      <div class="brochure-modal__field">
+        <label for="brochurePhone">WhatsApp / Mobile Number</label>
+        <input id="brochurePhone" name="phone" type="tel" autocomplete="tel" required placeholder="+91 73280 89908" />
+      </div>
+
+      <div class="brochure-modal__field">
+        <label for="brochurePhase">Interested Project / Phase</label>
+        <select id="brochurePhase" name="phase">
+          <option value="Costa Furtune Crestview (Phase 2 - 3 BHK)">Phase 2 · Crestview (Luxury 3 BHK High-Rise)</option>
+          <option value="Costa Furtune Horizon Heights (Phase 3 - Twin Towers)">Phase 3 · Horizon Heights (Twin Towers &amp; Penthouse)</option>
+          <option value="Costa Fortune Triplex (Phase 1 - Villas)">Phase 1 · Sovereign Triplex Villas</option>
+          <option value="Club Costa Fantasy (Township Clubhouse)">Club Costa Fantasy (G+3 Clubhouse Walkthrough)</option>
+          <option value="Costa Furtune Master Township">Complete 4.5-Acre Master Township</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-lux-gold btn--full brochure-modal__submit">
+        📥 Unlock &amp; Download Official PDF &rarr;
+      </button>
+      <p class="brochure-modal__note">
+        🔒 100% Privacy Guaranteed &middot; Direct Sai Harmony Developer Release &middot; Zero Brokerage
+      </p>
+    </form>
+  </div>
+</div>
 
 <script type="module" src="js/main.js"></script>
 <script src="js/chrome.js" defer></script>

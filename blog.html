@@ -246,7 +246,7 @@
         <a href="triplex.html">Costa Fortune Triplex (Phase 1 &middot; Sold Out)</a>
         <a href="crestview.html">Costa Furtune Crestview (Phase 2 &middot; 3 BHK)</a>
         <a href="horizon-heights.html">Horizon Heights (Phase 3 &middot; Twin Towers)</a>
-        <a href="clubhouse.html">Club Costa Fantasy (Construction Ready)</a>
+        <a href="clubhouse.html">Club Costa Fantasy (G+3 Clubhouse)</a>
       </div>
       <div>
         <h4>3 BHK Residences</h4>
@@ -277,6 +277,46 @@
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ─────────────────────────  OFFICIAL BROCHURE DOWNLOAD LEAD GATE MODAL  ───────────────────────── -->
+<div class="brochure-modal" id="brochureModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="brochure-modal__box">
+    <button type="button" class="brochure-modal__close" id="closeBrochureModal" aria-label="Close Brochure Modal">&times;</button>
+    <div class="brochure-modal__badge">👑 Verified Developer Documentation</div>
+    <h3 class="brochure-modal__title">Download Official Project Brochure &amp; Floor Plans</h3>
+    <p class="brochure-modal__sub">Enter your details to instantly receive the 25-page ORERA-certified brochure, high-resolution CAD floor plans, and current developer price sheet.</p>
+
+    <form class="brochure-modal__form" id="brochureGateForm" novalidate>
+      <div class="brochure-modal__field">
+        <label for="brochureName">Full Name</label>
+        <input id="brochureName" name="name" type="text" autocomplete="name" required placeholder="e.g. Dr. Ashok Kumar Mohapatra" />
+      </div>
+
+      <div class="brochure-modal__field">
+        <label for="brochurePhone">WhatsApp / Mobile Number</label>
+        <input id="brochurePhone" name="phone" type="tel" autocomplete="tel" required placeholder="+91 73280 89908" />
+      </div>
+
+      <div class="brochure-modal__field">
+        <label for="brochurePhase">Interested Project / Phase</label>
+        <select id="brochurePhase" name="phase">
+          <option value="Costa Furtune Crestview (Phase 2 - 3 BHK)">Phase 2 · Crestview (Luxury 3 BHK High-Rise)</option>
+          <option value="Costa Furtune Horizon Heights (Phase 3 - Twin Towers)">Phase 3 · Horizon Heights (Twin Towers &amp; Penthouse)</option>
+          <option value="Costa Fortune Triplex (Phase 1 - Villas)">Phase 1 · Sovereign Triplex Villas</option>
+          <option value="Club Costa Fantasy (Township Clubhouse)">Club Costa Fantasy (G+3 Clubhouse Walkthrough)</option>
+          <option value="Costa Furtune Master Township">Complete 4.5-Acre Master Township</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-lux-gold btn--full brochure-modal__submit">
+        📥 Unlock &amp; Download Official PDF &rarr;
+      </button>
+      <p class="brochure-modal__note">
+        🔒 100% Privacy Guaranteed &middot; Direct Sai Harmony Developer Release &middot; Zero Brokerage
+      </p>
+    </form>
+  </div>
+</div>
 
 <script src="js/chrome.js" defer></script>
 </body>

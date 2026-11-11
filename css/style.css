@@ -4619,6 +4619,243 @@ html, body{ overflow-x:clip; }
   .hero__sub { font-size: 15px !important; }
 }
 
+/* ==========================================================================
+   08 · PRODUCTION POLISH: CONTRAST, VISUAL CARDS & BUTTON OUTLINE
+   ========================================================================== */
+.btn-lux-outline {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px 22px !important;
+  font-family: var(--ui) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  background: transparent !important;
+  color: #D4AF37 !important;
+  border: 1px solid rgba(212, 175, 55, 0.5) !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.btn-lux-outline:hover {
+  background: rgba(212, 175, 55, 0.12) !important;
+  border-color: #D4AF37 !important;
+  color: #FAF8F5 !important;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Visual Card Meta & Typography contrast guarantee */
+.visual-card .visual-card__meta,
+.visual-card figcaption {
+  padding: 20px 22px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+}
+.visual-card .visual-card__meta h4,
+.visual-card figcaption h4 {
+  font-family: var(--serif) !important;
+  font-size: 19px !important;
+  color: #FAF8F5 !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
+  margin-bottom: 8px !important;
+}
+.visual-card .visual-card__meta p,
+.visual-card figcaption p {
+  font-family: var(--sans) !important;
+  font-size: 13.5px !important;
+  color: #D8D2C4 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* Fix dark enquire panel overriding light gradient */
+.section--enquire .enquire__panel.is-dark,
+.enquire__panel--dark,
+.section--enquire[style*="background:#0"] .enquire__panel,
+.section--enquire[style*="background: #0"] .enquire__panel {
+  background: linear-gradient(180deg, #101E16 0%, #08110B 100%) !important;
+  color: #FAF8F5 !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.section--enquire[style*="background:#0"] .enquire__panel .display,
+.section--enquire[style*="background: #0"] .enquire__panel .display {
+  color: #FAF8F5 !important;
+}
+.section--enquire[style*="background:#0"] .enquire__panel .lede,
+.section--enquire[style*="background: #0"] .enquire__panel .lede {
+  color: #A39E93 !important;
+}
+.section--enquire[style*="background:#0"] .enquire__panel input,
+.section--enquire[style*="background:#0"] .enquire__panel select,
+.section--enquire[style*="background: #0"] .enquire__panel input,
+.section--enquire[style*="background: #0"] .enquire__panel select {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #FAF8F5 !important;
+}
+
+/* Timeline opacity bug fix: ensure scheduled items are fully legible */
+.timeline li {
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   09 · OFFICIAL BROCHURE DOWNLOAD LEAD GATE MODAL
+   ========================================================================== */
+.brochure-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(4, 8, 12, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.brochure-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.brochure-modal__box {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: #0B121A;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 16px;
+  padding: clamp(24px, 4vw, 36px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.15);
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.brochure-modal.is-open .brochure-modal__box {
+  transform: translateY(0) scale(1);
+}
+.brochure-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FAF8F5;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.brochure-modal__close:hover {
+  background: rgba(212, 175, 55, 0.25);
+  border-color: #D4AF37;
+  color: #D4AF37;
+  transform: rotate(90deg);
+}
+.brochure-modal__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ui);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #D4AF37;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.brochure-modal__title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 26px);
+  font-weight: 400;
+  color: #FAF8F5;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+.brochure-modal__sub {
+  font-size: 13.5px;
+  color: #A39E93;
+  line-height: 1.55;
+  margin: 0 0 24px;
+}
+.brochure-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.brochure-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.brochure-modal__field label {
+  font-family: var(--ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #D4AF37;
+}
+.brochure-modal__field input,
+.brochure-modal__field select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #FAF8F5;
+  font-family: var(--sans);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.brochure-modal__field input:focus,
+.brochure-modal__field select:focus {
+  border-color: #D4AF37;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+}
+.brochure-modal__field select option {
+  background: #0B121A;
+  color: #FAF8F5;
+}
+.brochure-modal__submit {
+  margin-top: 8px;
+  padding: 14px 22px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-radius: 8px !important;
+}
+.brochure-modal__note {
+  font-size: 11.5px;
+  color: #7A766F;
+  text-align: center;
+  margin: 8px 0 0;
+  line-height: 1.4;
+}
+
+
 
 
 
