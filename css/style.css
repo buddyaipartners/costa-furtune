@@ -137,6 +137,74 @@ main{ position:relative; z-index:2; }
   color:rgba(30,34,42,.45);
 }
 
+/* ── 05.5 · UNIFIED FIXED HEADER WRAPPER ───────────────────────── */
+.site-header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+.site-header-wrapper .top-announcement-bar {
+  position: relative;
+  z-index: 1001;
+}
+.site-header-wrapper .nav {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  z-index: 1000;
+  background: rgba(8, 14, 11, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+}
+.site-header-wrapper .nav__links a {
+  color: rgba(250, 248, 245, 0.88) !important;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+.site-header-wrapper .nav__links a:hover {
+  color: #D4AF37 !important;
+}
+.site-header-wrapper .nav__brand img {
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)) !important;
+}
+.site-header-wrapper .nav__toggle {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 5px !important;
+  width: 42px !important;
+  height: 38px !important;
+  background: rgba(212, 175, 55, 0.12) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  z-index: 1002 !important;
+  flex: none !important;
+}
+.site-header-wrapper .nav__toggle span {
+  display: block !important;
+  width: 20px !important;
+  height: 2px !important;
+  background: #D4AF37 !important;
+  border-radius: 2px !important;
+  transition: transform 0.3s ease, opacity 0.3s ease !important;
+}
+.site-header-wrapper .nav__toggle em {
+  display: none !important;
+}
+@media (min-width: 961px) {
+  .site-header-wrapper .nav__toggle {
+    display: none !important;
+  }
+}
+
 /* ── 06 · NAV (lighter, logo left) ───────────────────────────── */
 .nav{
   position:fixed; top:0; left:0; right:0; z-index:60;
@@ -321,9 +389,9 @@ main{ position:relative; z-index:2; }
 /* ── 08 · SECTIONS ───────────────────────────────────────────── */
 .section{ position:relative; isolation:isolate; }
 .section--hero{
-  min-height:clamp(650px, 92vh, 900px);
-  display:flex; flex-direction:column; justify-content:center;
-  padding:clamp(100px, 12vh, 140px) var(--gutter) 80px;
+  min-height:clamp(700px, 95vh, 1000px);
+  display:flex; flex-direction:column; justify-content:flex-start;
+  padding:clamp(120px, 15vh, 160px) var(--gutter) 80px;
 }
 .section--split{ padding:0; }
 .split{
@@ -1021,11 +1089,11 @@ main{ position:relative; z-index:2; }
   .nav__links{ gap:16px; }
 }
 @media (max-width:960px){
-  .nav__links{ display:none; }
-  .nav__cta{ display:none; }
-  .nav{ padding:16px var(--gutter); justify-content:space-between; }
-  .nav__brand{ gap:10px; }
-  .nav__brand img{ height:30px; }
+  .nav__links{ display:none !important; }
+  .nav__cta{ display:none !important; }
+  .nav__toggle{ display:flex !important; }
+  .nav{ padding:12px 18px !important; justify-content:space-between !important; }
+  .nav__brand img{ height:24px !important; width:auto !important; max-width:210px !important; }
 
   .panel{ width:100%; max-width:none; }
   .split{
@@ -1034,7 +1102,7 @@ main{ position:relative; z-index:2; }
   }
   .section--right .panel{ margin-left:0; }
 
-  .section--hero{ padding-top:110px; }
+  .section--hero{ padding-top:clamp(150px, 18vh, 180px); }
   .hero__title{ font-size:clamp(48px, 16vw, 100px); }
   .hero__line--small{ letter-spacing:.38em; }
 
@@ -1901,7 +1969,7 @@ main{ position:relative; z-index:2; }
   }
   .nav__toggle span{
     display:block; width:24px; height:1.5px;
-    background:var(--ink);
+    background:#FAF8F5 !important;
     transition:transform .35s var(--ease), opacity .3s, width .3s;
   }
   .nav__toggle span:nth-child(2){ width:17px; }
@@ -2182,8 +2250,8 @@ html, body{ overflow-x:clip; }
     min-height:100svh;
     display:flex;
     flex-direction:column;
-    justify-content:center;
-    padding:110px var(--gutter) 40px;
+    justify-content:flex-start;
+    padding:clamp(160px, 22vh, 180px) var(--gutter) 40px;
     background:#0A120D;
     position:relative;
     overflow:hidden;

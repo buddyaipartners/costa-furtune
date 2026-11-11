@@ -647,7 +647,7 @@ function initLightbox() {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeLightbox();
   });
 
-  document.querySelectorAll('.phase-gallery-item, .lightbox-trigger, .visual-card').forEach(item => {
+  document.querySelectorAll('.phase-gallery-item, .lightbox-trigger, .visual-card, .unit__floorplan-wrap').forEach(item => {
     item.style.cursor = 'zoom-in';
     item.addEventListener('click', () => {
       const src = item.getAttribute('data-lightbox') || item.querySelector('img')?.src || (item.tagName === 'IMG' ? item.src : null);
