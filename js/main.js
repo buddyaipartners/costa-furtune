@@ -263,26 +263,48 @@ function initRail() {
 
 /* ── mobile menu ────────────────────────────────────────────── */
 function initMenu() {
+  if (window.__menuInitialized) return;
+  window.__menuInitialized = true;
+
   const toggle = $('#navToggle');
   const menu = $('#navMenu');
+  const closeBtn = $('#navMenuClose');
   if (!toggle || !menu) return;
 
   const close = () => {
-    toggle.setAttribute('aria-expanded', 'false');
-    menu.classList.remove('is-open');
-    menu.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    if (typeof window.closeCostaMenu === 'function') {
+      window.closeCostaMenu();
+    } else {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.classList.remove('is-active');
+      menu.classList.remove('is-open');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
   };
 
-  toggle.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') !== 'true';
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    menu.classList.toggle('is-open', open);
-    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
+  toggle.onclick = (e) => {
+    if (typeof window.toggleCostaMenu === 'function') {
+      window.toggleCostaMenu(e);
+    } else {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.classList.toggle('is-active', open);
+      menu.classList.toggle('is-open', open);
+      menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+  };
+
+  if (closeBtn) {
+    closeBtn.onclick = (e) => {
+      e.preventDefault();
+      close();
+    };
+  }
 
   $$('a', menu).forEach((a) => a.addEventListener('click', close));
+  menu.addEventListener('click', (e) => { if (e.target === menu) close(); });
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 }
 

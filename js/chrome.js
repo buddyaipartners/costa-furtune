@@ -19,25 +19,57 @@
   /* ── mobile menu ────────────────────────────────────────────── */
   const toggle = $('#navToggle');
   const menu = $('#navMenu');
-  if (toggle && menu) {
-    const close = () => {
-      toggle.setAttribute('aria-expanded', 'false');
-      menu.classList.remove('is-open');
-      menu.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    };
+  const closeBtn = $('#navMenuClose');
 
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') !== 'true';
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      menu.classList.toggle('is-open', open);
-      menu.setAttribute('aria-hidden', open ? 'false' : 'true');
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
+  const closeMenu = () => {
+    if (!menu) return;
+    toggle?.setAttribute('aria-expanded', 'false');
+    toggle?.classList.remove('is-active');
+    menu.classList.remove('is-open');
+    menu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
 
-    $$('a', menu).forEach((a) => a.addEventListener('click', close));
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  const openMenu = () => {
+    if (!menu) return;
+    toggle?.setAttribute('aria-expanded', 'true');
+    toggle?.classList.add('is-active');
+    menu.classList.add('is-open');
+    menu.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const toggleMenu = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (menu?.classList.contains('is-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  };
+
+  if (toggle) {
+    toggle.onclick = toggleMenu;
   }
+  if (closeBtn) {
+    closeBtn.onclick = (e) => {
+      e.preventDefault();
+      closeMenu();
+    };
+  }
+  if (menu) {
+    $$('a', menu).forEach((a) => a.addEventListener('click', closeMenu));
+    menu.addEventListener('click', (e) => {
+      if (e.target === menu) closeMenu();
+    });
+  }
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+  window.closeCostaMenu = closeMenu;
+  window.openCostaMenu = openMenu;
+  window.toggleCostaMenu = toggleMenu;
 
   /* ── scroll reveals ─────────────────────────────────────────── */
   const reveals = $$('[data-reveal]');
@@ -110,15 +142,18 @@
     pendingBrochureUrl = url || 'assets/brochure/costa-furtune-crestview-official.pdf';
     pendingBrochureName = filename || 'Costa-Furtune-Official-Brochure.pdf';
 
-    if (sessionStorage.getItem('costa_brochure_unlocked') === 'true') {
-      triggerDirectDownload(pendingBrochureUrl, pendingBrochureName);
-      return;
-    }
-
     if (!brochureModal) {
       triggerDirectDownload(pendingBrochureUrl, pendingBrochureName);
       return;
     }
+
+    // Pre-populate previously remembered user credentials for effortless 1-tap submission
+    const nameInput = $('#brochureName');
+    const phoneInput = $('#brochurePhone');
+    const savedName = localStorage.getItem('costa_user_name') || sessionStorage.getItem('costa_user_name') || '';
+    const savedPhone = localStorage.getItem('costa_user_phone') || sessionStorage.getItem('costa_user_phone') || '';
+    if (savedName && nameInput && !nameInput.value) nameInput.value = savedName;
+    if (savedPhone && phoneInput && !phoneInput.value) phoneInput.value = savedPhone;
 
     // Pre-select phase in dropdown if matched
     const phaseSelect = $('#brochurePhase');
@@ -186,10 +221,11 @@
         return;
       }
 
-      // Unlock brochure for the session
-      sessionStorage.setItem('costa_brochure_unlocked', 'true');
+      // Save user details
       sessionStorage.setItem('costa_user_name', name);
       sessionStorage.setItem('costa_user_phone', phone);
+      localStorage.setItem('costa_user_name', name);
+      localStorage.setItem('costa_user_phone', phone);
 
       // Persist lead locally
       try {
@@ -222,21 +258,16 @@
 
   // Intercept all brochure links site-wide
   document.addEventListener('click', (e) => {
-    const link = e.target.closest('a[href*=".pdf"], a[download*="Brochure"], .footer__brochure, [data-brochure]');
+    const link = e.target.closest('a[href*=".pdf"], a[download*="Brochure"], a[download*="brochure"], .footer__brochure, [data-brochure], .btn-brochure, [data-action="brochure"]');
     if (!link) return;
 
-    const href = link.getAttribute('href');
-    if (!href || !href.includes('.pdf')) return;
-
-    if (sessionStorage.getItem('costa_brochure_unlocked') === 'true') {
-      return; // allow default link behavior
-    }
-
     e.preventDefault();
-    const downloadAttr = link.getAttribute('download') || '';
+    const href = link.getAttribute('href') || link.getAttribute('data-brochure') || 'assets/brochure/costa-furtune-crestview-official.pdf';
+    const downloadAttr = link.getAttribute('download') || 'Costa-Furtune-Crestview-Official-Brochure.pdf';
     let phaseName = 'Crestview';
     if (href.includes('horizon')) phaseName = 'Horizon Heights';
     if (href.includes('triplex')) phaseName = 'Triplex';
+    if (href.includes('club')) phaseName = 'Clubhouse';
 
     openBrochureGate(href, downloadAttr, phaseName);
   });

@@ -29,7 +29,13 @@
 
   <header class="nav" id="nav">
     <a class="nav__brand" href="index.html" aria-label="Costa Furtune Master Township">
-      <img src="assets/logos/costa-furtune-crest.svg" alt="Costa Furtune Horizon Heights" width="340" height="70" />
+      <div style="display:inline-flex; align-items:center; gap:12px;">
+        <img src="assets/logos/costa-furtune-official-gold.webp" alt="Costa Furtune Official Emblem" width="46" height="46" style="height:44px; width:44px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(212,175,55,0.4)); flex-shrink:0;" />
+        <div style="display:flex; flex-direction:column; justify-content:center;">
+          <span style="font-family:var(--serif); font-size:clamp(17px, 2vw, 21px); font-weight:700; letter-spacing:0.12em; color:#FAF8F5; line-height:1.1; white-space:nowrap;">COSTA FURTUNE</span>
+          <span style="font-family:var(--ui); font-size:clamp(8.5px, 1vw, 10px); font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:#D4AF37; line-height:1.1; margin-top:2px;">HORIZON HEIGHTS &middot; PHASE 3</span>
+        </div>
+      </div>
     </a>
 
     <nav class="nav__links" aria-label="Sections">
@@ -51,6 +57,18 @@
 </div>
 
 <div class="navmenu" id="navMenu" aria-hidden="true">
+  <div class="navmenu__top-bar">
+    <div class="navmenu__brand">
+      <img src="assets/logos/costa-furtune-official-gold.webp" alt="Costa Furtune" width="38" height="38" style="height:36px; width:36px; object-fit:contain; filter:drop-shadow(0 2px 6px rgba(212,175,55,0.3));" />
+      <div style="display:flex; flex-direction:column;">
+        <span style="font-family:var(--serif); font-size:16px; font-weight:700; color:#FAF8F5; letter-spacing:0.1em; line-height:1.1;">COSTA FURTUNE</span>
+        <span style="font-family:var(--ui); font-size:8.5px; font-weight:600; color:#D4AF37; letter-spacing:0.22em; text-transform:uppercase;">PHASE 3 &middot; HORIZON HEIGHTS</span>
+      </div>
+    </div>
+    <button type="button" class="navmenu__close-btn" id="navMenuClose" aria-label="Close navigation menu">
+      <span>✕</span> CLOSE
+    </button>
+  </div>
   <nav aria-label="Mobile sections">
     <a href="#cinema" style="color:#D4AF37 !important;"><span>🎥</span>4K Drone Township Cinema</a>
     <a href="index.html#township"><span>01</span>Complete Township (All 3 Phases)</a>
@@ -187,35 +205,37 @@
 </section>
 
 <!-- ═══════════════════════  02 · TWIN TOWER ARCHITECTURE  ═══════════════════════ -->
-<section class="section section--split" id="architecture" style="background:#FAF8F5; padding:90px 24px;">
-  <div class="split" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+<section class="section section--split" id="architecture" style="background:#0B121A; padding:90px 24px; border-top:1px solid rgba(212,175,55,0.15);">
+  <div class="split" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:48px; align-items:center;">
     <div class="panel panel--left">
-      <p class="label" style="color:#7A805E;"><span>02</span> Twin Tower Superstructure</p>
-      <h2 class="display" style="color:#12161C; font-size:38px; line-height:1.2; margin-bottom:20px;">
-        Two towers.<br /><em>One unbroken horizon.</em>
+      <p class="label" style="color:#D4AF37;"><span>02</span> Twin Tower Superstructure</p>
+      <h2 class="display" style="color:#FAF8F5; font-size:38px; line-height:1.2; margin-bottom:20px;">
+        Two towers.<br /><em style="color:#E5C368;">One unbroken horizon.</em>
       </h2>
-      <p class="lede" style="color:#4A4843; font-size:16.5px; line-height:1.6; margin-bottom:16px;">
+      <p class="lede" style="color:rgba(250,248,245,0.92); font-size:16.5px; line-height:1.6; margin-bottom:16px;">
         Horizon Heights represents Phase 3 of the sovereign master township: an architecturally unified pair of <strong>B+S+12 apartment towers with duplex penthouse</strong> engineered to harmonize with the Chandaka tree line.
       </p>
-      <p class="body" style="color:#6A6862; font-size:14.5px; line-height:1.6; margin-bottom:24px;">
+      <p class="body" style="color:#A39E93; font-size:14.5px; line-height:1.6; margin-bottom:24px;">
         The layout is sanctioned under <strong>ORERA RP/19/2026/01487</strong> on Plot No. 2. 
         Engineered with dual high-speed lift cores, subterranean basement parking, integrated rain-water harvesting, 
         and seamless internal connectivity to Club Costa Fantasy.
       </p>
-      <dl class="stats" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-top:20px;">
-        <div class="stat" style="border-left:3px solid #D4AF37; padding-left:12px;"><dt style="font-size:26px; font-weight:700; color:#12161C; font-family:var(--serif);">B+S+12</dt><dd style="font-size:13px; color:#7A766F;">Twin Towers + Duplex Penthouse</dd></div>
-        <div class="stat" style="border-left:3px solid #7A805E; padding-left:12px;"><dt style="font-size:26px; font-weight:700; color:#0E873D; font-family:var(--serif);">RP/19/2026/01487</dt><dd style="font-size:13px; color:#7A766F;">Statutory ORERA registration</dd></div>
-        <div class="stat" style="border-left:3px solid #0E873D; padding-left:12px;"><dt style="font-size:26px; font-weight:700; color:#12161C; font-family:var(--serif);">214,212</dt><dd style="font-size:13px; color:#7A766F;">Sanctioned built-up area (sq ft)</dd></div>
-        <div class="stat" style="border-left:3px solid #D4AF37; padding-left:12px;"><dt style="font-size:26px; font-weight:700; color:#12161C; font-family:var(--serif);">₹6,000</dt><dd style="font-size:13px; color:#7A766F;">Indicative base rate / sq ft</dd></div>
+      <dl class="stats" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:16px; margin-top:20px;">
+        <div class="stat" style="border-left:3px solid #D4AF37; padding-left:12px; background:rgba(255,255,255,0.03); padding-top:8px; padding-bottom:8px; border-radius:4px;"><dt style="font-size:26px; font-weight:700; color:#FAF8F5; font-family:var(--serif);">B+S+12</dt><dd style="font-size:13px; color:#A39E93;">Twin Towers + Duplex</dd></div>
+        <div class="stat" style="border-left:3px solid #7A805E; padding-left:12px; background:rgba(255,255,255,0.03); padding-top:8px; padding-bottom:8px; border-radius:4px;"><dt style="font-size:26px; font-weight:700; color:#0E873D; font-family:var(--serif);">RP/19/2026/01487</dt><dd style="font-size:13px; color:#A39E93;">ORERA Registered</dd></div>
+        <div class="stat" style="border-left:3px solid #0E873D; padding-left:12px; background:rgba(255,255,255,0.03); padding-top:8px; padding-bottom:8px; border-radius:4px;"><dt style="font-size:26px; font-weight:700; color:#FAF8F5; font-family:var(--serif);">214,212</dt><dd style="font-size:13px; color:#A39E93;">Built-up area (sq ft)</dd></div>
+        <div class="stat" style="border-left:3px solid #D4AF37; padding-left:12px; background:rgba(255,255,255,0.03); padding-top:8px; padding-bottom:8px; border-radius:4px;"><dt style="font-size:26px; font-weight:700; color:#FAF8F5; font-family:var(--serif);">₹6,000</dt><dd style="font-size:13px; color:#A39E93;">Base rate / sq ft</dd></div>
       </dl>
       <div style="margin-top:28px;">
         <a href="#enquire" class="btn btn-lux-gold">Register Expression of Interest &rarr;</a>
       </div>
     </div>
 
-    <figure class="split__media" style="margin:0; border-radius:14px; overflow:hidden; box-shadow:0 24px 60px rgba(10,18,13,0.12);">
+    <figure class="split__media" style="margin:0; border-radius:14px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.5); border:1px solid rgba(212,175,55,0.25);">
       <img src="assets/phases/horizon/horizon-heights-page-09.webp" alt="Horizon Heights Morning Elevation" loading="lazy" decoding="async" width="2700" height="1950" style="width:100%; height:auto; display:block;" />
-      <figcaption style="padding:14px 18px; background:#12161C; color:#FAF8F5; font-size:13px; display:flex; justify-content:space-between; align-items:center;">
+      <figcaption style="padding:14px 18px; background:#070E09; color:#FAF8F5; font-size:13px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(212,175,55,0.2);">
+        <span style="color:#D4AF37; font-weight:600;">Phase 3 &middot; Horizon Heights</span>
+        <span style="color:#A39E93;">Twin B+S+12 Apartment Superstructure with Duplex Penthouse</span>
         <span style="color:#D4AF37; font-weight:600;">Phase 3 &middot; Horizon Heights</span>
         <span style="color:#A39E93;">Twin B+S+12 Apartment Superstructure with Duplex Penthouse</span>
       </figcaption>
@@ -501,32 +521,32 @@
 </section>
 
 <!-- ═══════════════════════  06 · COMMERCIAL FRONTAGE  ═══════════════════════ -->
-<section class="section section--split" id="commercial" style="background:#FAF8F5; padding:90px 24px;">
-  <div class="split" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
-    <figure class="split__media" style="margin:0; border-radius:14px; overflow:hidden; box-shadow:0 20px 50px rgba(10,18,13,0.12);">
+<section class="section section--split" id="commercial" style="background:#0B121A; padding:90px 24px; border-top:1px solid rgba(212,175,55,0.15);">
+  <div class="split" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:48px; align-items:center;">
+    <figure class="split__media" style="margin:0; border-radius:14px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.5); border:1px solid rgba(212,175,55,0.25);">
       <img src="assets/phases/horizon/horizon-heights-page-21.webp" alt="Commercial arcade frontage and master perspective" loading="lazy" decoding="async" width="1800" height="1300" style="object-fit:cover; width:100%; height:auto; display:block;" />
-      <figcaption style="padding:14px 18px; background:#12161C; color:#FAF8F5; font-size:13px; display:flex; justify-content:space-between; align-items:center;">
+      <figcaption style="padding:14px 18px; background:#070E09; color:#FAF8F5; font-size:13px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(212,175,55,0.2);">
         <span style="color:#D4AF37; font-weight:600;">Ground-Floor Retail Promenade</span>
         <span style="color:#A39E93;">Frontage on 15.25m Arterial Corridor</span>
       </figcaption>
     </figure>
 
     <div class="panel panel--right">
-      <p class="label" style="color:#7A805E;"><span>06</span> High-Yield Commercial Asset</p>
-      <h2 class="display" style="color:#12161C; font-size:38px; line-height:1.2; margin-bottom:20px;">
-        Retail frontage that<br /><em>compounds daily value.</em>
+      <p class="label" style="color:#D4AF37;"><span>06</span> High-Yield Commercial Asset</p>
+      <h2 class="display" style="color:#FAF8F5; font-size:38px; line-height:1.2; margin-bottom:20px;">
+        Retail frontage that<br /><em style="color:#E5C368;">compounds daily value.</em>
       </h2>
-      <p class="lede" style="color:#4A4843; font-size:16.5px; line-height:1.6; margin-bottom:16px;">
+      <p class="lede" style="color:rgba(250,248,245,0.92); font-size:16.5px; line-height:1.6; margin-bottom:16px;">
         The ground level of Horizon Heights is designed as a sheltered retail promenade facing the 15.25m approach road &mdash; providing built-in daily footfall from all three phases of Costa Furtune.
       </p>
-      <p class="body" style="color:#6A6862; font-size:14.5px; line-height:1.6; margin-bottom:24px;">
+      <p class="body" style="color:#A39E93; font-size:14.5px; line-height:1.6; margin-bottom:24px;">
         For residents, this provides instant access to supermarkets, pharmacies, cafes, and healthcare clinics. For commercial investors, early-mover retail allotments offer high rental yields in a booming micro-market.
       </p>
-      <dl class="stats" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-top:20px;">
-        <div class="stat" style="border-left:3px solid #D4AF37; padding-left:12px;"><dt style="font-size:24px; font-weight:700; color:#12161C; font-family:var(--serif);">Ground</dt><dd style="font-size:13px; color:#7A766F;">Commercial arcade</dd></div>
-        <div class="stat" style="border-left:3px solid #7A805E; padding-left:12px;"><dt style="font-size:24px; font-weight:700; color:#12161C; font-family:var(--serif);">15.25 m</dt><dd style="font-size:13px; color:#7A766F;">External road frontage</dd></div>
-        <div class="stat" style="border-left:3px solid #0E873D; padding-left:12px;"><dt style="font-size:24px; font-weight:700; color:#12161C; font-family:var(--serif);">3 Phases</dt><dd style="font-size:13px; color:#7A766F;">Built-in consumer base</dd></div>
-        <div class="stat" style="border-left:3px solid #D4AF37; padding-left:12px;"><dt style="font-size:24px; font-weight:700; color:#0E873D; font-family:var(--serif);">EOI Open</dt><dd style="font-size:13px; color:#7A766F;">Early allocation window</dd></div>
+      <dl class="stats" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:16px; margin-top:20px;">
+        <div class="stat" style="border-left:3px solid #D4AF37; padding-left:12px; background:rgba(255,255,255,0.03); padding-top:8px; padding-bottom:8px; border-radius:4px;"><dt style="font-size:24px; font-weight:700; color:#FAF8F5; font-family:var(--serif);">Ground</dt><dd style="font-size:13px; color:#A39E93;">Commercial arcade</dd></div>
+        <div class="stat" style="border-left:3px solid #7A805E; padding-left:12px; background:rgba(255,255,255,0.03); padding-top:8px; padding-bottom:8px; border-radius:4px;"><dt style="font-size:24px; font-weight:700; color:#FAF8F5; font-family:var(--serif);">15.25 m</dt><dd style="font-size:13px; color:#A39E93;">External road frontage</dd></div>
+        <div class="stat" style="border-left:3px solid #0E873D; padding-left:12px; background:rgba(255,255,255,0.03); padding-top:8px; padding-bottom:8px; border-radius:4px;"><dt style="font-size:24px; font-weight:700; color:#FAF8F5; font-family:var(--serif);">3 Phases</dt><dd style="font-size:13px; color:#A39E93;">Built-in consumer base</dd></div>
+        <div class="stat" style="border-left:3px solid #D4AF37; padding-left:12px; background:rgba(255,255,255,0.03); padding-top:8px; padding-bottom:8px; border-radius:4px;"><dt style="font-size:24px; font-weight:700; color:#0E873D; font-family:var(--serif);">EOI Open</dt><dd style="font-size:13px; color:#A39E93;">Early allocation window</dd></div>
       </dl>
       <div style="margin-top:28px;">
         <a href="#enquire" class="btn btn-lux-gold">Inquire Commercial Allotments &rarr;</a>
@@ -624,19 +644,25 @@
 <footer class="footer">
   <div class="footer__top">
     <div class="footer__mark">
-      <img src="assets/logos/costa-furtune-crest.svg" alt="Costa Furtune Crestview" width="340" height="70" />
+      <div style="display:inline-flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <img src="assets/logos/costa-furtune-official-gold.webp" alt="Costa Furtune Official Emblem" width="46" height="46" style="height:44px; width:44px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(212,175,55,0.4)); flex-shrink:0;" />
+        <div style="display:flex; flex-direction:column; justify-content:center;">
+          <span style="font-family:var(--serif); font-size:clamp(17px, 2vw, 21px); font-weight:700; letter-spacing:0.12em; color:#FAF8F5; line-height:1.1; white-space:nowrap;">COSTA FURTUNE</span>
+          <span style="font-family:var(--ui); font-size:clamp(8.5px, 1vw, 10px); font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:#D4AF37; line-height:1.1; margin-top:2px;">MASTER TOWNSHIP &middot; BHUBANESWAR</span>
+        </div>
+      </div>
       <p>
         Sai Harmony Pvt. Ltd. &middot; Plot No. 83, Ground Floor, Prachi Enclave, Chandrasekharpur, Bhubaneswar &ndash; 751016.
       </p>
       <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:14px;">
-        <a class="footer__brochure" href="assets/brochure/costa-furtune-horizon-heights-official.pdf" download="Costa-Furtune-Horizon-Heights-Official-Brochure.pdf">
+        <button type="button" class="footer__brochure btn-brochure" onclick="openBrochureGate('assets/brochure/costa-furtune-horizon-heights-official.pdf', 'Costa-Furtune-Horizon-Heights-Official-Brochure.pdf', 'Horizon Heights')" style="background:none; border:none; padding:0; cursor:pointer; text-align:left;">
           Download Horizon Heights brochure (22 pages)
           <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0l3.2-3.2M8 10L4.8 6.8M2.5 12.5h11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-        </a>
-        <a class="footer__brochure" href="assets/brochure/costa-furtune-crestview-official.pdf" download="Costa-Furtune-Crestview-Official-Brochure.pdf">
+        </button>
+        <button type="button" class="footer__brochure btn-brochure" onclick="openBrochureGate('assets/brochure/costa-furtune-crestview-official.pdf', 'Costa-Furtune-Crestview-Official-Brochure.pdf', 'Crestview')" style="background:none; border:none; padding:0; cursor:pointer; text-align:left;">
           Download Crestview brochure (25 pages)
           <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0l3.2-3.2M8 10L4.8 6.8M2.5 12.5h11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-        </a>
+        </button>
       </div>
     </div>
     <div class="footer__cols">

@@ -13,8 +13,14 @@
 <body class="is-ready">
 
 <header class="nav" id="nav">
-  <a class="nav__brand" href="index.html" aria-label="Costa Furtune Crestview">
-    <img src="assets/logos/costa-furtune-crest.svg" alt="Costa Furtune Crestview" width="340" height="70" />
+  <a class="nav__brand" href="index.html" aria-label="Costa Furtune Master Township">
+    <div style="display:inline-flex; align-items:center; gap:12px;">
+      <img src="assets/logos/costa-furtune-official-gold.webp" alt="Costa Furtune Official Emblem" width="46" height="46" style="height:44px; width:44px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(212,175,55,0.4)); flex-shrink:0;" />
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:var(--serif); font-size:clamp(17px, 2vw, 21px); font-weight:700; letter-spacing:0.12em; color:#FAF8F5; line-height:1.1; white-space:nowrap;">COSTA FURTUNE</span>
+        <span style="font-family:var(--ui); font-size:clamp(8.5px, 1vw, 10px); font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:#D4AF37; line-height:1.1; margin-top:2px;">CLUB COSTA FANTASY</span>
+      </div>
+    </div>
   </a>
 
   <nav class="nav__links" aria-label="Sections">
@@ -33,6 +39,18 @@
 </header>
 
 <div class="navmenu" id="navMenu" aria-hidden="true">
+  <div class="navmenu__top-bar">
+    <div class="navmenu__brand">
+      <img src="assets/logos/costa-furtune-official-gold.webp" alt="Costa Furtune" width="38" height="38" style="height:36px; width:36px; object-fit:contain; filter:drop-shadow(0 2px 6px rgba(212,175,55,0.3));" />
+      <div style="display:flex; flex-direction:column;">
+        <span style="font-family:var(--serif); font-size:16px; font-weight:700; color:#FAF8F5; letter-spacing:0.1em; line-height:1.1;">COSTA FURTUNE</span>
+        <span style="font-family:var(--ui); font-size:8.5px; font-weight:600; color:#D4AF37; letter-spacing:0.22em; text-transform:uppercase;">CLUB COSTA FANTASY</span>
+      </div>
+    </div>
+    <button type="button" class="navmenu__close-btn" id="navMenuClose" aria-label="Close navigation menu">
+      <span>✕</span> CLOSE
+    </button>
+  </div>
   <nav aria-label="Mobile sections">
     <a href="index.html#developer"><span>00</span>Master Developer (Sai Harmony)</a>
     <a href="index.html#township"><span>01</span>Complete Township (All 3 Phases)</a>
@@ -81,7 +99,7 @@
     </div>
     <div class="hero__actions" data-reveal data-reveal-delay="300">
       <a class="btn btn--gold" href="#enquire">Request Club Walkthrough</a>
-      <a class="btn btn--ghost" href="assets/brochure/costa-furtune-crestview-official.pdf" target="_blank" rel="noopener">Download Official Brochure</a>
+      <button type="button" class="btn btn--ghost btn-brochure" onclick="openBrochureGate('assets/brochure/costa-furtune-crestview-official.pdf', 'Costa-Furtune-Crestview-Official-Brochure.pdf', 'Club Costa Fantasy')" style="cursor:pointer;">Download Official Brochure</button>
       <a class="btn btn--ghost" href="index.html#amenities">Amenities at a Glance</a>
     </div>
   </div>
@@ -321,15 +339,21 @@
 <footer class="footer">
   <div class="footer__top">
     <div class="footer__mark">
-      <img src="assets/logos/costa-furtune-crest.svg" alt="Costa Furtune Crestview" width="340" height="70" />
+      <div style="display:inline-flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <img src="assets/logos/costa-furtune-official-gold.webp" alt="Costa Furtune Official Emblem" width="46" height="46" style="height:44px; width:44px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(212,175,55,0.4)); flex-shrink:0;" />
+        <div style="display:flex; flex-direction:column; justify-content:center;">
+          <span style="font-family:var(--serif); font-size:clamp(17px, 2vw, 21px); font-weight:700; letter-spacing:0.12em; color:#FAF8F5; line-height:1.1; white-space:nowrap;">COSTA FURTUNE</span>
+          <span style="font-family:var(--ui); font-size:clamp(8.5px, 1vw, 10px); font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:#D4AF37; line-height:1.1; margin-top:2px;">MASTER TOWNSHIP &middot; BHUBANESWAR</span>
+        </div>
+      </div>
       <p>
         Sai Harmony Pvt. Ltd. &middot; Plot No. 83, Ground Floor, Prachi Enclave, Chandrasekharpur, Bhubaneswar &ndash; 751016.
       </p>
-      <a class="footer__brochure" href="assets/brochure/costa-furtune-crestview-official.pdf" target="_blank" rel="noopener">
+      <button type="button" class="footer__brochure btn-brochure" onclick="openBrochureGate('assets/brochure/costa-furtune-crestview-official.pdf', 'Costa-Furtune-Crestview-Official-Brochure.pdf', 'Club Costa Fantasy')" style="background:none; border:none; padding:0; cursor:pointer; text-align:left;">
         Download the official brochure
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0l3.2-3.2M8 10L4.8 6.8M2.5 12.5h11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-        <small>PDF &middot; 25 pages</small>
-      </a>
+        <small>Official Verified PDF &middot; 25 pages</small>
+      </button>
     </div>
     <div class="footer__cols">
       <div>
