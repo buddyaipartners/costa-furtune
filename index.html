@@ -286,8 +286,8 @@
 <!-- ═══════════════════════  00 · HERO  ═══════════════════════ -->
 <section class="section section--hero" data-chapter="0" id="heroSection">
   <div class="hero__media">
-    <video autoplay loop muted playsinline preload="auto" poster="assets/drone_scenes/drone_township_master_poster.webp" style="width:100%; height:100%; object-fit:cover; filter:brightness(1.22) contrast(1.08) saturate(1.18);">
-      <source src="assets/video/costa-drone-hero-ambient.mp4" type="video/mp4" />
+    <video autoplay loop muted playsinline preload="auto" poster="assets/video/costa-hero-ambient-clean-poster.webp" style="width:100%; height:100%; object-fit:cover; filter:brightness(1.18) contrast(1.06) saturate(1.12);">
+      <source src="assets/video/costa-hero-ambient-clean.mp4" type="video/mp4" />
     </video>
     <div class="hero__media__veil" style="position:absolute; inset:0; z-index:2; background:linear-gradient(180deg, rgba(7,14,9,0.03) 0%, rgba(7,14,9,0.12) 42%, rgba(4,8,6,0.42) 100%); pointer-events:none;"></div>
     <div class="ambient-orb ambient-orb--gold" style="top:12%; left:8%;"></div>
@@ -396,17 +396,23 @@
       </div>
 
       <div style="position:relative; width:100%; aspect-ratio:16/9; background:#000;">
-        <video id="cinemaPlayer" src="assets/video/costa-furtune-drone-hero.mp4" poster="assets/drone_scenes/drone_township_master_poster.webp" controls playsinline preload="metadata" style="width:100%; height:100%; display:block; object-fit:contain; background:#000;"></video>
+        <video id="cinemaPlayer" src="assets/video/costa-township-aerial-4k.mp4" poster="assets/video/costa-township-aerial-4k-poster.webp" controls playsinline preload="metadata" style="width:100%; height:100%; display:block; object-fit:contain; background:#000;"></video>
       </div>
 
       <!-- TABS BELOW PLAYER -->
       <div style="display:flex; flex-wrap:wrap; gap:12px; padding:16px 20px; background:#0D1219; border-top:1px solid rgba(255,255,255,0.08); align-items:center; justify-content:space-between;">
         <div style="display:flex; flex-wrap:wrap; gap:10px;">
-          <button type="button" class="btn-cinema-switch is-active" id="btnSwitchDrone" data-video="assets/video/costa-furtune-drone-hero.mp4" data-poster="assets/drone_scenes/drone_township_master_poster.webp" data-title="Costa Furtune · 4K Master Drone Aerial Sweep (Full 4.5-Acre Township)" style="padding:10px 18px; font-size:11.5px; font-family:var(--ui); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; border-radius:6px; cursor:pointer; background:linear-gradient(135deg, #7A805E 0%, #614F33 100%); color:#FFFFFF; border:1px solid #D4AF37;">
-            🎥 4K Drone Flight (38s)
+          <button type="button" class="btn-cinema-switch is-active" id="btnSwitchDrone" data-video="assets/video/costa-township-aerial-4k.mp4" data-poster="assets/video/costa-township-aerial-4k-poster.webp" data-title="Costa Furtune · 4K Master Drone Aerial Sweep (Full 4.5-Acre Township)" style="padding:10px 18px; font-size:11.5px; font-family:var(--ui); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; border-radius:6px; cursor:pointer; background:linear-gradient(135deg, #7A805E 0%, #614F33 100%); color:#FFFFFF; border:1px solid #D4AF37;">
+            🎥 4K Township Aerial (24s)
           </button>
-          <button type="button" class="btn-cinema-switch" id="btnSwitchClub" data-video="assets/video/costa-furtune-club-fantacy-walkthrough.mp4" data-poster="assets/phases/club-costa-fantasy-official.webp" data-title="Club Costa Fantacy · 10,296 Sq.Ft Lifestyle Walkthrough" style="padding:10px 18px; font-size:11.5px; font-family:var(--ui); font-weight:500; text-transform:uppercase; letter-spacing:0.08em; border-radius:6px; cursor:pointer; background:rgba(255,255,255,0.06); color:#D8D2C4; border:1px solid rgba(255,255,255,0.15);">
-            🏛️ Club Fantacy Walkthrough (12s)
+          <button type="button" class="btn-cinema-switch" id="btnSwitchClub" data-video="assets/video/costa-boulevard-arrival.mp4" data-poster="assets/video/costa-boulevard-arrival-poster.webp" data-title="Club Costa Fantacy · Grand Boulevard &amp; Lifestyle Arrival (10,296 Sq.Ft)" style="padding:10px 18px; font-size:11.5px; font-family:var(--ui); font-weight:500; text-transform:uppercase; letter-spacing:0.08em; border-radius:6px; cursor:pointer; background:rgba(255,255,255,0.06); color:#D8D2C4; border:1px solid rgba(255,255,255,0.15);">
+            🏛️ Boulevard &amp; Club Fantacy (11s)
+          </button>
+          <button type="button" class="btn-cinema-switch" id="btnSwitchConstruction" data-video="assets/video/costa-construction-reality.mp4" data-poster="assets/video/costa-construction-reality-poster.webp" data-title="Costa Furtune · On-Ground RCC Construction Reality &amp; Superstructure" style="padding:10px 18px; font-size:11.5px; font-family:var(--ui); font-weight:500; text-transform:uppercase; letter-spacing:0.08em; border-radius:6px; cursor:pointer; background:rgba(255,255,255,0.06); color:#D8D2C4; border:1px solid rgba(255,255,255,0.15);">
+            🏗️ Tower Construction Reality (18s)
+          </button>
+          <button type="button" class="btn-cinema-switch" id="btnSwitchForest" data-video="assets/video/costa-hero-ambient-clean.mp4" data-poster="assets/video/costa-hero-ambient-clean-poster.webp" data-title="Costa Furtune · Chandaka Forest Canopy &amp; Elevation View" style="padding:10px 18px; font-size:11.5px; font-family:var(--ui); font-weight:500; text-transform:uppercase; letter-spacing:0.08em; border-radius:6px; cursor:pointer; background:rgba(255,255,255,0.06); color:#D8D2C4; border:1px solid rgba(255,255,255,0.15);">
+            🌲 Forest Canopy Sweep (15s)
           </button>
         </div>
         <div style="display:flex; gap:12px;">
@@ -1138,6 +1144,20 @@
     </figure>
   </div>
 
+  <!-- DEDICATED ON-SITE CONSTRUCTION REALITY VIDEO SHOWCASE -->
+  <div style="margin: clamp(24px, 4vh, 40px) 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(212,175,55,0.35); background: #080C10; box-shadow: 0 20px 60px rgba(0,0,0,0.7);" data-reveal data-reveal-delay="100">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding: 14px 22px; background: linear-gradient(90deg, #10161E 0%, #171E28 100%); border-bottom: 1px solid rgba(212,175,55,0.25); flex-wrap:wrap; gap:10px;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="width:10px; height:10px; border-radius:50%; background:#0E873D; display:inline-block; box-shadow:0 0 10px #0E873D;"></span>
+        <strong style="color:#FAF8F5; font-size:12.5px; font-family:var(--ui); letter-spacing:0.06em; text-transform:uppercase;">Live On-Site Telemetry · RCC Superstructure &amp; Ground Reality</strong>
+      </div>
+      <span style="font-size:11px; color:#D4AF37; font-family:var(--ui); letter-spacing:0.08em; text-transform:uppercase; font-weight:600;">18-Second Site Broadcast · 4K Footage</span>
+    </div>
+    <div style="position:relative; width:100%; aspect-ratio:16/9; max-height:520px; background:#000;">
+      <video src="assets/video/costa-construction-reality.mp4" poster="assets/video/costa-construction-reality-poster.webp" controls playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;"></video>
+    </div>
+  </div>
+
   <ol class="timeline" data-reveal data-reveal-delay="120">
     <li class="is-done">
       <span class="timeline__dot"></span>
@@ -1508,10 +1528,11 @@
   <div class="video-modal__box">
     <div class="video-modal__bar" style="flex-wrap:wrap; gap:12px;">
       <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-        <span class="video-modal__title" id="videoModalTitle">Costa Furtune · 31s Drone Aerial Flight</span>
-        <div class="video-tabs" style="display:flex; gap:6px;">
-          <button type="button" class="btn-video-tab is-active" data-src="assets/video/costa-furtune-drone-hero.mp4" poster="assets/drone_scenes/drone_township_master_poster.webp" data-title="Costa Furtune · 31s Drone Aerial Flight" style="padding:5px 12px; font-family:var(--ui); font-size:9px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--gold); background:rgba(184,145,75,0.18); color:var(--gold-3); cursor:pointer;">🎥 Drone Flight · 31s</button>
-          <button type="button" class="btn-video-tab" data-src="assets/video/costa-furtune-master-walkthrough.mp4" data-title="Costa Furtune · 45s Architectural Walkthrough &amp; Club Fantacy" style="padding:5px 12px; font-family:var(--ui); font-size:9px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--line-2); background:transparent; color:var(--muted); cursor:pointer;">🏛️ Walkthrough &amp; Club Fantacy · 45s</button>
+        <span class="video-modal__title" id="videoModalTitle">Costa Furtune · 4K Master Aerial Sweep (24s)</span>
+        <div class="video-tabs" style="display:flex; gap:6px; flex-wrap:wrap;">
+          <button type="button" class="btn-video-tab is-active" data-src="assets/video/costa-township-aerial-4k.mp4" poster="assets/video/costa-township-aerial-4k-poster.webp" data-title="Costa Furtune · 4K Master Aerial Sweep (24s)" style="padding:5px 12px; font-family:var(--ui); font-size:9px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--gold); background:rgba(184,145,75,0.18); color:var(--gold-3); cursor:pointer;">🎥 4K Aerial · 24s</button>
+          <button type="button" class="btn-video-tab" data-src="assets/video/costa-boulevard-arrival.mp4" poster="assets/video/costa-boulevard-arrival-poster.webp" data-title="Club Costa Fantacy · Boulevard &amp; Arrival Walkthrough (11s)" style="padding:5px 12px; font-family:var(--ui); font-size:9px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--line-2); background:transparent; color:var(--muted); cursor:pointer;">🏛️ Boulevard &amp; Club · 11s</button>
+          <button type="button" class="btn-video-tab" data-src="assets/video/costa-construction-reality.mp4" poster="assets/video/costa-construction-reality-poster.webp" data-title="Costa Furtune · RCC Superstructure &amp; Ground Reality (18s)" style="padding:5px 12px; font-family:var(--ui); font-size:9px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--line-2); background:transparent; color:var(--muted); cursor:pointer;">🏗️ Construction · 18s</button>
         </div>
       </div>
       <div style="display:flex; align-items:center; gap:8px;">
@@ -1520,7 +1541,7 @@
       </div>
     </div>
     <div class="video-modal__frame">
-      <video id="masterVideoPlayer" src="assets/video/costa-furtune-drone-hero.mp4" poster="assets/drone_scenes/drone_township_master_poster.webp" controls preload="metadata"></video>
+      <video id="masterVideoPlayer" src="assets/video/costa-township-aerial-4k.mp4" poster="assets/video/costa-township-aerial-4k-poster.webp" controls preload="metadata"></video>
     </div>
   </div>
 </div>
