@@ -5020,3 +5020,217 @@ body[style*="background: #0"] .stat dd {
   opacity: 0.95 !important;
   font-weight: 600 !important;
 }
+
+/* ==========================================================================
+   ULTRA-LUXURY RESPONSIVE MOBILE COMPACT POLISH (Zero Broken Layouts)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Prevent any horizontal page blowing */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* Compact luxury header */
+  .site-header {
+    padding: 10px 14px !important;
+  }
+  .nav__brand {
+    gap: 8px !important;
+  }
+  .nav__brand img {
+    height: 38px !important;
+    width: auto !important;
+  }
+  .nav__brand span:first-child {
+    font-size: 14px !important;
+    letter-spacing: 0.08em !important;
+  }
+  .nav__brand span:last-child {
+    font-size: 8px !important;
+    letter-spacing: 0.16em !important;
+  }
+  .nav__cta {
+    display: none !important; /* Hide desktop CTA in header to leave room for brand + hamburger */
+  }
+
+  /* Hero adjustments */
+  .section--hero {
+    padding: 110px 16px 40px !important;
+    min-height: auto !important;
+  }
+  .hero__title {
+    margin-bottom: 12px !important;
+  }
+  .hero__title-line--serif {
+    font-size: clamp(32px, 8vw, 48px) !important;
+  }
+  .hero__title-line--script {
+    font-size: clamp(42px, 12vw, 64px) !important;
+  }
+  .hero__title-line--small {
+    font-size: clamp(10px, 2.8vw, 13px) !important;
+    letter-spacing: 0.18em !important;
+  }
+  .hero__sub {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* Hero Action Buttons - Stacked Cleanly */
+  .hero__actions {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+    margin-bottom: 18px !important;
+  }
+  .hero__actions .btn,
+  .hero__actions button,
+  .hero__actions a {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 13px 18px !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+
+  /* Hero quick allocation form card */
+  .hero__quick-card {
+    margin-top: 14px !important;
+    padding: 16px 14px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .quick-card__inputs {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .quick-card__inputs input,
+  .quick-card__inputs select,
+  .quick-card__inputs button {
+    width: 100% !important;
+    height: 46px !important;
+    font-size: 13.5px !important;
+    padding: 10px 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Township master layout */
+  .township-master-feature {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .township-master-feature__img-box {
+    order: -1 !important;
+    width: 100% !important;
+    max-height: 280px !important;
+  }
+  .township-master-feature__img-box img {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .township-key {
+    padding: 0 !important;
+  }
+  .township-key li {
+    padding: 12px 10px !important;
+  }
+
+  /* Township 4-phase pills */
+  .township-master-pills {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    background: transparent !important;
+    border: none !important;
+  }
+  .township-master-pill {
+    border-radius: 10px !important;
+    border: 1px solid rgba(184, 145, 75, 0.35) !important;
+    padding: 14px 16px !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  }
+
+  /* Location map section */
+  .location {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .location__media {
+    width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+    border-radius: 12px !important;
+  }
+  .location__grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .location__card {
+    padding: 16px 14px !important;
+  }
+
+  /* Residences / Typology cards */
+  .unit,
+  .township-card,
+  .director-card {
+    border-radius: 12px !important;
+  }
+  .unit-grid--4col,
+  .township-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Interactive CAD Floorplan & Blueprint Switcher */
+  .cad-blueprint-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  .cad-tab-btn {
+    padding: 10px 8px !important;
+    font-size: 11px !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 4K Drone Cinema player container */
+  .cinema-stage {
+    border-radius: 10px !important;
+  }
+
+  /* All generic split layouts */
+  .split {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .split__media {
+    aspect-ratio: 16 / 10 !important;
+    max-height: 280px !important;
+  }
+
+  /* Buttons & Floating Elements */
+  .btn {
+    min-height: 44px !important; /* Touch target accessibility rule */
+    font-size: 13px !important;
+  }
+  .wa-float {
+    bottom: 16px !important;
+    right: 16px !important;
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+
+  /* Lightbox and Modals */
+  .brochure-modal {
+    max-width: 92vw !important;
+    padding: 24px 18px !important;
+  }
+}
