@@ -625,57 +625,75 @@ function initAmbientAudio() {
   });
 }
 
-/* ── FULLSCREEN IMAGE LIGHTBOX ──────────────────────────────── */
+/* ── FULLSCREEN IMAGE LIGHTBOX (ROBUST & BULLETPROOF) ───────── */
 function initLightbox() {
-  let modal = document.getElementById('lightboxModal');
+  let modal = document.getElementById('imgLightbox') || document.getElementById('lightboxModal');
   if (!modal) {
     modal = document.createElement('div');
     modal.className = 'lightbox-modal';
-    modal.id = 'lightboxModal';
+    modal.id = 'imgLightbox';
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
-    modal.innerHTML = `
-      <div class="lightbox-modal__box">
-        <button class="lightbox-modal__close" id="closeLightbox" aria-label="Close lightbox">&times;</button>
-        <img src="" alt="" class="lightbox-modal__img" id="lightboxImg" />
-        <div class="lightbox-modal__caption" id="lightboxCaption"></div>
-      </div>
-    `;
+    modal.innerHTML = '<div class="lightbox-modal__box"><button class="lightbox-modal__close" id="closeLightboxBtn" aria-label="Close lightbox">&times;</button><img src="" alt="" class="lightbox-modal__img" id="globalLightboxImg" /><div class="lightbox-modal__caption" id="globalLightboxCaption"></div></div>';
     document.body.appendChild(modal);
   }
 
-  const imgEl = document.getElementById('lightboxImg');
-  const capEl = document.getElementById('lightboxCaption');
-  const closeBtn = document.getElementById('closeLightbox');
+  const getImg = () => modal.querySelector('img');
+  const getCap = () => modal.querySelector('#lightboxCaption') || modal.querySelector('#globalLightboxCaption') || modal.querySelector('.lightbox-modal__caption');
 
   const openLightbox = (src, caption) => {
-    imgEl.src = src;
-    imgEl.alt = caption || 'Architectural View';
-    capEl.textContent = caption || '';
+    if (!src) return;
+    const imgEl = getImg();
+    const capEl = getCap();
+    if (imgEl) {
+      imgEl.src = src;
+      imgEl.alt = caption || 'Architectural View';
+    }
+    if (capEl) {
+      capEl.textContent = caption || '';
+    }
+    modal.style.display = 'flex';
     modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     modal.classList.remove('is-open');
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   };
 
-  closeBtn?.addEventListener('click', closeLightbox);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeLightbox();
-  });
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeLightbox();
+  modal.querySelectorAll('button, #closeImgLightbox, #closeLightbox, #closeLightboxBtn').forEach(btn => {
+    btn.onclick = (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    };
   });
 
-  document.querySelectorAll('.phase-gallery-item, .lightbox-trigger, .visual-card, .unit__floorplan-wrap').forEach(item => {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target.classList.contains('lightbox-modal') || e.target.id === 'imgLightbox') {
+      closeLightbox();
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  window.openCostaLightbox = openLightbox;
+  window.closeCostaLightbox = closeLightbox;
+
+  document.querySelectorAll('.phase-gallery-item, .lightbox-trigger, .visual-card, .unit__floorplan-wrap, [data-lightbox]').forEach(item => {
     item.style.cursor = 'zoom-in';
-    item.addEventListener('click', () => {
+    item.onclick = (e) => {
+      if (e.target.closest('a') || e.target.closest('button')) return;
+      e.preventDefault();
       const src = item.getAttribute('data-lightbox') || item.querySelector('img')?.src || (item.tagName === 'IMG' ? item.src : null);
       const cap = item.getAttribute('data-caption') || item.querySelector('figcaption h4')?.textContent || item.querySelector('figcaption')?.textContent || item.querySelector('img')?.alt || '';
       if (src) openLightbox(src, cap);
-    });
+    };
   });
 }
 

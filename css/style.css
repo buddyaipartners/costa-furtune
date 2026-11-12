@@ -200,6 +200,7 @@ main{ position:relative; z-index:2; }
 .site-header-wrapper .nav__toggle.is-active {
   background: rgba(212, 175, 55, 0.25) !important;
   border-color: #D4AF37 !important;
+  z-index: 10001 !important;
 }
 .site-header-wrapper .nav__toggle[aria-expanded="true"] span:nth-child(1),
 .site-header-wrapper .nav__toggle.is-active span:nth-child(1) {
@@ -4973,3 +4974,15 @@ body[style*="background: #0"] .stat dd {
 
 
 
+
+/* Hero quick form hint high contrast */
+.quick-card__hint {
+  color: #E5C368 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  display: block !important;
+  margin-top: 10px !important;
+  text-align: center !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9) !important;
+}
