@@ -452,11 +452,11 @@ function initPhaseModal() {
     if (phase === 'triplex') {
       if (paneTriplex) paneTriplex.style.display = 'block';
       if (paneHorizon) paneHorizon.style.display = 'none';
-      if (modalTitle) modalTitle.textContent = 'Costa Fortune Triplex · Official Architecture & Floor Plans';
+      if (modalTitle) modalTitle.textContent = 'Costa Furtune Triplex · Official Architecture & Floor Plans';
     } else if (phase === 'horizon') {
       if (paneTriplex) paneTriplex.style.display = 'none';
       if (paneHorizon) paneHorizon.style.display = 'block';
-      if (modalTitle) modalTitle.textContent = 'Costa Furtune Horizon Heights · Twin Towers & Layouts';
+      if (modalTitle) modalTitle.textContent = 'Costa Furtune Horizon Heights · Superstructure & Floor Plans';
     }
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
