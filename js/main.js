@@ -348,6 +348,16 @@ function initForm() {
       `Name: ${name}\nPhone: ${phone}\nInterested in: ${interest}\nPreferred time: ${when}\n\n` +
       `Sent from the Crestview presentation.`;
 
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'lead_form_submit',
+        form_id: (form && form.id) || 'enquiryForm',
+        form_location: window.location.pathname
+      });
+    } catch (e) {
+      console.warn("dataLayer push error", e);
+    }
     window.open(`https://wa.me/917328089908?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
     showToast('Opening WhatsApp — we will confirm shortly');
   });
@@ -846,6 +856,17 @@ function initLeadFunnels() {
   // Dispatch Lead helper
   const dispatchLead = (leadType, data) => {
     try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'lead_form_submit',
+        form_id: leadType,
+        form_location: window.location.pathname
+      });
+    } catch (e) {
+      console.warn("dataLayer push error", e);
+    }
+
+    try {
       const stored = JSON.parse(localStorage.getItem('cf_leads_crm') || '[]');
       stored.push({
         id: 'CF-' + Date.now(),
@@ -1292,3 +1313,20 @@ function initFinancialStudio() {
 
 
 
+
+/* ── Task 3.3 · Global Lead Form Submission Event Tracker ─────── */
+document.addEventListener('submit', function (e) {
+  try {
+    var f = e.target;
+    if (f && (f.tagName === 'FORM' || (f.id && f.id.toLowerCase().includes('form')) || f.classList.contains('form') || f.closest('.enquire') || f.closest('.modal'))) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'lead_form_submit',
+        form_id: f.id || 'lead_form',
+        form_location: window.location.pathname
+      });
+    }
+  } catch (err) {
+    console.warn('GTM global submit listener error', err);
+  }
+}, true);

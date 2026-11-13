@@ -5288,3 +5288,25 @@ body[style*="background: #0"] .stat dd {
 .section--light-canvas .visual-card .visual-card__tag {
   color: #B8913B !important;
 }
+
+/* ── Client Audit Contrast Fixes: Staged Activation & Top Nav Header ── */
+.staged-activation,
+.staged-activation p,
+.staged-activation strong {
+  color: #1C241E !important;
+  opacity: 0.95 !important;
+}
+
+header.nav,
+.nav,
+.site-header-wrapper .nav {
+  background: #111814 !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22) !important;
+}
+
+header.nav .nav__brand,
+.nav .nav__brand,
+.nav__brand strong,
+.nav__brand span {
+  color: #FAF8F5 !important;
+}

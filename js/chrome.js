@@ -221,6 +221,19 @@
         return;
       }
 
+      // Push lead_form_submit event to dataLayer before executing download
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'lead_form_submit',
+          form_name: 'Gated Brochure Download Gate',
+          form_location: window.location.pathname,
+          phase: phase
+        });
+      } catch (err) {
+        console.warn('GTM tracking error', err);
+      }
+
       // Save user details
       sessionStorage.setItem('costa_user_name', name);
       sessionStorage.setItem('costa_user_phone', phone);
