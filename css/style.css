@@ -5252,3 +5252,39 @@ body[style*="background: #0"] .stat dd {
   gap: 36px;
   align-items: center;
 }
+
+/* ── Crestview Milestones Track ── */
+.milestones-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1024px) {
+  .milestones-track {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  }
+}
+
+/* ── Card Lux Light High Contrast Fix ── */
+.card-lux-light,
+.section--pure-white .visual-card,
+.section--light-canvas .visual-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(184, 145, 75, 0.35) !important;
+  box-shadow: 0 12px 32px rgba(10, 18, 13, 0.08) !important;
+}
+.card-lux-light .visual-card__meta h4,
+.section--pure-white .visual-card .visual-card__meta h4,
+.section--light-canvas .visual-card .visual-card__meta h4 {
+  color: #0E1610 !important;
+}
+.card-lux-light .visual-card__meta p,
+.section--pure-white .visual-card .visual-card__meta p,
+.section--light-canvas .visual-card .visual-card__meta p {
+  color: #4A5568 !important;
+}
+.card-lux-light .visual-card__tag,
+.section--pure-white .visual-card .visual-card__tag,
+.section--light-canvas .visual-card .visual-card__tag {
+  color: #B8913B !important;
+}
