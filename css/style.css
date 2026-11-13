@@ -1300,7 +1300,7 @@ main{ position:relative; z-index:2; }
 }
 
 /* ── Warm sand panel variant ────────────────────────────────── */
-.panel--dark{
+.panel--sand{
   background:var(--paper-2);
   border-color:rgba(184,145,75,.20);
 }
@@ -2262,7 +2262,7 @@ main{ position:relative; z-index:2; }
 .enquire__panel{
   background:linear-gradient(180deg, #FFFDF8 0%, var(--paper) 100%) !important;
 }
-.panel--dark{
+.panel--sand{
   background:linear-gradient(180deg, #FFFDF8 0%, var(--paper-2) 100%) !important;
 }
 
@@ -5232,7 +5232,7 @@ body[style*="background: #0"] .stat dd {
   }
 
   /* Lightbox and Modals */
-  .brochure-modal {
+  .brochure-modal__box {
     max-width: 92vw !important;
     padding: 24px 18px !important;
   }
@@ -5311,19 +5311,19 @@ header.nav .nav__brand,
   color: #FAF8F5 !important;
 }
 
-/* ── Absolute High-Contrast Panel Rule Fix (Triplex, Crestview, Horizon) ── */
-body.at-hero .panel,
-body[style*="background:#0"] .panel,
-body[style*="background: #0"] .panel,
-body[style*="background:#070E09"] .panel,
+/* ── Absolute High-Contrast Luxury Panels (Dark Canvas: Crestview, Triplex, Horizon, Index Ch 4/7) ── */
+.panel.panel--dark,
 .panel.panel--dark-solid,
+.panel.is-dark,
 .panel[style*="background:#0"],
 .panel[style*="background: #0"],
 .panel[style*="background:rgba(11"],
 .panel[style*="background: rgba(11"],
 .panel[style*="background:rgba(14"],
 .panel[style*="background: rgba(14"],
-.panel.is-dark {
+section[style*="background:#0"] .panel,
+section[style*="background: #0"] .panel,
+section[style*="background:#070E09"] .panel {
   background: #0D1711 !important;
   border: 1px solid rgba(212, 175, 55, 0.35) !important;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7) !important;
@@ -5331,44 +5331,61 @@ body[style*="background:#070E09"] .panel,
   border-radius: 12px !important;
 }
 
-body.at-hero .panel .display,
-body.at-hero .panel h2,
-body[style*="background:#0"] .panel .display,
-body[style*="background:#0"] .panel h2,
+.panel.panel--dark .display,
+.panel.panel--dark h2,
+.panel.panel--dark h3,
 .panel.panel--dark-solid .display,
-.panel.panel--dark-solid h2 {
+.panel.panel--dark-solid h2,
+.panel.panel--dark-solid h3,
+.panel[style*="background:#0"] .display,
+.panel[style*="background: #0"] .display,
+.panel[style*="background:#0"] h2,
+.panel[style*="background: #0"] h2,
+section[style*="background:#0"] .panel .display,
+section[style*="background: #0"] .panel .display,
+section[style*="background:#0"] .panel h2,
+section[style*="background: #0"] .panel h2 {
   color: #FAF8F5 !important;
 }
 
-body.at-hero .panel .lede,
-body[style*="background:#0"] .panel .lede,
-.panel.panel--dark-solid .lede {
+.panel.panel--dark .lede,
+.panel.panel--dark-solid .lede,
+.panel[style*="background:#0"] .lede,
+.panel[style*="background: #0"] .lede,
+section[style*="background:#0"] .panel .lede,
+section[style*="background: #0"] .panel .lede {
   color: #D8D2C4 !important;
+  font-weight: 400 !important;
 }
 
-body.at-hero .panel .body,
-body[style*="background:#0"] .panel .body,
-.panel.panel--dark-solid .body {
-  color: #A39E93 !important;
+.panel.panel--dark .body,
+.panel.panel--dark-solid .body,
+.panel[style*="background:#0"] .body,
+.panel[style*="background: #0"] .body,
+section[style*="background:#0"] .panel .body,
+section[style*="background: #0"] .panel .body {
+  color: #C4BEB2 !important;
 }
 
-/* ── Guaranteed Contrast for Verify list & Amenities in Dark Panels ── */
-body.at-hero .panel .verify,
-body[style*="background:#0"] .panel .verify,
-.panel.panel--dark-solid .verify,
+/* Dark panel Verify list */
 .panel.panel--dark .verify,
-.panel .verify,
-.verify {
+.panel.panel--dark-solid .verify,
+.panel[style*="background:#0"] .verify,
+.panel[style*="background: #0"] .verify,
+section[style*="background:#0"] .verify,
+section[style*="background: #0"] .verify,
+.verify--dark {
   border-top: 1px solid rgba(212, 175, 55, 0.3) !important;
   margin-top: clamp(20px, 2.5vw, 30px) !important;
 }
 
-body.at-hero .panel .verify li,
-body[style*="background:#0"] .panel .verify li,
-.panel.panel--dark-solid .verify li,
 .panel.panel--dark .verify li,
-.panel .verify li,
-.verify li {
+.panel.panel--dark-solid .verify li,
+.panel[style*="background:#0"] .verify li,
+.panel[style*="background: #0"] .verify li,
+section[style*="background:#0"] .verify li,
+section[style*="background: #0"] .verify li,
+.verify--dark li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   display: grid !important;
   grid-template-columns: 160px 1fr !important;
@@ -5377,12 +5394,13 @@ body[style*="background:#0"] .panel .verify li,
   align-items: baseline !important;
 }
 
-body.at-hero .panel .verify__k,
-body[style*="background:#0"] .panel .verify__k,
-.panel.panel--dark-solid .verify__k,
 .panel.panel--dark .verify__k,
-.panel .verify__k,
-.verify__k {
+.panel.panel--dark-solid .verify__k,
+.panel[style*="background:#0"] .verify__k,
+.panel[style*="background: #0"] .verify__k,
+section[style*="background:#0"] .verify__k,
+section[style*="background: #0"] .verify__k,
+.verify--dark .verify__k {
   color: #D4AF37 !important;
   font-family: var(--ui) !important;
   font-size: 11px !important;
@@ -5393,12 +5411,13 @@ body[style*="background:#0"] .panel .verify__k,
   line-height: 1.4 !important;
 }
 
-body.at-hero .panel .verify__v,
-body[style*="background:#0"] .panel .verify__v,
-.panel.panel--dark-solid .verify__v,
 .panel.panel--dark .verify__v,
-.panel .verify__v,
-.verify__v {
+.panel.panel--dark-solid .verify__v,
+.panel[style*="background:#0"] .verify__v,
+.panel[style*="background: #0"] .verify__v,
+section[style*="background:#0"] .verify__v,
+section[style*="background: #0"] .verify__v,
+.verify--dark .verify__v {
   color: #FAF8F5 !important;
   font-size: 13.5px !important;
   font-weight: 600 !important;
@@ -5406,18 +5425,75 @@ body[style*="background:#0"] .panel .verify__v,
   opacity: 1 !important;
 }
 
-body.at-hero .panel .amenities li,
+/* Dark panel Amenities */
 .panel.panel--dark .amenities li,
-.panel .amenities li {
+.panel.panel--dark-solid .amenities li,
+.panel[style*="background:#0"] .amenities li,
+.panel[style*="background: #0"] .amenities li,
+section[style*="background:#0"] .amenities li,
+section[style*="background: #0"] .amenities li {
   color: #FAF8F5 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   font-size: 13px !important;
 }
-body.at-hero .panel .amenities li::before,
+
 .panel.panel--dark .amenities li::before,
-.panel .amenities li::before {
+.panel.panel--dark-solid .amenities li::before,
+.panel[style*="background:#0"] .amenities li::before,
+.panel[style*="background: #0"] .amenities li::before,
+section[style*="background:#0"] .amenities li::before,
+section[style*="background: #0"] .amenities li::before {
   background: #D4AF37 !important;
   opacity: 1 !important;
+}
+
+/* ── Guaranteed High-Contrast Light Panels (Clubhouse, Blog, Index Ch 1) ── */
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]):not([style*="background:rgba(14"]):not([style*="background: rgba(14"]) {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(184, 145, 75, 0.3) !important;
+  box-shadow: 0 16px 40px rgba(10, 18, 13, 0.06) !important;
+}
+
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]) .display,
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]) h2,
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]) h3 {
+  color: #12161C !important;
+}
+
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]) .lede {
+  color: #1F2937 !important;
+  font-weight: 500 !important;
+}
+
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]) .body {
+  color: #374151 !important;
+  font-weight: 400 !important;
+}
+
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]) .amenities li {
+  color: #1C241E !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid rgba(18, 22, 28, 0.12) !important;
+  font-size: 13.5px !important;
+}
+
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]) .amenities li::before {
+  background: #B8913B !important;
+  opacity: 1 !important;
+}
+
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]) .verify li {
+  border-bottom: 1px solid rgba(18, 22, 28, 0.12) !important;
+}
+
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]) .verify__k {
+  color: #8A6D1C !important;
+  font-weight: 700 !important;
+}
+
+.panel:not(.panel--dark):not(.panel--dark-solid):not([style*="background:#0"]):not([style*="background: #0"]):not([style*="background:rgba(11"]):not([style*="background: rgba(11"]) .verify__v {
+  color: #12161C !important;
+  font-weight: 600 !important;
 }
 
 /* Light canvas panel contrast */
