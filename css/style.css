@@ -5352,6 +5352,74 @@ body[style*="background:#0"] .panel .body,
   color: #A39E93 !important;
 }
 
+/* ── Guaranteed Contrast for Verify list & Amenities in Dark Panels ── */
+body.at-hero .panel .verify,
+body[style*="background:#0"] .panel .verify,
+.panel.panel--dark-solid .verify,
+.panel.panel--dark .verify,
+.panel .verify,
+.verify {
+  border-top: 1px solid rgba(212, 175, 55, 0.3) !important;
+  margin-top: clamp(20px, 2.5vw, 30px) !important;
+}
+
+body.at-hero .panel .verify li,
+body[style*="background:#0"] .panel .verify li,
+.panel.panel--dark-solid .verify li,
+.panel.panel--dark .verify li,
+.panel .verify li,
+.verify li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  display: grid !important;
+  grid-template-columns: 160px 1fr !important;
+  gap: 16px !important;
+  padding: 12px 0 !important;
+  align-items: baseline !important;
+}
+
+body.at-hero .panel .verify__k,
+body[style*="background:#0"] .panel .verify__k,
+.panel.panel--dark-solid .verify__k,
+.panel.panel--dark .verify__k,
+.panel .verify__k,
+.verify__k {
+  color: #D4AF37 !important;
+  font-family: var(--ui) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  opacity: 1 !important;
+  line-height: 1.4 !important;
+}
+
+body.at-hero .panel .verify__v,
+body[style*="background:#0"] .panel .verify__v,
+.panel.panel--dark-solid .verify__v,
+.panel.panel--dark .verify__v,
+.panel .verify__v,
+.verify__v {
+  color: #FAF8F5 !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  opacity: 1 !important;
+}
+
+body.at-hero .panel .amenities li,
+.panel.panel--dark .amenities li,
+.panel .amenities li {
+  color: #FAF8F5 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  font-size: 13px !important;
+}
+body.at-hero .panel .amenities li::before,
+.panel.panel--dark .amenities li::before,
+.panel .amenities li::before {
+  background: #D4AF37 !important;
+  opacity: 1 !important;
+}
+
 /* Light canvas panel contrast */
 .section--light-canvas .panel:not(.panel--dark-solid):not([style*="background:#0"]) {
   background: #FFFFFF !important;
