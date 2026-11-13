@@ -4047,8 +4047,7 @@ body[style*="background: #0"] .stat dd {
 
 /* ── 02 · Museum-Grade Property & Unit Cards ─────────────────── */
 .unit--3bhk,
-.unit-card,
-.panel {
+.unit-card {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
   border: 1px solid rgba(184, 145, 75, 0.26) !important;
   background: var(--paper) !important;
@@ -5309,4 +5308,61 @@ header.nav .nav__brand,
 .nav__brand strong,
 .nav__brand span {
   color: #FAF8F5 !important;
+}
+
+/* ── Absolute High-Contrast Panel Rule Fix (Triplex, Crestview, Horizon) ── */
+body.at-hero .panel,
+body[style*="background:#0"] .panel,
+body[style*="background: #0"] .panel,
+body[style*="background:#070E09"] .panel,
+.panel.panel--dark-solid,
+.panel[style*="background:#0"],
+.panel[style*="background: #0"],
+.panel[style*="background:rgba(11"],
+.panel[style*="background: rgba(11"],
+.panel[style*="background:rgba(14"],
+.panel[style*="background: rgba(14"],
+.panel.is-dark {
+  background: #0D1711 !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7) !important;
+  color: #FAF8F5 !important;
+  border-radius: 12px !important;
+}
+
+body.at-hero .panel .display,
+body.at-hero .panel h2,
+body[style*="background:#0"] .panel .display,
+body[style*="background:#0"] .panel h2,
+.panel.panel--dark-solid .display,
+.panel.panel--dark-solid h2 {
+  color: #FAF8F5 !important;
+}
+
+body.at-hero .panel .lede,
+body[style*="background:#0"] .panel .lede,
+.panel.panel--dark-solid .lede {
+  color: #D8D2C4 !important;
+}
+
+body.at-hero .panel .body,
+body[style*="background:#0"] .panel .body,
+.panel.panel--dark-solid .body {
+  color: #A39E93 !important;
+}
+
+/* Light canvas panel contrast */
+.section--light-canvas .panel:not(.panel--dark-solid):not([style*="background:#0"]) {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(184, 145, 75, 0.3) !important;
+}
+.section--light-canvas .panel:not(.panel--dark-solid):not([style*="background:#0"]) .display,
+.section--light-canvas .panel:not(.panel--dark-solid):not([style*="background:#0"]) h2 {
+  color: #1C241E !important;
+}
+.section--light-canvas .panel:not(.panel--dark-solid):not([style*="background:#0"]) .lede {
+  color: #2D3748 !important;
+}
+.section--light-canvas .panel:not(.panel--dark-solid):not([style*="background:#0"]) .body {
+  color: #4A5568 !important;
 }
