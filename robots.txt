@@ -1,14 +1,11 @@
-# Robots.txt for Costa Furtune Crestview
-# All pages are public and should be indexed
+# Robots.txt for Sai Harmony & Costa Furtune Master Township
+# All official project pages public and crawlable
 
-Sitemap: https://buddyaipartners.github.io/costa-furtune/sitemap.xml
+Sitemap: https://www.saiharmony.com/sitemap.xml
 
-# Disallow sensitive files
+User-agent: *
+Allow: /
+
+# Disallow sensitive VCS and build files
 Disallow: /.git/
-Disallow: /.svn/
-Disallow: /node_modules/
-Disallow: /admin/
-Disallow: /api/
-
-# Allow all other pages
-# All other paths are allowed
+Disallow: /.github/
