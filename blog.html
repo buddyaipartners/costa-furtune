@@ -2,14 +2,7 @@
 <html lang="en">
 <head>
   <meta name="google-site-verification" content="JtAHMdFfWP8tKkxZtdMA4xQBKfleQzdG404QkSPXxAU" />
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
-new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
-"https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,"script","dataLayer","GTM-5786D7BS");</script>
-<!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) - Official Costa Furtune GA4 -->
+<!-- Google tag (gtag.js) - Official Costa Furtune GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V36V4WWPQF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,7 +13,6 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
       'cookie_flags': 'SameSite=None;Secure'
     });
   </script>
-  <meta name="google-site-verification" content="Sm7JOBVB1XgilVUoDI4M9qd9hUyyRUmbRml3opM5rM0" />
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -89,10 +81,6 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   </script>
 </head>
 <body class="is-ready">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5786D7BS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <header class="nav" id="nav">
   <a class="nav__brand" href="index.html" aria-label="Costa Furtune Master Township">
     <div style="display:inline-flex; align-items:center; gap:12px;">
@@ -431,5 +419,78 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 </div>
 
 <script src="js/chrome.js" defer></script>
+  <!-- Costa Furtune Interaction & Conversion Measurement Engine -->
+  <script>
+  (function() {
+    function trackEvent(name, params) {
+      if (typeof gtag === 'function') {
+        gtag('event', name, params);
+      }
+    }
+
+    // 1. Global Link & Button Click Measurement
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a, button');
+      if (!link) return;
+
+      var href = (link.getAttribute('href') || '').trim();
+      var text = (link.innerText || link.getAttribute('aria-label') || link.title || '').trim().substring(0, 80);
+
+      // WhatsApp Clicks
+      if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+        trackEvent('contact_whatsapp', {
+          event_category: 'contact',
+          event_label: text || 'WhatsApp Chat',
+          link_url: href
+        });
+      }
+      // Phone Call Clicks
+      else if (href.startsWith('tel:')) {
+        trackEvent('contact_call', {
+          event_category: 'contact',
+          event_label: text || href,
+          phone_number: href.replace('tel:', '')
+        });
+      }
+      // File / Brochure / CAD Downloads
+      else if (href.match(/\.(pdf|dwg|dxf|zip|xlsx?)$/i) || link.hasAttribute('download')) {
+        trackEvent('file_download', {
+          event_category: 'engagement',
+          event_label: text || href,
+          file_name: href.split('/').pop()
+        });
+      }
+      // Drone Cinema & Virtual Tours
+      else if (link.classList.contains('drone-card') || link.classList.contains('btn-cinema') || text.toLowerCase().includes('drone') || text.toLowerCase().includes('virtual tour')) {
+        trackEvent('view_virtual_tour', {
+          event_category: 'engagement',
+          event_label: text
+        });
+      }
+      // VIP Site Visit / Booking CTAs
+      else if (text.toLowerCase().includes('site visit') || text.toLowerCase().includes('book') || text.toLowerCase().includes('schedule')) {
+        trackEvent('cta_click', {
+          event_category: 'conversion_intent',
+          event_label: text,
+          link_url: href
+        });
+      }
+    }, true);
+
+    // 2. Global Form Submission Measurement
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      var formId = form.id || 'unnamed_form';
+      var formName = form.getAttribute('name') || form.className || formId;
+
+      trackEvent('generate_lead', {
+        event_category: 'lead_generation',
+        form_id: formId,
+        form_name: formName,
+        page_location: window.location.href
+      });
+    }, true);
+  })();
+  </script>
 </body>
 </html>
