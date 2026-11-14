@@ -6,6 +6,8 @@ Sitemap: https://www.saiharmony.com/sitemap.xml
 User-agent: *
 Allow: /
 
-# Disallow sensitive VCS and build files
+# LLM Crawler Context
+# Reference: https://www.saiharmony.com/llms.txt
+
 Disallow: /.git/
 Disallow: /.github/

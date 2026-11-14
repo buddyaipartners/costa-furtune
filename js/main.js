@@ -1228,7 +1228,7 @@ function initFinancialStudio() {
 
     // Share / Copy button
     btnShare.onclick = () => {
-      const summary = `Costa Furtune Crestview — Investment Summary\nUnit: ${currentUnitName}\nPrice: ${formatCrores(currentPrice)}\nEstimated EMI: ${formatRupees(emi)}/mo (${years} yrs @ ${annualRate}%)\n5-Yr Projected Value: ${formatCrores(val5Yr)}\nTotal Wealth Gain: +${formatLakhs(totalWealthGain)}\nOfficial Portal: https://buddyaipartners.github.io/costa-furtune/`;
+      const summary = `Costa Furtune Crestview — Investment Summary\nUnit: ${currentUnitName}\nPrice: ${formatCrores(currentPrice)}\nEstimated EMI: ${formatRupees(emi)}/mo (${years} yrs @ ${annualRate}%)\n5-Yr Projected Value: ${formatCrores(val5Yr)}\nTotal Wealth Gain: +${formatLakhs(totalWealthGain)}\nOfficial Portal: https://www.saiharmony.com/`;
       navigator.clipboard.writeText(summary).then(() => {
         alert("Investment summary copied to clipboard!");
       }).catch(() => {
